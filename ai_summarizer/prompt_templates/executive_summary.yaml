@@ -1,0 +1,38 @@
+# =============================================================================
+# Prompt Template: Executive Summary
+# =============================================================================
+# Non-technical summary suitable for leadership / C-suite.
+# Version: 1.0
+# =============================================================================
+
+name: "executive_summary"
+version: "1.0"
+description: "High-level threat landscape summary for non-technical stakeholders."
+
+system_prompt: |
+  You are a senior threat intelligence analyst preparing a briefing for
+  executive leadership. Write clearly, avoid jargon, and focus on business
+  impact. Structure your response with: key findings, risk level, and
+  recommended actions.
+
+user_prompt_template: |
+  Summarize the following threat intelligence data collected over the last
+  {time_period}. Focus on:
+  1. The most significant threats identified and their potential business impact.
+  2. Overall risk posture (increasing, stable, or decreasing).
+  3. Top 3 recommended actions for leadership.
+
+  --- DATA ---
+  Total posts analyzed: {total_posts}
+  Threat category breakdown: {category_breakdown}
+  Critical CVEs mentioned: {critical_cves}
+  Top IOC types: {ioc_summary}
+  Notable trends: {trends}
+  --- END DATA ---
+
+  Provide the summary in 3-5 concise paragraphs. Do not use technical
+  acronyms without explanation.
+
+parameters:
+  temperature: 0.3
+  max_tokens: 800

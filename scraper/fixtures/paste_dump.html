@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>QuickPaste — Recent Pastes</title></head>
+<body>
+<div id="site-header">
+  <h1>QuickPaste</h1>
+  <nav><a href="/">Home</a> | <a href="/recent">Recent</a> | <a href="/create">New Paste</a></nav>
+</div>
+
+<div id="paste-list">
+
+  <!-- Paste 1: Credential dump -->
+  <div class="paste" data-paste-id="p8a3f2x1">
+    <div class="paste-header">
+      <h2 class="paste-title">corp_breach_nov2024.txt</h2>
+      <span class="author">Author: anonymous</span>
+      <span class="timestamp">2024-11-15 03:12 UTC</span>
+      <span class="views">Views: 4,521</span>
+      <span class="expires">Expires: Never</span>
+    </div>
+    <pre class="paste-content">
+=== MEGACORP INDUSTRIES DATA BREACH — NOV 2024 ===
+Source: Internal HR database dump
+Records: ~12,000 employees
+Format: email:password:department:employee_id
+
+j.smith@megacorp.com:Welcome2024!:Engineering:EMP-4421
+m.johnson@megacorp.com:Summer2024#:Finance:EMP-4422
+a.williams@megacorp.com:P@ssword123:HR:EMP-4423
+r.brown@megacorp.com:Megacorp1!:IT:EMP-4424
+s.jones@megacorp.com:Qwerty!2024:Marketing:EMP-4425
+d.garcia@megacorp.com:Ch@ngeMe99:Legal:EMP-4426
+k.martinez@megacorp.com:Baseball2024:Sales:EMP-4427
+l.robinson@megacorp.com:Sunshine!23:Engineering:EMP-4428
+p.clark@megacorp.com:Dragon2024!:IT:EMP-4429
+t.rodriguez@megacorp.com:Trustno1!:Finance:EMP-4430
+admin@megacorp.com:4dm1n!Str@t0r:IT:EMP-0001
+
+=== ALSO RECOVERED ===
+VPN credentials: vpn.megacorp.com
+Internal Wiki: wiki.internal.megacorp.com
+JIRA instance: jira.megacorp.com:8080
+
+Contact: disposable8472@protonmail.com for full dump
+BTC: 1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2
+    </pre>
+  </div>
+
+  <!-- Paste 2: IOC list -->
+  <div class="paste" data-paste-id="p9b4c3y2">
+    <div class="paste-header">
+      <h2 class="paste-title">Malware C2 Infrastructure — November 2024</h2>
+      <span class="author">Author: th3_hunt3r</span>
+      <span class="timestamp">2024-11-14 21:05 UTC</span>
+      <span class="views">Views: 892</span>
+      <span class="expires">Expires: 30 days</span>
+    </div>
+    <pre class="paste-content">
+# Active C2 Infrastructure — LockCrypt Ransomware Campaign
+# Last updated: 2024-11-14
+# Confidence: HIGH
+# Share freely — TLP:WHITE
+
+## IP Addresses (C2 Servers)
+185.220.101.34
+185.220.101.35
+23.106.215.76
+91.214.124.20
+194.165.16.21
+194.165.16.22
+194.165.16.23
+
+## Domains
+lockcrypt-payment[.]onion  (Tor payment portal)
+update-service-cdn[.]com
+secure-file-transfer[.]net
+cloud-backup-restore[.]org
+microsoft-security-patch[.]com
+
+## File Hashes (SHA-256)
+7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b  (dropper)
+1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef  (ransomware binary)
+abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890  (exfil tool)
+
+## Email Addresses (used in ransom notes)
+recovery@protonmail.ch
+lockcrypt_support@tutanota.com
+decrypt.files@onionmail.org
+
+## Bitcoin Wallets (ransom collection)
+bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq
+3FZbgi29cpjq2GjdwV8eyHuJJnkLtktZc5
+
+## Monero Wallets
+47BnZFRPcZNoPgNpjqq8SFmrpLdKgHdBz8bXKVSRfFJke5o6yXhjBzQniGH5uN8A7baU7oD8kC6FTRfHCPSTR7Wn5P4jXXj
+
+## MITRE ATT&CK Techniques Observed
+T1190 - Exploit Public-Facing Application
+T1059.001 - PowerShell
+T1486 - Data Encrypted for Impact
+T1082 - System Information Discovery
+T1005 - Data from Local System
+T1567.002 - Exfiltration to Cloud Storage
+
+## CVEs Exploited in Initial Access
+CVE-2024-21887 (Ivanti Connect Secure - Command Injection)
+CVE-2024-21893 (Ivanti Connect Secure - SSRF)
+CVE-2024-3400 (Palo Alto PAN-OS - Command Injection)
+
+## Recommendations
+1. Block all listed IPs and domains at firewall/proxy level
+2. Search for listed file hashes across all endpoints
+3. Monitor for connections to listed BTC/XMR wallets
+4. Patch Ivanti and Palo Alto devices IMMEDIATELY
+5. Enable enhanced logging on VPN appliances
+    </pre>
+  </div>
+
+  <!-- Paste 3: Threat actor recruitment -->
+  <div class="paste" data-paste-id="p0c5d4z3">
+    <div class="paste-header">
+      <h2 class="paste-title">hiring devs for new project</h2>
+      <span class="author">Author: ghost_admin</span>
+      <span class="timestamp">2024-11-15 07:40 UTC</span>
+      <span class="views">Views: 337</span>
+      <span class="expires">Expires: 7 days</span>
+    </div>
+    <pre class="paste-content">
+We are looking for experienced developers to join our team. Requirements:
+
+1. Strong C/C++ and Python skills
+2. Experience with Windows kernel development
+3. Knowledge of AV/EDR evasion techniques (userland hooking, syscall proxying)
+4. Ability to develop custom loaders and crypters
+5. Understanding of network protocols and C2 frameworks
+
+What we offer:
+- Competitive payment in XMR (Monero)
+- Revenue share on successful operations
+- Access to private 0day repository
+- Fully compartmentalized opsec — we never meet, never use real names
+
+Our team has been operational since 2021. Recent successes include Fortune 500 targets.
+
+Interested? Prove your skills first:
+1. Write a proof-of-concept that bypasses Windows Defender real-time protection
+2. Submit via encrypted message to our Tox: 76518406F6A9F2217E8DC487AB38D882329AE630B3F4B3D2C2F47C3658B3E1D3AE4B3F2C1D5E
+
+DO NOT contact us via email. Telegram groups are compromised. Use Tox or Session only.
+Session ID: 05a2b3c4d5e6f7890123456789abcdef0123456789abcdef0123456789abcdef01
+
+PGP fingerprint for verification: B2C3 D4E5 F6A7 8901 2345 6789 ABCD EF01 2345 6789
+    </pre>
+  </div>
+
+  <!-- Paste 4: Vulnerability discussion -->
+  <div class="paste" data-paste-id="p1d6e5a4">
+    <div class="paste-header">
+      <h2 class="paste-title">Apache Struts CVE-2024-53677 analysis notes</h2>
+      <span class="author">Author: vuln_researcher_88</span>
+      <span class="timestamp">2024-11-14 14:22 UTC</span>
+      <span class="views">Views: 1,205</span>
+      <span class="expires">Expires: Never</span>
+    </div>
+    <pre class="paste-content">
+## CVE-2024-53677 — Apache Struts File Upload RCE
+
+CVSS v3.1: 9.8 (CRITICAL)
+Affected versions: Struts 2.0.0 - 6.3.0.2
+Patch available: 6.4.0+
+
+### Summary
+Path traversal vulnerability in the file upload interceptor allows
+unauthenticated attackers to upload malicious files (e.g., webshells)
+to arbitrary locations on the server.
+
+### Technical Details
+The vulnerability exists in the `FileUploadInterceptor` component.
+When processing multipart/form-data requests, the filename parameter
+is not properly sanitized. Attackers can use directory traversal
+sequences (../../) to escape the upload directory.
+
+### PoC (educational purposes)
+POST /upload.action HTTP/1.1
+Host: target.com
+Content-Type: multipart/form-data; boundary=----BOUNDARY
+
+------BOUNDARY
+Content-Disposition: form-data; name="upload"; filename="../../webapps/ROOT/shell.jsp"
+Content-Type: application/octet-stream
+
+<webshell content here>
+------BOUNDARY--
+
+### Affected Organizations (from Shodan scan)
+- ~15,000 internet-facing Struts instances detected
+- Major sectors: government (.gov), healthcare, financial services
+- IPs of confirmed vulnerable (sample):
+  203.0.113.50
+  198.51.100.75
+  192.0.2.100
+  2001:db8::1
+
+### Detection
+Monitor for:
+- POST requests to /upload.action with ../ in filename
+- New .jsp files in web root directories
+- Outbound connections from web servers on unusual ports
+
+### References
+- NVD: https://nvd.nist.gov/vuln/detail/CVE-2024-53677
+- Apache Advisory: https://struts.apache.org/announce
+    </pre>
+  </div>
+
+</div>
+
+<div id="site-footer">
+  <p>QuickPaste — Free anonymous paste service</p>
+</div>
+</body>
+</html>

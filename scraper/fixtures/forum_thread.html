@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>CyberUnderground Forum — Thread #7741</title></head>
+<body>
+<div id="site-header">
+  <h1>CyberUnderground Forum</h1>
+  <nav><a href="/">Home</a> | <a href="/forums">Forums</a> | <a href="/members">Members</a> | <a href="/rules">Rules</a></nav>
+</div>
+
+<div id="breadcrumb">
+  <a href="/">Home</a> &gt; <a href="/forums/exploits">Exploits &amp; Vulnerabilities</a> &gt; Thread #7741
+</div>
+
+<div id="thread">
+  <h2 class="thread-title">Ivanti Connect Secure mass exploitation — who's got working PoC?</h2>
+
+  <!-- Post 1 -->
+  <div class="post" data-post-id="19201">
+    <div class="post-header">
+      <span class="username"><a href="/user/xpl0itDev">xpl0itDev</a></span>
+      <span class="user-rank">Elite Member</span>
+      <span class="post-count">Posts: 1,247</span>
+      <span class="timestamp">2024-11-14 16:22 UTC</span>
+    </div>
+    <div class="post-body">
+      <p>anyone got a reliable PoC for the Ivanti chain? CVE-2024-21887 + CVE-2024-21893. The public exploits on github are getting detected by most WAFs now. Need something that bypasses Cloudflare and Akamai.</p>
+      <p>Willing to pay for private PoC. DM me or hit me up on Jabber: xpl0it@jabber.de</p>
+      <p>also looking for a list of vulnerable endpoints. ran a shodan scan and found ~4,500 exposed instances but need help filtering patched vs unpatched.</p>
+    </div>
+  </div>
+
+  <!-- Post 2 -->
+  <div class="post" data-post-id="19202">
+    <div class="post-header">
+      <span class="username"><a href="/user/APT_watcher">APT_watcher</a></span>
+      <span class="user-rank">Moderator</span>
+      <span class="post-count">Posts: 3,891</span>
+      <span class="timestamp">2024-11-14 16:45 UTC</span>
+    </div>
+    <div class="post-body">
+      <p>The SSRF in CVE-2024-21893 is the real prize. The command injection alone (CVE-2024-21887) requires auth, but chaining them gives you unauth RCE. Mandiant published a good writeup but the detection IOCs are already rotated by the threat actors.</p>
+      <p>Known C2 IPs from recent campaigns:</p>
+      <ul>
+        <li>185.174.100.56</li>
+        <li>192.36.27.92</li>
+        <li>91.92.240.113</li>
+        <li>45.77.45.127</li>
+      </ul>
+      <p>SHA-256 of the WIREFIRE webshell variant:</p>
+      <p><code>a3f5b2c8d1e4f6789012345678abcdef0123456789abcdef0123456789abcdef</code></p>
+      <p>If you see /dana-na/auth/url_default/welcome.cgi getting hit with weird SAML assertions, that's the SSRF trigger.</p>
+    </div>
+  </div>
+
+  <!-- Post 3 -->
+  <div class="post" data-post-id="19203">
+    <div class="post-header">
+      <span class="username"><a href="/user/darkR3searcher">darkR3searcher</a></span>
+      <span class="user-rank">Senior Member</span>
+      <span class="post-count">Posts: 567</span>
+      <span class="timestamp">2024-11-14 17:03 UTC</span>
+    </div>
+    <div class="post-body">
+      <p>fwiw i've been tracking UNC5221 (the group Mandiant attributed this to) and they've expanded their target list. They're now hitting healthcare and financial sector specifically.</p>
+      <p>New domains registered in the last week that match their pattern:</p>
+      <ul>
+        <li>ivanti-update-service[.]com</li>
+        <li>connectsecure-patch[.]net</li>
+        <li>vpn-security-update[.]org</li>
+      </ul>
+      <p>All resolving to IPs in the 194.165.16.0/24 range. Probably C2 infrastructure.</p>
+      <p>Also found credentials being dumped from compromised Ivanti appliances on a paste site: admin@hospital-corp.org:Ivanti2024! and sysadmin@firstnat-bank.com:VPN@ccess#1</p>
+    </div>
+  </div>
+
+  <!-- Post 4 -->
+  <div class="post" data-post-id="19204">
+    <div class="post-header">
+      <span class="username"><a href="/user/n00b_hacker42">n00b_hacker42</a></span>
+      <span class="user-rank">Junior Member</span>
+      <span class="post-count">Posts: 12</span>
+      <span class="timestamp">2024-11-14 17:30 UTC</span>
+    </div>
+    <div class="post-body">
+      <p>i have the exploit working! just tested on my lab. The trick is to use a modified SAML response with the entity ID set to the internal SSRF endpoint. Then pipe command injection thru the checkmtimestamp parameter.</p>
+      <p>my setup: Kali 2024.3, Python 3.12, modified the public PoC from watchTowr. Getting reverse shells on port 4444 ez</p>
+      <p>can share the modified script for 0.5 BTC. my wallet: bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</p>
+    </div>
+  </div>
+
+  <!-- Post 5 -->
+  <div class="post" data-post-id="19205">
+    <div class="post-header">
+      <span class="username"><a href="/user/APT_watcher">APT_watcher</a></span>
+      <span class="user-rank">Moderator</span>
+      <span class="post-count">Posts: 3,892</span>
+      <span class="timestamp">2024-11-14 18:01 UTC</span>
+    </div>
+    <div class="post-body">
+      <p>Update: CISA just added CVE-2024-21887 to the KEV catalog. Federal agencies have 48 hours to patch or disconnect. This is going to get worse before it gets better.</p>
+      <p>For defenders — here are the YARA rule hashes for the known malware families deployed post-exploitation:</p>
+      <ul>
+        <li>LIGHTWIRE: <code>d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8091011121314151617181920212223aabb</code></li>
+        <li>WIREFIRE: <code>a3f5b2c8d1e4f6789012345678abcdef0123456789abcdef0123456789abcdef</code></li>
+        <li>BUSHWALK: <code>cc11dd22ee33ff44aa55bb66cc77dd88ee99ff00aa11bb22cc33dd44ee55ff66</code></li>
+      </ul>
+      <p>Block these at the endpoint. Also monitor for outbound connections to port 8443 from your Ivanti appliances — that's a common C2 callback port.</p>
+    </div>
+  </div>
+
+  <!-- Post 6 -->
+  <div class="post" data-post-id="19206">
+    <div class="post-header">
+      <span class="username"><a href="/user/threat_intel_guy">threat_intel_guy</a></span>
+      <span class="user-rank">Member</span>
+      <span class="post-count">Posts: 234</span>
+      <span class="timestamp">2024-11-14 19:15 UTC</span>
+    </div>
+    <div class="post-body">
+      <p>Heads up — someone is selling a zero-day for another VPN product in the marketplace section. Claims pre-auth RCE, $75k price tag. Could be legit given the current wave of VPN exploits.</p>
+      <p>Also: saw a new ransomware strain being distributed through compromised Ivanti instances. Samples uploaded to MalwareBazaar. MD5: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6</p>
+      <p>The ransomware note references "LockCrypt" — looks like a new RaaS operation. Demanding 5 BTC per victim. Contact email in the ransom note: recovery@protonmail.ch</p>
+      <p>MITRE ATT&CK mapping for this campaign: T1190 (Initial Access via Exploit), T1059.001 (PowerShell), T1486 (Data Encrypted for Impact), T1567 (Exfiltration Over Web Service).</p>
+    </div>
+  </div>
+
+</div>
+
+<div id="thread-footer">
+  <p>Page 1 of 1 — 6 posts</p>
+  <p class="disclaimer">CyberUnderground Forum — Knowledge sharing only. We do not condone illegal activity.</p>
+</div>
+</body>
+</html>

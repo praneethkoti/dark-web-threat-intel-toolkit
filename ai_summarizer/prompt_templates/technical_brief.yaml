@@ -1,0 +1,41 @@
+# =============================================================================
+# Prompt Template: Technical Brief
+# =============================================================================
+# Detailed analysis for SOC analysts and security engineers.
+# Version: 1.0
+# =============================================================================
+
+name: "technical_brief"
+version: "1.0"
+description: "Detailed technical threat analysis for SOC / IR teams."
+
+system_prompt: |
+  You are a threat intelligence analyst writing a technical brief for SOC
+  analysts and incident responders. Be precise, reference MITRE ATT&CK
+  technique IDs, and include actionable detection and mitigation steps.
+
+user_prompt_template: |
+  Produce a technical threat intelligence brief from the following data
+  collected over the last {time_period}.
+
+  Include:
+  1. Threat landscape overview with category distribution.
+  2. Detailed breakdown of each active threat category with MITRE ATT&CK
+     technique references.
+  3. High-priority CVEs — CVSS scores, affected products, exploitation status.
+  4. IOC summary table (top IPs, domains, hashes) with context.
+  5. Detection recommendations (SIEM rules, YARA signatures, network indicators).
+  6. Mitigation priorities.
+
+  --- DATA ---
+  Posts analyzed: {total_posts}
+  Category breakdown: {category_breakdown}
+  MITRE techniques observed: {mitre_techniques}
+  CVE details: {cve_details}
+  Extracted IOCs: {ioc_details}
+  Anomalies detected: {anomalies}
+  --- END DATA ---
+
+parameters:
+  temperature: 0.2
+  max_tokens: 1500

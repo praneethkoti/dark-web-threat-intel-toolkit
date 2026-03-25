@@ -1,0 +1,42 @@
+# =============================================================================
+# Prompt Template: IOC Bulletin
+# =============================================================================
+# Focused on actionable indicators — for threat feeds and blocking lists.
+# Version: 1.0
+# =============================================================================
+
+name: "ioc_bulletin"
+version: "1.0"
+description: "Actionable IOC bulletin for immediate defensive use."
+
+system_prompt: |
+  You are a threat intelligence analyst producing an IOC bulletin for
+  immediate ingestion into security tools (SIEM, firewall, EDR). Be concise
+  and structured. Every indicator must have context and a recommended action.
+
+user_prompt_template: |
+  Generate an IOC bulletin from the following extracted indicators collected
+  over the last {time_period}.
+
+  For each IOC category, provide:
+  1. The indicator value.
+  2. Source context (where it was found and associated threat category).
+  3. Confidence level (high / medium / low).
+  4. Recommended action (block, monitor, investigate).
+
+  Group IOCs by type: IP addresses, domains, file hashes, email addresses,
+  CVE IDs, cryptocurrency wallets.
+
+  --- IOC DATA ---
+  {ioc_data}
+  --- END DATA ---
+
+  Associated threat categories: {categories}
+  MITRE ATT&CK techniques: {mitre_techniques}
+
+  Format as a structured bulletin with clear sections. Prioritize
+  high-confidence indicators first.
+
+parameters:
+  temperature: 0.1
+  max_tokens: 1200

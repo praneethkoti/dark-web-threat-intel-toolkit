@@ -1,0 +1,206 @@
+# =============================================================================
+# Dark Web Threat Intelligence Toolkit — Configuration
+# =============================================================================
+# All tuneable parameters live here. Secrets (API keys, passwords) go in .env.
+
+# ── General ───────────────────────────────────────────────────────────────────
+project:
+  name: "Dark Web Threat Intelligence Toolkit"
+  version: "1.0.0"
+  log_level: "INFO"               # DEBUG | INFO | WARNING | ERROR | CRITICAL
+  log_file: "data/toolkit.log"
+  database_path: "data/threat_intel.db"
+
+# ── Scraper Settings ──────────────────────────────────────────────────────────
+scraper:
+  # Global defaults — individual scrapers can override these
+  default_delay_seconds: 2.0      # Polite delay between requests
+  max_retries: 3
+  retry_backoff_factor: 2.0       # Exponential backoff multiplier
+  request_timeout: 30             # Seconds
+  verify_ssl: true
+
+  # Proxy configuration (leave empty to disable)
+  proxy:
+    enabled: false
+    http: ""                       # e.g. "http://127.0.0.1:8080"
+    https: ""
+    socks5: ""                     # e.g. "socks5h://127.0.0.1:9050"
+
+  # User-agent rotation pool size (loaded from fake-useragent + custom list)
+  user_agent_pool_size: 25
+
+  # ── Source-specific config ────────────────────────────────────
+  sources:
+    paste_sites:
+      enabled: true
+      # Public paste site URLs (no .onion — legal OSINT only)
+      urls:
+        - "https://rentry.co"
+        - "https://dpaste.org"
+      scrape_limit: 50             # Max items per run
+
+    threat_feeds:
+      enabled: true
+      alientvault_otx:
+        base_url: "https://otx.alienvault.com/api/v1"
+        pulse_limit: 25
+      abuse_ch:
+        urlhaus_url: "https://urlhaus-api.abuse.ch/v1"
+        malwarebazaar_url: "https://mb-api.abuse.ch/api/v1"
+      nvd:
+        base_url: "https://services.nvd.nist.gov/rest/json/cves/2.0"
+        results_per_page: 50
+        default_cve_year: 2024
+
+    simulated:
+      enabled: true
+      fixtures_dir: "scraper/fixtures"
+
+# ── Pipeline Settings ─────────────────────────────────────────────────────────
+pipeline:
+  cleaning:
+    remove_html: true
+    normalize_unicode: true
+    min_content_length: 20        # Discard posts shorter than this (chars)
+    dedup_enabled: true
+
+  entity_extraction:
+    spacy_model: "en_core_web_sm"
+    confidence_thresholds:
+      regex_only: "high"
+      ner_only: "medium"
+      regex_and_ner: "high"
+    extract_types:
+      - email
+      - ipv4
+      - ipv6
+      - domain
+      - url
+      - bitcoin_address
+      - monero_address
+      - cve_id
+      - credential_pair
+      - md5
+      - sha1
+      - sha256
+      - pgp_fingerprint
+
+  enrichment:
+    nvd_enabled: true
+    nvd_api_url: "https://services.nvd.nist.gov/rest/json/cves/2.0"
+    nvd_delay_seconds: 1.0        # NVD rate limit: ~5 req/30s without key
+    abuse_ch_enabled: false       # Enable if you want IP/domain lookups
+
+# ── Classifier Settings ───────────────────────────────────────────────────────
+classifier:
+  keyword:
+    config_path: "classifier/keyword_configs/threat_keywords.yaml"
+    min_confidence: 0.3
+
+  ml:
+    vectorizer: "tfidf"
+    max_features: 10000
+    models:
+      - "logistic_regression"
+      - "random_forest"
+      - "svm"
+    test_size: 0.2
+    random_state: 42
+    grid_search_cv: 3             # Cross-validation folds
+
+  transformer:
+    model_name: "facebook/bart-large-mnli"   # Zero-shot classification
+    candidate_labels:
+      - "data breach"
+      - "exploit or vulnerability"
+      - "ransomware or malware"
+      - "carding or financial fraud"
+      - "threat actor communication"
+      - "zero-day discussion"
+    batch_size: 16
+    device: "cpu"                 # "cpu" or "cuda"
+
+  mitre:
+    mapping_path: "config/mitre_attack_mapping.yaml"
+
+  synthetic_data:
+    num_samples: 2500
+    output_path: "data/synthetic_training_data.json"
+    balanced: true
+    seed: 42
+
+# ── Analysis Settings ─────────────────────────────────────────────────────────
+analysis:
+  time_windows:
+    - "7d"
+    - "30d"
+    - "90d"
+  anomaly_detection:
+    method: "zscore"              # "zscore" or "rolling_avg"
+    zscore_threshold: 2.5
+    rolling_window_days: 7
+  top_n_keywords: 30
+  top_n_cves: 20
+  report_output_dir: "data/reports"
+  chart_output_dir: "data/reports/charts"
+
+# ── Export Settings ───────────────────────────────────────────────────────────
+export:
+  output_dir: "data/exports"
+  stix:
+    bundle_name: "threat-intel-bundle"
+    identity_name: "dark-web-threat-intel-toolkit"
+  csv:
+    include_headers: true
+  misp:
+    org_name: "dark-web-threat-intel-toolkit"
+    event_threat_level: 2         # 1=High, 2=Medium, 3=Low, 4=Undefined
+
+# ── AI Summarizer Settings ────────────────────────────────────────────────────
+ai_summarizer:
+  default_backend: "openai"       # "openai" or "local"
+  prompt_templates_dir: "ai_summarizer/prompt_templates"
+
+  openai:
+    model: "gpt-4o-mini"
+    temperature: 0.3
+    max_tokens: 1500
+
+  anthropic:
+    model: "claude-sonnet-4-20250514"
+    temperature: 0.3
+    max_tokens: 1500
+
+  local:
+    model_name: "facebook/bart-large-cnn"   # Good for summarization
+    max_length: 512
+    device: "cpu"
+
+# ── Dashboard Settings ────────────────────────────────────────────────────────
+dashboard:
+  host: "localhost"
+  port: 8501
+  page_title: "Threat Intelligence Dashboard"
+  theme: "dark"
+
+# ── Scheduler Settings ────────────────────────────────────────────────────────
+scheduler:
+  timezone: "UTC"
+  jobs:
+    scrape_pastes:
+      trigger: "interval"
+      minutes: 30
+    scrape_feeds:
+      trigger: "interval"
+      hours: 6
+    process_pipeline:
+      trigger: "interval"
+      minutes: 35                 # Runs shortly after scrape
+    classify_new:
+      trigger: "interval"
+      hours: 1
+    daily_report:
+      trigger: "cron"
+      hour: 6
+      minute: 0

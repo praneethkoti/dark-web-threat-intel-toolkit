@@ -1,0 +1,57 @@
+# ── Python ────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# ── Virtual Environment ──────────────────────────────
+venv/
+.venv/
+env/
+
+# ── Environment & Secrets ────────────────────────────
+.env
+*.key
+*.pem
+
+# ── Data (keep structure, ignore contents) ───────────
+data/raw/*
+data/processed/*
+data/exports/*
+data/reports/*
+data/*.db
+data/*.log
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/exports/.gitkeep
+!data/reports/.gitkeep
+
+# ── ML Model Artifacts ──────────────────────────────
+*.pkl
+*.joblib
+models/
+*.pt
+*.bin
+*.safetensors
+
+# ── IDE ──────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ── Jupyter ──────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Testing / Coverage ──────────────────────────────
+.coverage
+htmlcov/
+.pytest_cache/
+
+# ── Misc ─────────────────────────────────────────────
+*.log

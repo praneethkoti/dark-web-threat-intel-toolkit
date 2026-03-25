@@ -1,0 +1,127 @@
+# =============================================================================
+# MITRE ATT&CK Technique Mapping
+# =============================================================================
+# Maps each threat classification category to the most relevant ATT&CK
+# techniques.  Used by classifier/mitre_mapper.py to enrich classified posts.
+#
+# Reference: https://attack.mitre.org/techniques/enterprise/
+# =============================================================================
+
+categories:
+
+  data_breach:
+    display_name: "Data Breach / Credential Dump"
+    techniques:
+      - id: "T1078"
+        name: "Valid Accounts"
+        tactic: "Defense Evasion, Persistence, Privilege Escalation, Initial Access"
+      - id: "T1110"
+        name: "Brute Force"
+        tactic: "Credential Access"
+      - id: "T1555"
+        name: "Credentials from Password Stores"
+        tactic: "Credential Access"
+      - id: "T1552"
+        name: "Unsecured Credentials"
+        tactic: "Credential Access"
+      - id: "T1530"
+        name: "Data from Cloud Storage"
+        tactic: "Collection"
+      - id: "T1567"
+        name: "Exfiltration Over Web Service"
+        tactic: "Exfiltration"
+
+  exploit_vulnerability:
+    display_name: "Exploit / Vulnerability Discussion"
+    techniques:
+      - id: "T1190"
+        name: "Exploit Public-Facing Application"
+        tactic: "Initial Access"
+      - id: "T1203"
+        name: "Exploitation for Client Execution"
+        tactic: "Execution"
+      - id: "T1068"
+        name: "Exploitation for Privilege Escalation"
+        tactic: "Privilege Escalation"
+      - id: "T1211"
+        name: "Exploitation for Defense Evasion"
+        tactic: "Defense Evasion"
+      - id: "T1212"
+        name: "Exploitation for Credential Access"
+        tactic: "Credential Access"
+
+  ransomware_malware:
+    display_name: "Ransomware / Malware"
+    techniques:
+      - id: "T1486"
+        name: "Data Encrypted for Impact"
+        tactic: "Impact"
+      - id: "T1489"
+        name: "Service Stop"
+        tactic: "Impact"
+      - id: "T1059"
+        name: "Command and Scripting Interpreter"
+        tactic: "Execution"
+      - id: "T1547"
+        name: "Boot or Logon Autostart Execution"
+        tactic: "Persistence"
+      - id: "T1027"
+        name: "Obfuscated Files or Information"
+        tactic: "Defense Evasion"
+      - id: "T1071"
+        name: "Application Layer Protocol"
+        tactic: "Command and Control"
+
+  carding_fraud:
+    display_name: "Carding / Financial Fraud"
+    techniques:
+      - id: "T1056"
+        name: "Input Capture"
+        tactic: "Collection, Credential Access"
+      - id: "T1185"
+        name: "Browser Session Hijacking"
+        tactic: "Collection"
+      - id: "T1557"
+        name: "Adversary-in-the-Middle"
+        tactic: "Collection, Credential Access"
+      - id: "T1565"
+        name: "Data Manipulation"
+        tactic: "Impact"
+      - id: "T1566"
+        name: "Phishing"
+        tactic: "Initial Access"
+
+  threat_actor_comms:
+    display_name: "Threat Actor Recruitment / Communication"
+    techniques:
+      - id: "T1583"
+        name: "Acquire Infrastructure"
+        tactic: "Resource Development"
+      - id: "T1585"
+        name: "Establish Accounts"
+        tactic: "Resource Development"
+      - id: "T1588"
+        name: "Obtain Capabilities"
+        tactic: "Resource Development"
+      - id: "T1586"
+        name: "Compromise Accounts"
+        tactic: "Resource Development"
+
+  zero_day:
+    display_name: "Zero-Day Discussion"
+    techniques:
+      - id: "T1190"
+        name: "Exploit Public-Facing Application"
+        tactic: "Initial Access"
+      - id: "T1203"
+        name: "Exploitation for Client Execution"
+        tactic: "Execution"
+      - id: "T1068"
+        name: "Exploitation for Privilege Escalation"
+        tactic: "Privilege Escalation"
+      - id: "T1189"
+        name: "Drive-by Compromise"
+        tactic: "Initial Access"
+      - id: "T1195"
+        name: "Supply Chain Compromise"
+        tactic: "Initial Access"

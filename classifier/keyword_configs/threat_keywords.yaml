@@ -1,0 +1,142 @@
+# =============================================================================
+# Threat Keyword Dictionaries — Weighted Scoring
+# =============================================================================
+# Each category has a list of keywords with associated weights.
+# Higher weight = stronger signal for that category.
+# Weights: 1.0 = weak signal, 2.0 = moderate, 3.0 = strong indicator.
+# =============================================================================
+
+categories:
+
+  data_breach:
+    keywords:
+      - { term: "database dump", weight: 3.0 }
+      - { term: "credential dump", weight: 3.0 }
+      - { term: "data leak", weight: 3.0 }
+      - { term: "data breach", weight: 3.0 }
+      - { term: "leaked database", weight: 3.0 }
+      - { term: "combo list", weight: 2.5 }
+      - { term: "combolist", weight: 2.5 }
+      - { term: "plaintext passwords", weight: 2.5 }
+      - { term: "email:pass", weight: 2.5 }
+      - { term: "user:pass", weight: 2.5 }
+      - { term: "breach", weight: 1.5 }
+      - { term: "leaked", weight: 1.5 }
+      - { term: "dump", weight: 1.0 }
+      - { term: "credentials", weight: 1.5 }
+      - { term: "accounts", weight: 1.0 }
+      - { term: "hacked", weight: 1.5 }
+      - { term: "dehashed", weight: 2.0 }
+      - { term: "dox", weight: 2.0 }
+      - { term: "doxxed", weight: 2.0 }
+      - { term: "fullz", weight: 2.5 }
+
+  exploit_vulnerability:
+    keywords:
+      - { term: "exploit", weight: 2.5 }
+      - { term: "0day", weight: 3.0 }
+      - { term: "0-day", weight: 3.0 }
+      - { term: "proof of concept", weight: 2.5 }
+      - { term: "poc", weight: 2.0 }
+      - { term: "CVE-", weight: 2.5 }
+      - { term: "vulnerability", weight: 2.0 }
+      - { term: "vuln", weight: 1.5 }
+      - { term: "remote code execution", weight: 3.0 }
+      - { term: "rce", weight: 2.5 }
+      - { term: "privilege escalation", weight: 2.5 }
+      - { term: "privesc", weight: 2.5 }
+      - { term: "buffer overflow", weight: 2.5 }
+      - { term: "sql injection", weight: 2.5 }
+      - { term: "sqli", weight: 2.0 }
+      - { term: "xss", weight: 2.0 }
+      - { term: "cross-site scripting", weight: 2.5 }
+      - { term: "lfi", weight: 2.0 }
+      - { term: "rfi", weight: 2.0 }
+      - { term: "shellcode", weight: 2.5 }
+      - { term: "payload", weight: 1.5 }
+      - { term: "metasploit", weight: 2.0 }
+
+  ransomware_malware:
+    keywords:
+      - { term: "ransomware", weight: 3.0 }
+      - { term: "ransom", weight: 2.0 }
+      - { term: "malware", weight: 2.5 }
+      - { term: "trojan", weight: 2.5 }
+      - { term: "rat", weight: 2.0 }
+      - { term: "remote access trojan", weight: 3.0 }
+      - { term: "keylogger", weight: 2.5 }
+      - { term: "botnet", weight: 2.5 }
+      - { term: "crypter", weight: 2.5 }
+      - { term: "fud", weight: 2.0 }
+      - { term: "stealer", weight: 2.5 }
+      - { term: "infostealer", weight: 3.0 }
+      - { term: "backdoor", weight: 2.5 }
+      - { term: "rootkit", weight: 2.5 }
+      - { term: "c2", weight: 2.0 }
+      - { term: "command and control", weight: 2.5 }
+      - { term: "dropper", weight: 2.0 }
+      - { term: "loader", weight: 1.5 }
+      - { term: "encrypt your files", weight: 3.0 }
+      - { term: "decrypt", weight: 1.5 }
+      - { term: "lockbit", weight: 3.0 }
+      - { term: "blackcat", weight: 3.0 }
+      - { term: "conti", weight: 2.5 }
+
+  carding_fraud:
+    keywords:
+      - { term: "carding", weight: 3.0 }
+      - { term: "cvv", weight: 2.5 }
+      - { term: "fullz", weight: 3.0 }
+      - { term: "cc dump", weight: 3.0 }
+      - { term: "credit card", weight: 2.0 }
+      - { term: "bank drop", weight: 3.0 }
+      - { term: "cashout", weight: 2.5 }
+      - { term: "cash out", weight: 2.5 }
+      - { term: "money mule", weight: 3.0 }
+      - { term: "skimmer", weight: 2.5 }
+      - { term: "bins", weight: 1.5 }
+      - { term: "bank log", weight: 2.5 }
+      - { term: "bank logs", weight: 2.5 }
+      - { term: "pp transfer", weight: 2.0 }
+      - { term: "paypal", weight: 1.0 }
+      - { term: "western union", weight: 1.5 }
+      - { term: "btc to cash", weight: 2.0 }
+      - { term: "cloned cards", weight: 3.0 }
+
+  threat_actor_comms:
+    keywords:
+      - { term: "hiring", weight: 1.5 }
+      - { term: "looking for developer", weight: 2.0 }
+      - { term: "team", weight: 1.0 }
+      - { term: "affiliate program", weight: 2.5 }
+      - { term: "partnership", weight: 1.5 }
+      - { term: "collaboration", weight: 1.0 }
+      - { term: "jabber", weight: 2.0 }
+      - { term: "wickr", weight: 2.0 }
+      - { term: "telegram", weight: 1.5 }
+      - { term: "pgp key", weight: 2.0 }
+      - { term: "encrypt", weight: 1.0 }
+      - { term: "opsec", weight: 2.5 }
+      - { term: "burner", weight: 2.0 }
+      - { term: "dead drop", weight: 2.5 }
+      - { term: "warrant canary", weight: 2.0 }
+      - { term: "trusted vendor", weight: 2.0 }
+      - { term: "vouch", weight: 1.5 }
+      - { term: "escrow", weight: 2.0 }
+
+  zero_day:
+    keywords:
+      - { term: "zero day", weight: 3.0 }
+      - { term: "zero-day", weight: 3.0 }
+      - { term: "0day", weight: 3.0 }
+      - { term: "0-day", weight: 3.0 }
+      - { term: "unpatched", weight: 2.5 }
+      - { term: "undisclosed", weight: 2.0 }
+      - { term: "unpublished exploit", weight: 3.0 }
+      - { term: "private exploit", weight: 3.0 }
+      - { term: "selling exploit", weight: 3.0 }
+      - { term: "buying exploit", weight: 2.5 }
+      - { term: "fresh vuln", weight: 2.5 }
+      - { term: "no patch available", weight: 3.0 }
+      - { term: "unreported", weight: 2.0 }
+      - { term: "pre-auth", weight: 2.0 }
