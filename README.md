@@ -380,26 +380,26 @@ spaCy NER adds contextual extraction for **organization names**, **person names*
 
 SQLite with WAL mode for concurrent dashboard reads. 7 normalized tables:
 
-- **`sources`** — scraper source registry with last-scraped timestamps
-- **`raw_posts`** — ingested content with SHA-256 dedup (idempotent)
-- **`entities`** — extracted IOCs linked to posts via foreign key
-- **`cve_enrichment`** — NVD data (CVSS, severity, CPE) with upsert
-- **`classifications`** — multi-model results (same post, different models)
-- **`summaries`** — AI-generated summary audit trail
-- **`scheduler_runs`** — job execution log (status, timing, record counts)
+- **`sources`** - scraper source registry with last-scraped timestamps
+- **`raw_posts`** - ingested content with SHA-256 dedup (idempotent)
+- **`entities`** - extracted IOCs linked to posts via foreign key
+- **`cve_enrichment`** - NVD data (CVSS, severity, CPE) with upsert
+- **`classifications`** - multi-model results (same post, different models)
+- **`summaries`** - AI-generated summary audit trail
+- **`scheduler_runs`** - job execution log (status, timing, record counts)
 
 ---
 
 ## How This Could Be Extended
 
-- **Real dark web sources** — swap fixture URLs for Tor-proxied .onion endpoints (SOCKS5 proxy already configurable)
-- **YARA rule generation** — auto-generate YARA rules from extracted file hashes and string patterns
-- **Slack/Teams alerting** — add webhook notifications for anomaly spikes or critical CVE mentions
-- **Multi-tenant** — replace SQLite with PostgreSQL for team-scale deployment
-- **Graph analysis** — build relationship graphs between threat actors, IOCs, and CVEs using NetworkX
-- **Fine-tuned classifier** — train DistilBERT on the synthetic data instead of zero-shot for better accuracy
-- **Automated SIEM ingestion** — push STIX bundles directly to Splunk/Elastic via API
-- **Historical comparison** — week-over-week trend diffing for threat landscape shift detection
+- **Real dark web sources** - swap fixture URLs for Tor-proxied .onion endpoints (SOCKS5 proxy already configurable)
+- **YARA rule generation** - auto-generate YARA rules from extracted file hashes and string patterns
+- **Slack/Teams alerting** - add webhook notifications for anomaly spikes or critical CVE mentions
+- **Multi-tenant** - replace SQLite with PostgreSQL for team-scale deployment
+- **Graph analysis** - build relationship graphs between threat actors, IOCs, and CVEs using NetworkX
+- **Fine-tuned classifier** - train DistilBERT on the synthetic data instead of zero-shot for better accuracy
+- **Automated SIEM ingestion** - push STIX bundles directly to Splunk/Elastic via API
+- **Historical comparison** - week-over-week trend diffing for threat landscape shift detection
 
 ---
 
