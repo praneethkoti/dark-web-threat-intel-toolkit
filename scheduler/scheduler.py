@@ -344,7 +344,7 @@ class ToolkitScheduler:
         self.status()
         console.print()
 
-        def _shutdown(signum, frame):
+        def _shutdown(signum: int, frame: Any) -> None:
             console.print("\n[yellow]Shutting down scheduler...[/]")
             self._scheduler.shutdown(wait=False)
             sys.exit(0)

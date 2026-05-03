@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 _pipeline = None
 
 
-def _get_pipeline(model_name: str, max_length: int, device: str):
+def _get_pipeline(model_name: str, max_length: int, device: str) -> Any:
     """Load the summarization pipeline lazily."""
     global _pipeline
     if _pipeline is None:

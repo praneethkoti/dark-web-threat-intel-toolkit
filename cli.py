@@ -77,9 +77,10 @@ def cli(ctx: click.Context, verbose: bool, dry_run: bool) -> None:
 @click.option("--cve-year", type=int, default=None, help="CVE year filter (NVD only).")
 @click.option("--cve-id", type=str, default=None, help="Specific CVE ID to fetch.")
 @click.option("--save/--no-save", default=True, help="Save raw data to data/raw/.")
+@click.option("--json", "output_json", is_flag=True, help="Output results as JSON (machine-readable).")
 @click.pass_context
 def scrape(ctx: click.Context, source: str, limit: int, cve_year: int | None,
-           cve_id: str | None, save: bool) -> None:
+           cve_id: str | None, save: bool, output_json: bool) -> None:
     """🕷️  Scrape threat data from configured sources."""
     from scraper import PasteScraper, FeedScraper, SimulatedMarketScraper, SeleniumScraper
 
@@ -137,20 +138,22 @@ def scrape(ctx: click.Context, source: str, limit: int, cve_year: int | None,
             if save and items:
                 fs.save_raw(items, f"feed_{feed_name}")
 
-    # ── Summary table ─────────────────────────────────────────────────
-    table = Table(title="Scrape Results", show_lines=True)
-    table.add_column("Source", style="cyan")
-    table.add_column("Items", style="green", justify="right")
-
+    # ── Summary ───────────────────────────────────────────────────────
     source_counts: dict[str, int] = {}
     for item in all_items:
         src = item.source_name
         source_counts[src] = source_counts.get(src, 0) + 1
 
+    if output_json:
+        print(json.dumps({"total": len(all_items), "by_source": source_counts}, indent=2))
+        return
+
+    table = Table(title="Scrape Results", show_lines=True)
+    table.add_column("Source", style="cyan")
+    table.add_column("Items", style="green", justify="right")
     for src, count in sorted(source_counts.items()):
         table.add_row(src, str(count))
     table.add_row("[bold]Total", f"[bold]{len(all_items)}")
-
     console.print(table)
 
 
@@ -200,9 +203,10 @@ def process(ctx: click.Context, input_dir: str, skip_enrichment: bool, skip_ner:
 @click.option("--limit", "-l", type=int, default=500, help="Max posts to classify.")
 @click.option("--show-comparison", is_flag=True,
               help="After ML training, print model accuracy comparison table.")
+@click.option("--json", "output_json", is_flag=True, help="Output results as JSON (machine-readable).")
 @click.pass_context
 def classify(ctx: click.Context, model: str, input_filter: str, export_mitre: bool,
-             train_ml: bool, limit: int, show_comparison: bool) -> None:
+             train_ml: bool, limit: int, show_comparison: bool, output_json: bool) -> None:
     """🏷️  Classify posts by threat category."""
     from pipeline.db_loader import DatabaseLoader
     from classifier.keyword_classifier import KeywordClassifier
@@ -320,7 +324,10 @@ def classify(ctx: click.Context, model: str, input_filter: str, export_mitre: bo
 
     db.close()
 
-    # Summary
+    if output_json:
+        print(json.dumps({"total_classified": classified, "by_category": category_counts}, indent=2))
+        return
+
     table = Table(title="Classification Results", show_lines=True)
     table.add_column("Category", style="cyan")
     table.add_column("Count", style="green", justify="right")
@@ -338,8 +345,9 @@ def classify(ctx: click.Context, model: str, input_filter: str, export_mitre: bo
               default="both", help="Output type.")
 @click.option("--format", "-f", "report_format", type=click.Choice(["markdown", "html", "both"]),
               default="both", help="Report format.")
+@click.option("--json", "output_json", is_flag=True, help="Output summary stats as JSON (machine-readable).")
 @click.pass_context
-def analyze(ctx: click.Context, period: str, output: str, report_format: str) -> None:
+def analyze(ctx: click.Context, period: str, output: str, report_format: str, output_json: bool) -> None:
     """📈  Analyze trends, detect anomalies, generate reports."""
     from pipeline.db_loader import DatabaseLoader
     from analysis.trend_analyzer import TrendAnalyzer
@@ -364,6 +372,19 @@ def analyze(ctx: click.Context, period: str, output: str, report_format: str) ->
         ioc_dist = analyzer.get_ioc_distribution()
         anomalies = detector.detect(window_days=int(period.replace("d", "").replace("h", "")))
         actors = analyzer.get_threat_actor_patterns()
+
+    if output_json:
+        print(json.dumps({
+            "summary": stats,
+            "category_distribution": cat_dist,
+            "top_cves": top_cves,
+            "trending_keywords": keywords,
+            "ioc_distribution": ioc_dist,
+            "anomalies": anomalies,
+            "actor_patterns": actors,
+        }, indent=2, default=str))
+        db.close()
+        return
 
     # Print summary
     console.print(Panel(
@@ -425,8 +446,9 @@ def analyze(ctx: click.Context, period: str, output: str, report_format: str) ->
               default="all", help="Export format.")
 @click.option("--output", "-o", type=str, default="data/exports", help="Output directory.")
 @click.option("--ioc-type", type=str, default=None, help="Filter CSV export by IOC type.")
+@click.option("--json", "output_json", is_flag=True, help="Output file paths as JSON (machine-readable).")
 @click.pass_context
-def export(ctx: click.Context, export_format: str, output: str, ioc_type: str | None) -> None:
+def export(ctx: click.Context, export_format: str, output: str, ioc_type: str | None, output_json: bool) -> None:
     """📦  Export IOCs in industry-standard formats (STIX, CSV, MISP)."""
     from pipeline.db_loader import DatabaseLoader
     from export.stix_exporter import StixExporter
@@ -470,6 +492,10 @@ def export(ctx: click.Context, export_format: str, output: str, ioc_type: str | 
             paths.append(str(p))
 
     db.close()
+
+    if output_json:
+        print(json.dumps({"files": paths, "total": len(paths)}, indent=2))
+        return
 
     table = Table(title="Exported Files", show_lines=True)
     table.add_column("File", style="green")

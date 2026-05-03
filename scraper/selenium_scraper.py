@@ -281,7 +281,7 @@ class SeleniumScraper(BaseScraper):
 
     # ── Driver management ─────────────────────────────────────────────────
 
-    def _make_driver(self):
+    def _make_driver(self) -> Any:
         """
         Construct a headless Chrome WebDriver.
 

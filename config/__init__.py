@@ -92,7 +92,7 @@ def _validate_settings(data: dict) -> None:
             )
 
     # Check required keys have correct types
-    def _get_nested(d: dict, dotted: str):
+    def _get_nested(d: dict, dotted: str) -> Any:
         node = d
         for k in dotted.split("."):
             if not isinstance(node, dict):

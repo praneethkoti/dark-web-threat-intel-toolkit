@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 _nlp = None
 
 
-def _get_nlp():
+def _get_nlp() -> Any:
     """Load spaCy model lazily to avoid slow startup when NER isn't needed."""
     global _nlp
     if _nlp is None:

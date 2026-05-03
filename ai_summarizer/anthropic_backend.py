@@ -37,7 +37,7 @@ class AnthropicBackend:
         self._api_key = settings.get("_env.anthropic_api_key", "")
         self._client = None
 
-    def _get_client(self):
+    def _get_client(self) -> "Anthropic":  # type: ignore[name-defined]
         """Lazy-load the Anthropic client."""
         if self._client is None:
             try:

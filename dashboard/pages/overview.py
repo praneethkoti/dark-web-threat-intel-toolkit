@@ -72,7 +72,7 @@ def render(db: Any) -> None:
         df.columns = ["CVE ID", "Mentions", "CVSS", "Severity", "Description"]
 
         # Color-code severity
-        def color_severity(val):
+        def color_severity(val: str) -> str:
             colors = {
                 "CRITICAL": "background-color: rgba(231,76,60,0.3)",
                 "HIGH": "background-color: rgba(230,126,34,0.3)",

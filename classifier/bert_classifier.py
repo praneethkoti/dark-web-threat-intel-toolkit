@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 _pipeline = None
 
 
-def _get_pipeline():
+def _get_pipeline() -> Any:
     """Load the zero-shot classification pipeline lazily."""
     global _pipeline
     if _pipeline is None:
@@ -349,14 +349,14 @@ class DistilBertClassifier:
         )
 
         class _ThreatDataset(Dataset):
-            def __init__(self, enc, labs):
+            def __init__(self, enc: Any, labs: list) -> None:
                 self.enc = enc
                 self.labs = labs
 
-            def __len__(self):
+            def __len__(self) -> int:
                 return len(self.labs)
 
-            def __getitem__(self, idx):
+            def __getitem__(self, idx: int) -> dict:
                 item = {k: v[idx] for k, v in self.enc.items()}
                 item["labels"] = torch.tensor(self.labs[idx], dtype=torch.long)
                 return item
@@ -388,7 +388,7 @@ class DistilBertClassifier:
             report_to="none",  # don't push to wandb/hub
         )
 
-        def _compute_metrics(eval_pred):
+        def _compute_metrics(eval_pred: Any) -> dict[str, float]:
             from sklearn.metrics import accuracy_score, f1_score  # noqa: PLC0415
             logits, label_ids = eval_pred
             preds = logits.argmax(axis=-1)
