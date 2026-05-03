@@ -236,6 +236,22 @@ python -m pytest tests/ -v
 
 ---
 
+## Dashboard Screenshots
+
+| Overview | Threat Feed |
+|---|---|
+| ![Overview](docs/screenshots/overview.png) | ![Threat Feed](docs/screenshots/threat_feed.png) |
+
+| IOC Explorer | Trends |
+|---|---|
+| ![IOC Explorer](docs/screenshots/ioc_explorer.png) | ![Trends](docs/screenshots/trends.png) |
+
+| Report Generator | AI Summarizer |
+|---|---|
+| ![Report Generator](docs/screenshots/report.png) | ![AI Summarizer](docs/screenshots/summarizer.png) |
+
+---
+
 ## Quick Start
 
 Run the entire pipeline in one command:
