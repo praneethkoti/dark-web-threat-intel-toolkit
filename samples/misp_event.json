@@ -1,0 +1,2126 @@
+{
+  "Event": {
+    "uuid": "13c224ef-21a7-4319-99fd-19b1ed563419",
+    "info": "Dark Web Threat Intelligence Report",
+    "date": "2026-05-03",
+    "threat_level_id": "2",
+    "analysis": "2",
+    "distribution": "0",
+    "published": false,
+    "Orgc": {
+      "name": "dark-web-threat-intel-toolkit",
+      "uuid": "43757a64-4ff9-5af0-bef3-421215237f00"
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "type:OSINT"
+      },
+      {
+        "name": "source:dark-web-threat-intel-toolkit"
+      },
+      {
+        "name": "misp-galaxy:tool=\"exploit-kit\""
+      },
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "misp-galaxy:ransomware=\"generic\""
+      },
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "misp-galaxy:threat-actor=\"data-breach\""
+      },
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "misp-galaxy:threat-actor=\"financial-crime\""
+      },
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "misp-galaxy:tool=\"0day\""
+      },
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "misp-galaxy:threat-actor=\"unknown\""
+      },
+      {
+        "name": "tlp:amber"
+      }
+    ],
+    "Attribute": [
+      {
+        "uuid": "6d6cc47e-0313-40a7-aede-cf183b9c823e",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "email:pass",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "2b50a31b-ff0f-449a-832d-24fc7970f9d8",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "ashleyhernandez510@jabber.de",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "5220e5f4-0d13-4954-98a7-e44112fb082c",
+        "type": "vulnerability",
+        "category": "External analysis",
+        "value": "CVE-2023-28063",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (cve_id, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "8149cac5-209c-4d04-93c0-0512f3d21627",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "bryanparsons667@jabber.de",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "18d6b210-759e-4088-a8d7-b2ec58746b90",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "davisphillip@xmpp.jp",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "cc997231-11e6-43d4-be6e-c770f6fea1bc",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "schmidtjames@example.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "a0ef76a8-5e13-4ce5-b935-3153a0609a6d",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "cjones@example.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "2ec75b40-0194-41c5-9ae0-d03d46ba66a7",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "colelisa@example.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "b923d40a-ac72-4851-a1da-2b87c4b0e27c",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "schmidtjames@example.com:_22iaHjdh",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "4644241f-0a00-4e9c-ac7f-f341dd22d1c6",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "cjones@example.net:E^M#F9Sb%4",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "0b51fb24-7df0-4be6-942b-b023cf2d7dab",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "colelisa@example.net:PwTmny&p$5",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "4e89b775-b42e-4da6-8a94-eca0e6605577",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "2d5e087a5818667488edffdbd87ca865057ab38ff62b07804154e90470b4afdd",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "a092e0d8-bc1a-41cd-a980-ca55fae1f165",
+        "type": "sha1",
+        "category": "Payload delivery",
+        "value": "80ef7422abf5e7e61fd2d1f62fdcf7b663723ec0",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha1, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ade151ff-4b86-4cf7-8fcd-1c31518c6a7d",
+        "type": "vulnerability",
+        "category": "External analysis",
+        "value": "CVE-2025-44860",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (cve_id, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "4799e5e1-13be-4a03-94df-dfd483e96025",
+        "type": "sha1",
+        "category": "Payload delivery",
+        "value": "a7a9843f3c67362fa562edd94043d68546c64073",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha1, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "781c2c25-abbd-4f68-98c4-bfab1b13fa8b",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "2a33dbc640120fd1e12421de31c67a36ea724eaad155f90841988c35e021b243",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "0b08dd81-396c-48ac-b0ee-04dee0bc2289",
+        "type": "sha1",
+        "category": "Payload delivery",
+        "value": "1ba7c6fe43dbf1c923b679451635ed7ef469ef86",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha1, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "4f11ff69-8485-41aa-b14b-72f718d90bda",
+        "type": "vulnerability",
+        "category": "External analysis",
+        "value": "CVE-2024-49033",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (cve_id, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "db9c4dab-fd6b-4c40-897a-ad31fea89be4",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "57.121.99.205",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "d2aa82a7-1399-4a13-a0dc-6f11a3696171",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "183.252.209.147",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "2769705b-a010-47a1-a2c3-93e0172b866a",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "75.232.54.16",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "7b8b2773-8694-4267-8b22-8df575c34719",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "179.196.178.183",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "7186e39d-b4d1-4823-a2ef-bae2fe2b77e9",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "nullstepha@jabber.de",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c90ee0b4-a797-412a-92e4-2b5174041fff",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "2a12370aeea0860b848b6f2e83945c1f73b4d1fa0667ab1da5ffee3eb94ea48a",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "6e3e9182-475d-4c6c-a3d0-2cec53a2a8b9",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "williamsyvette@example.org",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "639b228f-5c95-48a7-9e76-e60e3b1e158b",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "jeff09@example.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "99ddbdbf-bdee-44eb-b38d-62f86b6c7020",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "bethwilliams@example.org",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "2c36817a-6744-430b-a9d0-e281b6ed8882",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "williamsyvette@example.org:N33FGy7n@J",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "75cd9877-d992-4f6e-ac6e-e44894c54bcd",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "jeff09@example.net:%(P0+xX1Wk",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "cb966965-b844-4686-818e-a2c94521aa36",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "bethwilliams@example.org:&SbB7)Zqu9",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ac8beb09-db5f-491f-93fb-b7c0a5aba52c",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "j.smith@megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "0d087163-cc90-454e-9779-8cf86a2656af",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "m.johnson@megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "35ebdea7-803d-4894-9d88-7f82f7c2921b",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "a.williams@megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "83ad4e67-0175-45a8-b145-9eb5b5fa951c",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "r.brown@megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "afb90cb5-93e5-4b38-a548-4fd397f8c0ac",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "s.jones@megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "8837ec60-6c89-4bf7-b430-2c256c6ee6a1",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "d.garcia@megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "9653fbb1-a1b3-4dfb-b203-29bf2ef6ae5b",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "k.martinez@megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "14bf8bb6-81f1-4b14-83f7-d594a11ed940",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "l.robinson@megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "bd7c2034-2c4c-47b9-baae-1c823183e79a",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "p.clark@megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "36c02340-1b77-48db-ab4c-fd93811095b0",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "t.rodriguez@megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "fcca64ca-14ba-45d5-b3a3-21d1830249cb",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "admin@megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "4c5f1495-2f54-44d7-a999-6c1f4edbf9f6",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "disposable8472@protonmail.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "8b1689e0-1040-4109-ab3e-da4a09fca082",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "vpn.megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "251d95bb-1013-4f30-98a1-959abe2c451c",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "wiki.internal.megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c9fdbeec-9d46-4877-a590-89ffb10d657a",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "jira.megacorp.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "4f37cd61-99ab-4920-bb17-0b0e26e0b8c8",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ecd14c77-c624-4171-a15f-02eb43a4b16b",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "email:password:department:",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "b857ea75-038c-4566-ac24-cfdedae7480c",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "j.smith@megacorp.com:Welcome2024!:Engineering:EMP-4421",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "950f6c75-5689-4a34-8e83-b0dc45875e13",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "m.johnson@megacorp.com:Summer2024#:Finance:EMP-4422",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "da28c531-0a9d-4307-8c56-c3cec4a2eb44",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "a.williams@megacorp.com:P@ssword123:HR:EMP-4423",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "effa7c7b-60bc-44ea-a416-e0f0bd217e04",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "r.brown@megacorp.com:Megacorp1!:IT:EMP-4424",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "3a0136c6-285d-4da9-aabb-97454a532d70",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "s.jones@megacorp.com:Qwerty!2024:Marketing:EMP-4425",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "fb841633-ca7e-4d22-89bc-d13811a8b5d5",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "d.garcia@megacorp.com:Ch@ngeMe99:Legal:EMP-4426",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "6d09a833-2ce5-4c06-92b9-2fe483d2f9c8",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "k.martinez@megacorp.com:Baseball2024:Sales:EMP-4427",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "0cf7fd34-236c-476f-9d1a-e921e66173ba",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "l.robinson@megacorp.com:Sunshine!23:Engineering:EMP-4428",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c5e3cd1d-2a09-4567-9885-45d28cb2dc19",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "p.clark@megacorp.com:Dragon2024!:IT:EMP-4429",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c33602cf-1436-4052-ae40-419a14bbb975",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "t.rodriguez@megacorp.com:Trustno1!:Finance:EMP-4430",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "cc73012e-7dee-49e6-8b3c-14eab34562fe",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "admin@megacorp.com:4dm1n!Str@t0r:IT:EMP-0001",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "7eb20f24-78df-4483-be08-7142cd9d96de",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "jira.megacorp.com:8080",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "35b61f41-d2c1-47fe-b889-83aedb74860e",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "b84aba6e-67c1-48d3-b58d-b52423ac18b1",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "39dfc0f4-f701-493c-91b2-b7b96a0a43c8",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c3419926-ed8b-47b9-8c10-9608ab0b70ec",
+        "type": "vulnerability",
+        "category": "External analysis",
+        "value": "CVE-2024-21887",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (cve_id, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "38f2531a-b035-4282-8871-c8d8cd3b494a",
+        "type": "vulnerability",
+        "category": "External analysis",
+        "value": "CVE-2024-21893",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (cve_id, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "129da677-07bc-4fb9-b466-6e211a9e2a19",
+        "type": "vulnerability",
+        "category": "External analysis",
+        "value": "CVE-2024-3400",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (cve_id, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c6a11faf-4123-473c-9b0f-c63f7af240f3",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "recovery@protonmail.ch",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ff0f1d0b-c234-494f-a6c2-1547c4c34a6c",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "lockcrypt_support@tutanota.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "8b9bb7f6-ab5b-48df-b775-313d13fd46e2",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "decrypt.files@onionmail.org",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "2bdc5a8f-a908-40e6-bde7-e4198de1228d",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "lockcrypt-payment.onion",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "a1cb72c3-3aef-49a2-a0d5-b9f990e51a6f",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "update-service-cdn.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "3032ea63-5331-42ce-aaf8-5e5dccefdd26",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "secure-file-transfer.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "99a30f93-f358-42c0-9316-27913c287463",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "cloud-backup-restore.org",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "b0e9e093-64de-4fef-9a03-13b8350bf1e6",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "microsoft-security-patch.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "46062964-3c62-49a6-8aa4-73976734782f",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "185.220.101.34",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "b2518fb2-bbab-47ca-bf6d-6238c520e19e",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "185.220.101.35",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "99e1b3af-1afc-4745-a2a9-3185accd4d4b",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "23.106.215.76",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "4b9195bb-49b6-4c3f-b599-1078dd2caf88",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "91.214.124.20",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "42a379db-a8b1-401f-b592-3a6dc99b2a12",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "194.165.16.21",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "eea48ad9-08dd-4b10-ba77-37bd3e02bb92",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "194.165.16.22",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "1a4d1f47-dbaf-4c0e-996b-d6c6a3d57e97",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "194.165.16.23",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "2896ecf5-b41c-44eb-9b05-71d24e97c454",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ee72cbf8-ec5e-41e8-8675-032a2ab286db",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "3FZbgi29cpjq2GjdwV8eyHuJJnkLtktZc5",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "936b7da5-d2e6-40a7-955e-2034ab0d57fd",
+        "type": "xmr",
+        "category": "Financial fraud",
+        "value": "47BnZFRPcZNoPgNpjqq8SFmrpLdKgHdBz8bXKVSRfFJke5o6yXhjBzQniGH5uN8A7baU7oD8kC6FTRfHCPSTR7Wn5P4jXXj",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (monero_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "e3dbc5b1-bc25-467e-8812-41c5587220c1",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "TLP:WHITE",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "31d4efaa-3152-4e6f-a8aa-c952cdab7c76",
+        "type": "vulnerability",
+        "category": "External analysis",
+        "value": "CVE-2024-53677",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (cve_id, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "658db972-a4fe-46cf-9d7a-483c4fe67463",
+        "type": "url",
+        "category": "Network activity",
+        "value": "https://nvd.nist.gov/vuln/detail/CVE-2024-53677",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (url, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "21b18e69-8e75-4374-9b81-cc6af3f54c07",
+        "type": "url",
+        "category": "Network activity",
+        "value": "https://struts.apache.org/announce",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (url, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "5067827c-ff28-4ded-9a76-3686fd79715b",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "upload.action",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "16f89de5-c469-4b35-97a6-df2afe1c353a",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "target.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "201d857e-7320-4adc-beb1-a6db8b783e37",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "shell.jsp",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "7f863f5d-4733-4ad8-82f0-4cf0f7f71774",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "2001:db8::",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv6, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "538a81b4-d6e3-4a35-8956-7e6c49cc6c25",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "6.3.0.2",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "2b64dc83-7ea0-4cda-a7fc-fb140e03175d",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "203.0.113.50",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "47948b1c-8b50-4f07-9db0-5e73833706d6",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "198.51.100.75",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "960f5ff6-21e6-4d11-afb0-f0bcd1ba1d6c",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "192.0.2.100",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "fa64d3c4-b4f0-4482-8718-adba13e805c4",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "2001:db8::1",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "0a25ad0b-d4c0-4812-9c4a-5aa8d31c8214",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "https://nvd.nist.gov/vuln/detail/CVE",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "274978b5-90f3-4c91-a3bf-8eb17456a2d7",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "n.doe@gmail.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c51163c1-a249-4e29-be0a-b3ea74c3060f",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "co.uk",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "bb5cbf68-3d5b-472c-859f-a594abb7005e",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c4d58e0a-0ff1-47bb-b7f9-c5ab1ca6a866",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "Vendor:cr3dKing",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "f0d89b33-fd1c-4400-9aad-ddb4374501a7",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "email:password",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "830fc31c-21ab-4abb-8381-8d5a9d34b1fb",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "n.doe@gmail.com:P@ssw0rd2024",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "73576228-08be-4982-be5c-f60fb9d1d607",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "74496547-2248-4390-bd8b-7ae12940baf6",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "Vendor:z3r0day_shop",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "1c534ee5-daec-4807-aef3-c0db32d05c99",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "lockcrypt@xmpp.jp",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c7b9a27b-8bfb-40dd-a1a1-4c2fba79112f",
+        "type": "xmr",
+        "category": "Financial fraud",
+        "value": "44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (monero_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "a867d1ae-0074-4f57-b4a7-c70e880f0bcc",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "Vendor:LockCrypt_Admin",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "915a1198-be14-41bd-8a3b-fe2682fa300c",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "5cb249cf-d590-46ae-9f21-5b691fbca0b2",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "Vendor:SwipeGhost",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "21bacd83-e59a-4ec8-b102-29a149a3710f",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "Vendor:shadow_broker_x",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "a9f12903-a41d-44e1-bb10-1f95c66ac55f",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "xpl0it@jabber.de",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "0acb502e-8f83-4a48-8158-3195da295252",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "a3f5b2c8d1e4f6789012345678abcdef0123456789abcdef0123456789abcdef",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "bd98c43c-77db-4ae8-acea-53f1d2de6858",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "welcome.cgi",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ea8ea3ba-98a6-4900-a0db-988993b1cb09",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "185.174.100.56",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "5c954598-538e-442d-8534-2d5cb3b3facf",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "192.36.27.92",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ab8c3c67-ed8a-4204-8c87-b768eccb9100",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "91.92.240.113",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "005c5be8-7964-49fe-ae53-73ddc2836118",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "45.77.45.127",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "df926988-8385-49b0-bae6-49bda0329052",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "admin@hospital-corp.org",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "94b07315-43a8-40b5-99fe-a552e84423f2",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "sysadmin@firstnat-bank.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "9b26aad7-4681-4900-b20e-3e84f1d9f0ec",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "ivanti-update-service.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "6ccd3942-accc-4091-9917-d781760ba06a",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "connectsecure-patch.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "d3b20452-f97e-4c03-a578-162e7c1b4caf",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "vpn-security-update.org",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "dcbdbc75-ef27-4abd-9bcb-1b107ed643ea",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "194.165.16.0",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "067abb75-ccd3-4ce3-9023-0a32f89fb452",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "admin@hospital-corp.org:Ivanti2024",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "73ea7741-5302-497e-9183-c985e934d1f9",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "sysadmin@firstnat-bank.com:VPN@ccess#1",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "475b6fb6-a684-43f6-890e-c479f76c6a2e",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "b39e0eb4-3ca0-4a55-bdef-6f417955ed97",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8091011121314151617181920212223aabb",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "b4d776b6-8f75-40c5-9e28-7ebb12284230",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "cc11dd22ee33ff44aa55bb66cc77dd88ee99ff00aa11bb22cc33dd44ee55ff66",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "612ae044-51ef-47f0-b151-418a2847211f",
+        "type": "md5",
+        "category": "Payload delivery",
+        "value": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (md5, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "e9d6fdfc-f486-4ff4-aeb3-441f89043840",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "bc1qWrxeMm8w9WFz4AaBYr8a6CKZwuMJEcTHrxhiGq",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "b26ac191-1646-41ba-876e-fc3a2b14cfff",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "48c476735caed746c3bc658b446b5825392be3b3343dd5c11f70dfd55ee942c8",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "bfbe02c8-5066-4a01-a909-a58794f91a4b",
+        "type": "md5",
+        "category": "Payload delivery",
+        "value": "9a5af146a630be8b895d3f7602888518",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (md5, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "0dc8229a-fae8-43d7-8885-5e25965d093b",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "jimenezcourtney@example.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "63508d67-fa92-4806-9783-573d81a6c0db",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "209.81.118.182",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "e062510b-5e28-4b67-b9a9-3a0678928651",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "80.240.31.80",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "3018eac1-ee38-4b6a-8615-48c031d94ec4",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "221.84.173.205",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "28f89aad-2b6a-4cbf-b5f2-bec23da5551a",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "0326048509eeec9c5d66bb016badf799826be20cf1385695acc919542777f7d3",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "a92085b8-c956-4c09-8126-b275ceac1c1c",
+        "type": "sha1",
+        "category": "Payload delivery",
+        "value": "0f49512c4d2a29010ad90b0b44ad5b95178355d6",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha1, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "8833ed74-c445-46a1-a706-9eef79386f0d",
+        "type": "sha1",
+        "category": "Payload delivery",
+        "value": "8529600bc82e2e569d98879705164eda94af9307",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha1, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "13b604b5-6ea4-4922-bd68-bc378ce064d5",
+        "type": "vulnerability",
+        "category": "External analysis",
+        "value": "CVE-2025-59261",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (cve_id, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "0486dc6f-afe8-49d7-ad61-59c70f4f106a",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "40a6eef8eeed007415b60638e6e0c4755e84fa72b0eb142650afff177a2cc6bb",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "71989c62-5f9c-47d6-8ffd-c5244bf4bb10",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "dce77241951b7ffc7eff75469a7895167ef0f0cb82169d3da578d121f6661593",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "1d867532-8c54-433b-afd3-f2d3b81adbed",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "69bcb1273d4e63bc910ab552a4d654ac6c758445bbdab7b23658bb2f012e6131",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "f8746ec7-3901-4f08-8c1c-24248ebba62e",
+        "type": "sha1",
+        "category": "Payload delivery",
+        "value": "d9cd2a4b5793613d8621790c81729deca85083cc",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha1, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "84641f6f-13a1-493a-b667-38f83717b134",
+        "type": "md5",
+        "category": "Payload delivery",
+        "value": "b13cb7732d0092a09042f990ba417fd2",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (md5, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "77540681-e7bf-474e-9da1-5163c63353d1",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "donovan-perez.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "16ba7d48-0674-415a-9a14-9d1579bb23c6",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "singleton-king.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "21dcdcfc-09c3-4cec-a2b8-fc092c3ec08f",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "martinez-turner.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "f2db5877-7058-40bb-9fc4-536e5236aa75",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "1qU5ukiNeT8fFwAjst6K3jUceAzKymEugQ",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c303320c-5ba0-4635-b174-a6ee2a1eaa9e",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "dfa2b7b80ea91708a494e534571240983552b43195727a106299db94dba8fc72",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "7db135cc-ac8a-4598-b59e-50dccf2999a3",
+        "type": "md5",
+        "category": "Payload delivery",
+        "value": "ad969dcb506737f341cce70783eb8c2d",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (md5, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "bac7ac1b-ed29-427b-b594-78b74fba3bb8",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "carriemorales@example.org",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "9aa131cb-bdd1-4f57-9de4-6718c4a9e29f",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "70.48.7.138",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ade97508-04be-451d-91f2-3f4527e9029e",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "149.179.146.208",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "e8dbbfc5-02bf-4424-83b0-6d8b42fbb58a",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "199.73.221.105",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ab51bcb3-9f83-4de3-9085-6d203b327e8b",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "vfox@example.org",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "fc0c6e5e-db43-4535-9056-ca2866227dc0",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "cjoseph@example.org",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "658f0f11-9a47-4b55-a8ff-c8bc0babbb2b",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "abeasley@example.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "f226d162-4501-4ad3-8df3-ead8f5915516",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "vfox@example.org:*7Pv$jYlLx",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "8978a30a-3c6d-4007-91a2-62074990de72",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "cjoseph@example.org:%5YTCz3L",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ade3d718-c6b0-46c4-8885-d7bfc200d19d",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "abeasley@example.com:6JNF+x%n",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "f2a77f4d-fbe3-4b9d-9853-3102bfd907bb",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "72eb4fdba230524280555824e672750bf5b74ff929e7bbe2846d710a93e4087a",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "00852c05-eb90-463d-984b-0ea50014d212",
+        "type": "sha1",
+        "category": "Payload delivery",
+        "value": "4f14b7d8a4f8257a41d3fa65a59bd742c24f7c05",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha1, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "249b93fd-2a82-491c-b79c-adeecc2419bd",
+        "type": "md5",
+        "category": "Payload delivery",
+        "value": "317f9f3b354a415781ba849cfcf1e71e",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (md5, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "a3bab88e-3b2f-41b1-b5b4-ea986c9c4003",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "bennett.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "cbcaa01a-3b0c-40bb-83e1-3fa5b6e5e738",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "payne-lowe.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "43617936-cce8-4072-adf5-e7e9aaa65c40",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "washington.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "fa27f11f-094b-44a4-9291-0307bd87cf67",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "bb395314338bfca9aa6d307041799300c9072f088507d64551c704f7aedf13d2",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "301652fc-b1e8-4a9d-b2f4-8587857ae930",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "f98f443d0db488e2052593c16ebbc2db9e94b910c5d6dd3490c64082830b6798",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "3256f800-e553-4db9-98ec-2d9446d03a16",
+        "type": "sha1",
+        "category": "Payload delivery",
+        "value": "b8383a2b61a57ae22652f755f55c6b993c34f76b",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha1, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "63e6d06e-cf00-43af-ac77-3667155c1f17",
+        "type": "md5",
+        "category": "Payload delivery",
+        "value": "3719da8b4591e3731c08f65bd4014ff1",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (md5, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ad5e3ed6-e7e1-4ffc-8bea-2d316407e2ef",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "peck-griffith.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "1db8b4c1-b525-494f-bea8-2f880dad9422",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "ff4cc7202e413313ad5757abeadbc12c2cedb6617b939c55d9cea23365a646d0",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "bd42ee01-1823-45ec-b575-de8eac622c28",
+        "type": "vulnerability",
+        "category": "External analysis",
+        "value": "CVE-2025-43957",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (cve_id, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "88040ef4-b1cf-481f-ad1a-09c84d4ec770",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "181.30.156.121",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c212ef63-8873-4f50-b7d5-ac900139586f",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "92.11.6.8",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "bd6898b5-51ea-4d69-b14e-ce0fb893e617",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "79.26.140.93",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "920ccd39-d2c9-4d99-9603-c7c3e364c684",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "220.64.87.220",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "f9660f30-96ce-4781-b299-f6eefad63db6",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "1Vqu96YUaN972nSmnJGBYufZz6yz1bi2sT",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c42af062-8ec3-4197-871d-101b47399d7a",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "j05huajon35@example.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "18acbe5c-2aae-41f7-948b-db9e82417dd1",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "b3nd3rk3nn37h@3xampl3.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "82046015-0f73-4024-84eb-cc016b25110a",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "me4dowsbrittany@3x4mple.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c20effe1-e818-4c5c-bd08-5212772925f4",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "c0ok3m1cha3l@ex4mple.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "303fc119-fe95-4c6f-912f-eea8d5d59345",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "l4n3sar4h@3xample.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "b30cac23-0bef-48a2-938e-420cd2b2fab2",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "1Snt3eiwjmy7BdZwV6b2HC6rx3ZFTX3CqC",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ba0580d1-63a3-45d1-b998-4743deec26b0",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "3m4il:p45sw0rd",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "cabf1057-b418-40dd-8896-6f3868a58f7f",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "example.n37:$m!Pi*J16Q",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "553fbd72-0adf-4cfc-a07a-bd58b3b3324d",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "exampl3.ne7:wrX87n5k(N",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c6402aa1-fd5c-4a24-8534-e5731b988161",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "j05huajon35@example.com:$^+G+3KkM4",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "8fc7247e-a442-4d4d-9243-ddfb31a9f06f",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "b3nd3rk3nn37h@3xampl3.com:SWX4K#Cx&8",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "aac28a9f-cecf-4ebb-9561-471f6990cfc9",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "me4dowsbrittany@3x4mple.net:!1$GUCinhn",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "27910bde-d292-49e2-9684-5d7dd8eb52c5",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "c0ok3m1cha3l@ex4mple.net:w40+YbT4d",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "7d50d5ab-bd7d-4122-acef-c80261a2b7cc",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "a4baf4660b93b38cea8dde2124cc2a515b4c544d7d9f138d640d2369e75bc742",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "3dfecc8c-8e84-4ab7-966a-954829cedd03",
+        "type": "vulnerability",
+        "category": "External analysis",
+        "value": "CVE-2023-34901",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (cve_id, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c93adb0a-136d-4f51-b88f-a33523f963c6",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "cody64@example.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "36fe4daf-2052-4fcd-86af-cdffe69b241a",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "bromero@example.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "78f3a772-d0a9-42d6-8eb8-e99f640138be",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "lmoore@example.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "f8ba179f-e51a-48d5-9cb7-64c50754be3d",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "smurray@example.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "10114602-474d-488f-9d1d-9ac7ba013c66",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "1PxEUjb1QzhnNv7bjAvAeivsq7bkE4gVRm",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "8375e1c0-a870-4f7b-ac6b-80fa40a0096b",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "cody64@example.com:&9EAak)e+T",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "4d26a1ee-4625-4b99-8815-d9f65f03d756",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "bromero@example.com:%NG_^k*jn2",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "54b947fa-c074-46bc-86b0-10a9931b1133",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "lmoore@example.net:$Ef2XXko5",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "adaa05f0-9727-49bf-b860-571270f50edf",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "4a662449e5a7025babbb41053efff9b049465f8948ee2582102ddbe439c45e5f",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "e42762f5-b583-47d9-9a42-6936f1c6221b",
+        "type": "sha1",
+        "category": "Payload delivery",
+        "value": "c362ef33f3aaef3b266415f1b6e7a1b3dc472d9f",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha1, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "e919e0c5-f8c5-4fb8-8ca3-3a6cc1f720bc",
+        "type": "md5",
+        "category": "Payload delivery",
+        "value": "db859db700a4c26a5128fdcdac57b4ad",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (md5, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "17af16dc-f251-41e6-9b1d-cbadff275ab9",
+        "type": "domain",
+        "category": "Network activity",
+        "value": "fi7zpatrick-hor7on.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (domain, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ae8d87fa-6453-4ace-aaf7-8f2f78a61d19",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "bc1q5LPh4DPtRGlPwUkHxZrmWKtAPEW7TNqPLf7nsX",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "b273547d-191a-4a88-8bd0-007509554920",
+        "type": "vulnerability",
+        "category": "External analysis",
+        "value": "CVE-2025-40176",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (cve_id, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "df302a76-7f53-4352-8199-89b598f91d8c",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "lmorrison@jabber.de",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "98858c8c-cc7a-4f90-a991-b814211c68bf",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "1FQytf4ViXqf8n7WhF2JXfuHqpfc5UkXPW",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "13bdc18a-bffc-4e2f-83c0-a7d7c50c755d",
+        "type": "vulnerability",
+        "category": "External analysis",
+        "value": "CVE-2022-37876",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (cve_id, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "b1808deb-6734-4ebc-9b89-855b81f23cdc",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "x_patric@jabber.de",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "c4fbbb55-f5e0-412f-b197-cdb09e9d60b4",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "null_christ@jabber.de",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "1ca13440-173f-49f7-b6ba-09c1c1ca2f6d",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "686f16314dcff853e4caaaaa8836c4e2d60dcaa196630398196092aaf09c683e",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "f17c5853-8f07-4cb8-adef-8e064abd77fa",
+        "type": "sha256",
+        "category": "Payload delivery",
+        "value": "04d0777fe3a64864c658f185d9a44c497a3ac8af500168a5b40909e391f196ca",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (sha256, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "aa13987f-c3ff-4d47-a390-38ef61eb7fdd",
+        "type": "md5",
+        "category": "Payload delivery",
+        "value": "21c4944b9eba52c3280ff9ddc66ab29d",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (md5, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "b06a25b7-c9bf-4a7a-a5e8-a967c986601e",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "laura09@example.com",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "f2a55000-97eb-4d1e-b8d4-a8a12321450d",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "217.151.226.99",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "16537885-8b8f-48b2-9a6d-375831a20452",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "165.228.203.40",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "979a7ebf-b269-4ed2-98ba-fa5ea04bd291",
+        "type": "ip-dst",
+        "category": "Network activity",
+        "value": "189.84.76.66",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (ipv4, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "e1d32b45-71b2-46fe-bc6e-50a99813434b",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "jillrhodes@example.net",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "d77e36c5-ddc1-4345-950d-a09ae2c022d8",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "er1c51@example.org",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "15d32837-5517-48e7-a4a2-38085b1a52c9",
+        "type": "email-src",
+        "category": "Payload delivery",
+        "value": "gabri3ll3cameron@example.org",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (email, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "eaa61b27-0243-403e-9566-b3afea4955a0",
+        "type": "btc",
+        "category": "Financial fraud",
+        "value": "bc1qqn7P3fybmDblNGnJXaXRuj7tff1KX7F8wGYL1J",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (bitcoin_address, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "5850d3b7-5582-41e5-8d77-4173e502f077",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "3m4il:pa5sw0rd",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "52838450-2c01-4ff3-8884-855487722345",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "jillrhodes@example.net:@49@2Nb4Vl",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "ffdf73e0-9902-424b-892f-8dbb051652e9",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "er1c51@example.org:&lgLyG5nX1",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      },
+      {
+        "uuid": "1d8a3f9a-95d7-4f70-82eb-839a777fd562",
+        "type": "text",
+        "category": "Artifacts dropped",
+        "value": "3x4mple.0rg:Z3@36vIo0f",
+        "to_ids": true,
+        "comment": "Extracted from dark web intelligence (credential_pair, confidence: high)",
+        "timestamp": "1777780597"
+      }
+    ],
+    "attribute_count": "229"
+  }
+}

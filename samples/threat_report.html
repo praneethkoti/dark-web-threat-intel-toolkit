@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Threat Intelligence Report — 2026-05-03 03:56 UTC</title>
+<style>
+  :root { --bg: #0f0f23; --card: #1a1a2e; --text: #e0e0e0; --accent: #3498db;
+           --red: #e74c3c; --orange: #e67e22; --green: #27ae60; --border: #2d2d44; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg);
+          color: var(--text); line-height: 1.6; padding: 2rem; max-width: 1100px; margin: auto; }
+  h1 { color: #fff; border-bottom: 2px solid var(--accent); padding-bottom: .5rem; margin-bottom: 1rem; }
+  h2 { color: var(--accent); margin-top: 2rem; margin-bottom: .8rem; }
+  h3 { color: #bbb; margin-top: 1.5rem; margin-bottom: .5rem; }
+  .meta { color: #888; margin-bottom: 1.5rem; }
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                   gap: 1rem; margin: 1.5rem 0; }
+  .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                padding: 1.2rem; text-align: center; }
+  .stat-card .value { font-size: 2rem; font-weight: bold; color: var(--accent); }
+  .stat-card .label { color: #888; font-size: .85rem; margin-top: .3rem; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th { background: var(--card); color: var(--accent); padding: .6rem .8rem; text-align: left;
+        border-bottom: 2px solid var(--border); }
+  td { padding: .5rem .8rem; border-bottom: 1px solid var(--border); }
+  tr:hover { background: rgba(52, 152, 219, 0.05); }
+  .severity-critical { color: var(--red); font-weight: bold; }
+  .severity-high { color: var(--orange); font-weight: bold; }
+  .severity-medium { color: #f39c12; }
+  .severity-low { color: var(--green); }
+  .badge { display: inline-block; padding: .15rem .5rem; border-radius: 4px; font-size: .8rem; }
+  .badge-red { background: rgba(231,76,60,.2); color: var(--red); }
+  .badge-blue { background: rgba(52,152,219,.2); color: var(--accent); }
+  .keywords { display: flex; flex-wrap: wrap; gap: .5rem; margin: .5rem 0; }
+  .kw { background: var(--card); border: 1px solid var(--border); padding: .3rem .6rem;
+         border-radius: 4px; font-size: .85rem; }
+  .recommendations li { margin: .5rem 0; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: #666; font-size: .85rem; }
+</style>
+</head>
+<body>
+<h1>Dark Web Threat Intelligence Report</h1>
+<div class="meta">Generated: 2026-05-03 03:56 UTC | Period: 30d</div>
+
+<div class="summary-grid">
+<div class="stat-card"><div class="value">80</div><div class="label">Posts Analyzed</div></div>
+<div class="stat-card"><div class="value">363</div><div class="label">IOCs Extracted</div></div>
+<div class="stat-card"><div class="value">7</div><div class="label">Threat Categories</div></div>
+<div class="stat-card"><div class="value">0</div><div class="label">CVEs Enriched</div></div>
+</div>
+<h2>Executive Summary</h2>
+<p>Analysis of <strong>80 posts</strong> yielded <strong>363 IOCs</strong>. The dominant threat category is <strong>Exploit Vulnerability</strong>.</p>
+<h2>Threat Category Distribution</h2>
+<table><tr><th>Category</th><th>Count</th></tr>
+<tr><td>Exploit Vulnerability</td><td>26</td></tr>
+<tr><td>Ransomware Malware</td><td>17</td></tr>
+<tr><td>Data Breach</td><td>13</td></tr>
+<tr><td>Carding Fraud</td><td>8</td></tr>
+<tr><td>Threat Actor Comms</td><td>6</td></tr>
+<tr><td>Unknown</td><td>5</td></tr>
+<tr><td>Zero Day</td><td>5</td></tr>
+</table>
+<h2>Top CVEs</h2>
+<table><tr><th>CVE ID</th><th>Mentions</th><th>CVSS</th><th>Severity</th><th>Description</th></tr>
+<tr><td><strong>CVE-2024-21887</strong></td><td>10</td><td>None</td><td class="">UNKNOWN</td><td></td></tr>
+<tr><td><strong>CVE-2024-21893</strong></td><td>8</td><td>None</td><td class="">UNKNOWN</td><td></td></tr>
+<tr><td><strong>CVE-2024-3400</strong></td><td>2</td><td>None</td><td class="">UNKNOWN</td><td></td></tr>
+<tr><td><strong>CVE-2024-53677</strong></td><td>2</td><td>None</td><td class="">UNKNOWN</td><td></td></tr>
+<tr><td><strong>CVE-2023-28063</strong></td><td>1</td><td>None</td><td class="">UNKNOWN</td><td></td></tr>
+<tr><td><strong>CVE-2025-44860</strong></td><td>1</td><td>None</td><td class="">UNKNOWN</td><td></td></tr>
+<tr><td><strong>CVE-2024-49033</strong></td><td>1</td><td>None</td><td class="">UNKNOWN</td><td></td></tr>
+<tr><td><strong>CVE-2025-59261</strong></td><td>1</td><td>None</td><td class="">UNKNOWN</td><td></td></tr>
+<tr><td><strong>CVE-2025-43957</strong></td><td>1</td><td>None</td><td class="">UNKNOWN</td><td></td></tr>
+<tr><td><strong>CVE-2023-34901</strong></td><td>1</td><td>None</td><td class="">UNKNOWN</td><td></td></tr>
+<tr><td><strong>CVE-2025-40176</strong></td><td>1</td><td>None</td><td class="">UNKNOWN</td><td></td></tr>
+<tr><td><strong>CVE-2022-37876</strong></td><td>1</td><td>None</td><td class="">UNKNOWN</td><td></td></tr>
+</table>
+<h2>IOC Type Distribution</h2>
+<table><tr><th>IOC Type</th><th>Count</th></tr>
+<tr><td>CREDENTIAL PAIR</td><td>76</td></tr>
+<tr><td>EMAIL</td><td>73</td></tr>
+<tr><td>IPV4</td><td>49</td></tr>
+<tr><td>DOMAIN</td><td>40</td></tr>
+<tr><td>SHA256</td><td>33</td></tr>
+<tr><td>CVE ID</td><td>30</td></tr>
+<tr><td>BITCOIN ADDRESS</td><td>21</td></tr>
+<tr><td>PGP FINGERPRINT</td><td>13</td></tr>
+<tr><td>MD5</td><td>9</td></tr>
+<tr><td>SHA1</td><td>9</td></tr>
+<tr><td>MONERO ADDRESS</td><td>4</td></tr>
+<tr><td>URL</td><td>4</td></tr>
+<tr><td>IPV6</td><td>2</td></tr>
+</table>
+<h2>Trending Keywords</h2>
+<div class="keywords">
+<span class="kw">cve (35)</span>
+<span class="kw">megacorp (30)</span>
+<span class="kw">ivanti (28)</span>
+<span class="kw">utc (26)</span>
+<span class="kw">emp (22)</span>
+<span class="kw">btc (20)</span>
+<span class="kw">vpn (20)</span>
+<span class="kw">poc (18)</span>
+<span class="kw">posts (18)</span>
+<span class="kw">listed (16)</span>
+<span class="kw">upload (14)</span>
+<span class="kw">rce (14)</span>
+<span class="kw">data (14)</span>
+<span class="kw">email (14)</span>
+<span class="kw">lockcrypt (14)</span>
+<span class="kw">ransomware (14)</span>
+<span class="kw">secure (14)</span>
+<span class="kw">contact (12)</span>
+<span class="kw">exploit (12)</span>
+<span class="kw">connect (12)</span>
+<span class="kw">fullz (12)</span>
+<span class="kw">file (10)</span>
+<span class="kw">patch (10)</span>
+<span class="kw">org (10)</span>
+<span class="kw">payment (10)</span>
+</div>
+<h2>Recommendations</h2>
+<ol class="recommendations">
+<li><strong>Patch critical CVEs immediately</strong> — prioritize CRITICAL/HIGH severity CVEs listed above.</li>
+<li><strong>Block extracted IOCs</strong> — ingest IPs, domains, and hashes into firewall/EDR/SIEM.</li>
+<li><strong>Monitor for anomalous spikes</strong> — investigate flagged activity increases.</li>
+<li><strong>Track repeat threat actors</strong> — cross-source username patterns may indicate organized groups.</li>
+<li><strong>Align detection with MITRE ATT&CK</strong> — map observed techniques to detection rules.</li>
+</ol>
+<footer>Report generated by Dark Web Threat Intelligence Toolkit — 2026-05-03 03:56 UTC</footer>
+</body></html>

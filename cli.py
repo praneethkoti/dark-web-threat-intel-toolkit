@@ -69,7 +69,7 @@ def cli(ctx: click.Context, verbose: bool, dry_run: bool) -> None:
 @cli.command()
 @click.option(
     "--source", "-s",
-    type=click.Choice(["fixtures", "pastes", "feeds", "nvd", "otx", "urlhaus", "bazaar", "all"]),
+    type=click.Choice(["fixtures", "pastes", "feeds", "nvd", "otx", "urlhaus", "bazaar", "selenium", "all"]),
     default="fixtures",
     help="Data source to scrape.",
 )
@@ -81,7 +81,7 @@ def cli(ctx: click.Context, verbose: bool, dry_run: bool) -> None:
 def scrape(ctx: click.Context, source: str, limit: int, cve_year: int | None,
            cve_id: str | None, save: bool) -> None:
     """🕷️  Scrape threat data from configured sources."""
-    from scraper import PasteScraper, FeedScraper, SimulatedMarketScraper
+    from scraper import PasteScraper, FeedScraper, SimulatedMarketScraper, SeleniumScraper
 
     if ctx.obj.get("dry_run"):
         console.print(f"[yellow]DRY RUN:[/] Would scrape source={source}, limit={limit}")
@@ -108,6 +108,17 @@ def scrape(ctx: click.Context, source: str, limit: int, cve_year: int | None,
             all_items.extend(items)
             if save and items:
                 ps.save_raw(items, "live_pastes")
+
+        if source == "selenium":
+            # Headless-Chrome demo: drives the bundled HTML fixtures via
+            # file:// URLs, proves the WebDriver flow end-to-end without
+            # needing internet. For live URLs use the SeleniumScraper API
+            # directly: SeleniumScraper().scrape(source="url", url=...).
+            ss = SeleniumScraper()
+            items = ss.scrape(source="fixture")
+            all_items.extend(items)
+            if save and items:
+                ss.save_raw(items, "selenium_fixtures")
 
         if source in ("feeds", "nvd", "otx", "urlhaus", "bazaar", "all"):
             fs = FeedScraper()
@@ -187,9 +198,11 @@ def process(ctx: click.Context, input_dir: str, skip_enrichment: bool, skip_ner:
 @click.option("--export-mitre", is_flag=True, help="Enrich with MITRE ATT&CK techniques.")
 @click.option("--train-ml", is_flag=True, help="Train ML models on synthetic data first.")
 @click.option("--limit", "-l", type=int, default=500, help="Max posts to classify.")
+@click.option("--show-comparison", is_flag=True,
+              help="After ML training, print model accuracy comparison table.")
 @click.pass_context
 def classify(ctx: click.Context, model: str, input_filter: str, export_mitre: bool,
-             train_ml: bool, limit: int) -> None:
+             train_ml: bool, limit: int, show_comparison: bool) -> None:
     """🏷️  Classify posts by threat category."""
     from pipeline.db_loader import DatabaseLoader
     from classifier.keyword_classifier import KeywordClassifier
@@ -247,6 +260,30 @@ def classify(ctx: click.Context, model: str, input_filter: str, export_mitre: bo
                 results = ml_clf.train(texts, labels, tune=False)
                 for name, res in results.items():
                     console.print(f"  {name}: accuracy={res['accuracy']:.4f}")
+
+                if show_comparison:
+                    report = ml_clf.get_comparison_report()
+                    cmp_table = Table(title="ML Model Comparison", show_lines=True)
+                    cmp_table.add_column("Model", style="cyan")
+                    cmp_table.add_column("Accuracy", style="green", justify="right")
+                    cmp_table.add_column("Weighted F1", style="yellow", justify="right")
+                    for mname in ml_clf.available_models:
+                        mstats = report.get(mname, {})
+                        marker = " [bold](best)[/]" if mname == report.get("best_model") else ""
+                        cmp_table.add_row(
+                            f"{mname}{marker}",
+                            f"{mstats.get('accuracy', 0):.4f}",
+                            f"{mstats.get('weighted_f1', 0):.4f}",
+                        )
+                    console.print(cmp_table)
+
+                    # Also save to disk for review
+                    import json as _json
+                    from pathlib import Path as _Path
+                    cmp_path = _Path("data/reports/ml_comparison.json")
+                    cmp_path.parent.mkdir(parents=True, exist_ok=True)
+                    cmp_path.write_text(_json.dumps(report, indent=2))
+                    console.print(f"[dim]Comparison saved to {cmp_path}[/]")
 
             if model in ("ml", "all"):
                 for post in posts:

@@ -1,0 +1,59 @@
+┌───────────────────────────────── 🛡️  Demo ──────────────────────────────────┐
+│                                                                             │
+│    Dark Web Threat Intelligence Toolkit                                     │
+│    Sai Praneeth Koti · praneeth01koti@gmail.com                             │
+│    Cybersecurity Researcher · Python Developer                              │
+│                                                                             │
+└─────────── github.com/praneethkoti/dark-web-threat-intel-toolkit ───────────┘
+
+Step 2 Generating synthetic training data  (50 samples)
+  ✓ 50 synthetic threat posts generated
+
+Step 3 Scraping fixtures  (Paste + SimulatedMarket + Selenium)
+  ✓ PasteScraper: 4 items
+  ✓ SimulatedMarketScraper: 11 items
+  ✓ SeleniumScraper: 15 items
+
+  ✓ Total scraped: 30 items
+
+Step 4 Running full pipeline  (clean → extract → enrich → store)
+
+  ✓ Input: 80  |  Stored: 80  |  Entities: 363  |  Dupes skipped: 0
+
+Step 5 Classifying posts  (keyword scorer + MITRE ATT&CK mapper)
+
+  ✓ Classified 80 posts with MITRE ATT&CK enrichment
+
+Step 6 Running trend analysis + anomaly detection
+  ✓ Summary: 80 posts | 363 IOCs | 0 CVEs | 0 anomalies detected
+
+Step 7 Generating reports  (Markdown + HTML)
+  ✓ Markdown → data\reports\demo_threat_report
+  ✓ HTML     → data\reports\demo_threat_report
+
+Step 8 Exporting IOCs  (STIX 2.1 + CSV + MISP)
+  ✓ STIX bundle → data\exports\demo_stix_bundle.json  (211 objects)
+  ✓ CSV IOCs    → data\exports\demo_iocs.csv  (363 rows)
+  ✓ MISP event  → data\exports\demo_misp_event.json
+
+──────────────────────────────── Demo Complete ────────────────────────────────
+┌───────────────────────────── Pipeline Summary ──────────────────────────────┐
+│                                                                             │
+│  ┌──────────────────────┬──────────────────────────────────────┐            │
+│  │  Posts stored        │                                  80  │            │
+│  │  Posts in DB         │                                  80  │            │
+│  │  Posts classified    │                                  80  │            │
+│  │  Entities extracted  │                                 363  │            │
+│  │  IOCs in DB          │                                 363  │            │
+│  │  CVEs enriched       │                                   0  │            │
+│  │                      │                                      │            │
+│  │  Report (Markdown)   │     data\reports\demo_threat_report  │            │
+│  │  Report (HTML)       │     data\reports\demo_threat_report  │            │
+│  │  STIX bundle         │  data\exports\demo_stix_bundle.json  │            │
+│  │  IOC CSV             │          data\exports\demo_iocs.csv  │            │
+│  │  MISP event          │   data\exports\demo_misp_event.json  │            │
+│  │                      │                                      │            │
+│  │  Total time          │                                7.0s  │            │
+│  └──────────────────────┴──────────────────────────────────────┘            │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘

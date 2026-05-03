@@ -183,6 +183,101 @@ class TestJobFunctions:
         assert result["status"] in ("success", "skipped")
 
 
+# ── Job config override tests ────────────────────────────────────────────────
+
+class TestJobConfig:
+    """
+    ``job_scrape_pastes`` and ``job_scrape_feeds`` read their source/feed
+    config from settings.yaml so a real deployment can flip from fixtures
+    to live sources without touching code. These tests lock in:
+
+      * the default values match the original hardcoded behaviour
+        (no regression for existing users),
+      * a settings override actually reaches the underlying scraper call.
+    """
+
+    def test_scrape_pastes_default_is_fixture(self):
+        """Out-of-the-box default must stay ``"fixture"`` — demos run offline."""
+        from config import settings
+        assert settings.get("scheduler.jobs.scrape_pastes.source") == "fixture"
+
+    def test_scrape_feeds_defaults_preserve_original(self):
+        """Default feed/limit must match the original hardcoded values."""
+        from config import settings
+        assert settings.get("scheduler.jobs.scrape_feeds.feed") == "all"
+        assert settings.get("scheduler.jobs.scrape_feeds.limit") == 25
+
+    def test_scrape_pastes_honors_source_override(self, monkeypatch):
+        """
+        Monkey-patch ``PasteScraper.scrape`` and verify ``job_scrape_pastes``
+        passes whatever the settings say. Proves the job reads settings
+        at call-time, not import-time (important for hot-reload scenarios).
+        """
+        from config import settings
+        import scraper as _scraper_pkg
+
+        calls: list[dict] = []
+
+        class FakePasteScraper:
+            def scrape(self, **kwargs):
+                calls.append(dict(kwargs))
+                return []
+            def save_raw(self, items, *a, **kw):
+                return None
+
+        monkeypatch.setattr(_scraper_pkg, "PasteScraper", FakePasteScraper)
+
+        # Override the settings value for this test only
+        monkeypatch.setitem(
+            settings.data["scheduler"]["jobs"]["scrape_pastes"],
+            "source",
+            "live",
+        )
+
+        result = job_scrape_pastes()
+        assert result["status"] == "success"
+        assert len(calls) == 1
+        assert calls[0]["source"] == "live", (
+            f"Expected source='live' from settings, got {calls[0]}"
+        )
+
+    def test_scrape_feeds_honors_feed_and_limit_override(self, monkeypatch):
+        """
+        Same pattern for scrape_feeds — both ``feed`` and ``limit`` settings
+        should round-trip into the ``FeedScraper.scrape`` call.
+        """
+        from config import settings
+        import scraper as _scraper_pkg
+        from scheduler.scheduler import job_scrape_feeds
+
+        calls: list[dict] = []
+
+        class FakeFeedScraper:
+            def scrape(self, **kwargs):
+                calls.append(dict(kwargs))
+                return []
+            def save_raw(self, items, *a, **kw):
+                return None
+
+        monkeypatch.setattr(_scraper_pkg, "FeedScraper", FakeFeedScraper)
+        monkeypatch.setitem(
+            settings.data["scheduler"]["jobs"]["scrape_feeds"],
+            "feed",
+            "urlhaus",
+        )
+        monkeypatch.setitem(
+            settings.data["scheduler"]["jobs"]["scrape_feeds"],
+            "limit",
+            7,
+        )
+
+        result = job_scrape_feeds()
+        assert result["status"] == "success"
+        assert len(calls) == 1
+        assert calls[0]["feed"] == "urlhaus"
+        assert calls[0]["limit"] == 7
+
+
 # ── Scheduler CLI Tests ───────────────────────────────────────────────────────
 
 class TestSchedulerCLI:

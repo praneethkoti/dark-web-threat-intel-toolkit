@@ -1,0 +1,3441 @@
+{
+    "type": "bundle",
+    "id": "bundle--b0d64166-2d0b-44a8-affa-419cff92da6a",
+    "objects": [
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.209333Z",
+            "modified": "2026-05-03T03:56:36.209333Z",
+            "name": "dark-web-threat-intel-toolkit",
+            "description": "Dark Web Threat Intelligence Toolkit \u2014 automated IOC collection and analysis",
+            "identity_class": "system"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--70d93206-bff8-4138-9cee-dc076c5ef3be",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.209556Z",
+            "modified": "2026-05-03T03:56:36.209556Z",
+            "name": "EMAIL: ashleyhernandez510@jabber.de",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'ashleyhernandez510@jabber.de']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--9d46f1f2-caef-458a-b658-8ae04591fdf1",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.215485Z",
+            "modified": "2026-05-03T03:56:36.215485Z",
+            "name": "EMAIL: bryanparsons667@jabber.de",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'bryanparsons667@jabber.de']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--347c0a4b-1125-465d-b5ad-db7fe98c2ba9",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.216471Z",
+            "modified": "2026-05-03T03:56:36.216471Z",
+            "name": "EMAIL: davisphillip@xmpp.jp",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'davisphillip@xmpp.jp']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--6b2708e5-3319-46db-b7e8-43d8a824cc11",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.217151Z",
+            "modified": "2026-05-03T03:56:36.217151Z",
+            "name": "EMAIL: schmidtjames@example.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'schmidtjames@example.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--c6200f97-b2b6-4d65-9742-9feee28404d6",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.217708Z",
+            "modified": "2026-05-03T03:56:36.217708Z",
+            "name": "EMAIL: cjones@example.net",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'cjones@example.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--a47a022f-8368-4c5d-a5e6-a85b83ac58ac",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.218382Z",
+            "modified": "2026-05-03T03:56:36.218382Z",
+            "name": "EMAIL: colelisa@example.net",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'colelisa@example.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--02ff11a3-835f-404d-be51-89af6dc36a0a",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.218886Z",
+            "modified": "2026-05-03T03:56:36.218886Z",
+            "name": "SHA256: 2d5e087a5818667488edffdbd87ca865057ab38ff62b07804154e90470b4afdd",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = '2d5e087a5818667488edffdbd87ca865057ab38ff62b07804154e90470b4afdd']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--128fbdea-656a-460d-9036-90d4c1435eb5",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.221403Z",
+            "modified": "2026-05-03T03:56:36.221403Z",
+            "name": "SHA1: 80ef7422abf5e7e61fd2d1f62fdcf7b663723ec0",
+            "description": "Extracted sha1 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-1' = '80ef7422abf5e7e61fd2d1f62fdcf7b663723ec0']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--c428f82b-2c77-4c9e-9262-3bd226655723",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.22217Z",
+            "modified": "2026-05-03T03:56:36.22217Z",
+            "name": "SHA1: a7a9843f3c67362fa562edd94043d68546c64073",
+            "description": "Extracted sha1 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-1' = 'a7a9843f3c67362fa562edd94043d68546c64073']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--1816ce7f-fef4-412c-a149-e09996c4dd56",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.222725Z",
+            "modified": "2026-05-03T03:56:36.222725Z",
+            "name": "SHA256: 2a33dbc640120fd1e12421de31c67a36ea724eaad155f90841988c35e021b243",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = '2a33dbc640120fd1e12421de31c67a36ea724eaad155f90841988c35e021b243']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--c9fa592f-36d6-41b9-89cd-8a7f7423935b",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.223681Z",
+            "modified": "2026-05-03T03:56:36.223681Z",
+            "name": "SHA1: 1ba7c6fe43dbf1c923b679451635ed7ef469ef86",
+            "description": "Extracted sha1 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-1' = '1ba7c6fe43dbf1c923b679451635ed7ef469ef86']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--35d5b04e-464b-4b56-9e52-36d092268394",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.224272Z",
+            "modified": "2026-05-03T03:56:36.224272Z",
+            "name": "IPV4: 57.121.99.205",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '57.121.99.205']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--da1f74ba-6635-4491-9e52-bbd6f852a87d",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.224923Z",
+            "modified": "2026-05-03T03:56:36.224923Z",
+            "name": "IPV4: 183.252.209.147",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '183.252.209.147']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--98187f90-e947-4607-8139-6f16c089ccc7",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.225366Z",
+            "modified": "2026-05-03T03:56:36.225366Z",
+            "name": "IPV4: 75.232.54.16",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '75.232.54.16']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--159748a6-265b-48cb-9ebe-c719b8fdcfc6",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.225822Z",
+            "modified": "2026-05-03T03:56:36.225822Z",
+            "name": "IPV4: 179.196.178.183",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '179.196.178.183']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--46792a77-3e3f-454d-90ab-1aa2611da791",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.226239Z",
+            "modified": "2026-05-03T03:56:36.226239Z",
+            "name": "EMAIL: nullstepha@jabber.de",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'nullstepha@jabber.de']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--17631a2b-7853-4fb1-a552-890d60586b60",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.226752Z",
+            "modified": "2026-05-03T03:56:36.226752Z",
+            "name": "SHA256: 2a12370aeea0860b848b6f2e83945c1f73b4d1fa0667ab1da5ffee3eb94ea48a",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = '2a12370aeea0860b848b6f2e83945c1f73b4d1fa0667ab1da5ffee3eb94ea48a']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--ddf5b59e-8136-4f51-8e35-d4a382e23901",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.227679Z",
+            "modified": "2026-05-03T03:56:36.227679Z",
+            "name": "EMAIL: williamsyvette@example.org",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'williamsyvette@example.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--c0476c31-16e7-41a2-ab6f-63b80794bb77",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.228338Z",
+            "modified": "2026-05-03T03:56:36.228338Z",
+            "name": "EMAIL: jeff09@example.net",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'jeff09@example.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--f88ff1f3-fa64-4aef-8db1-90faee6f3c96",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.228844Z",
+            "modified": "2026-05-03T03:56:36.228844Z",
+            "name": "EMAIL: bethwilliams@example.org",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'bethwilliams@example.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--48fc34b6-74a6-49a7-8eff-3f63ada94ea0",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.229339Z",
+            "modified": "2026-05-03T03:56:36.229339Z",
+            "name": "EMAIL: j.smith@megacorp.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'j.smith@megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--128bbdf4-d329-4012-baf0-4c26e0ea7a9f",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.229779Z",
+            "modified": "2026-05-03T03:56:36.229779Z",
+            "name": "EMAIL: m.johnson@megacorp.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'm.johnson@megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--d55788a8-f011-48fc-bf1e-d4f204408fc6",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.230489Z",
+            "modified": "2026-05-03T03:56:36.230489Z",
+            "name": "EMAIL: a.williams@megacorp.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'a.williams@megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--04e3cca2-84e3-4285-881d-c81b52979a18",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.23102Z",
+            "modified": "2026-05-03T03:56:36.23102Z",
+            "name": "EMAIL: r.brown@megacorp.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'r.brown@megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--48859430-50f3-4d5d-9898-d6010ae2d62c",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.231688Z",
+            "modified": "2026-05-03T03:56:36.231688Z",
+            "name": "EMAIL: s.jones@megacorp.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 's.jones@megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--5d1b12ba-e11d-4601-95ba-0b774aeac656",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.232211Z",
+            "modified": "2026-05-03T03:56:36.232211Z",
+            "name": "EMAIL: d.garcia@megacorp.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'd.garcia@megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--7c49934c-fde1-4696-8783-9dbd9da1cf23",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.232646Z",
+            "modified": "2026-05-03T03:56:36.232646Z",
+            "name": "EMAIL: k.martinez@megacorp.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'k.martinez@megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--663737ab-57c2-4926-b590-eeb641aa1b8b",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.23313Z",
+            "modified": "2026-05-03T03:56:36.23313Z",
+            "name": "EMAIL: l.robinson@megacorp.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'l.robinson@megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--2869d55e-01a8-42b0-9874-ad13549dcde3",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.233734Z",
+            "modified": "2026-05-03T03:56:36.233734Z",
+            "name": "EMAIL: p.clark@megacorp.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'p.clark@megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--6c1ed047-24b6-4bfc-ba6e-0369a774d5b4",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.234413Z",
+            "modified": "2026-05-03T03:56:36.234413Z",
+            "name": "EMAIL: t.rodriguez@megacorp.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 't.rodriguez@megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--666211ec-667a-4187-8abf-80f48ac8c417",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.234927Z",
+            "modified": "2026-05-03T03:56:36.234927Z",
+            "name": "EMAIL: admin@megacorp.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'admin@megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--d1ffba21-74e2-47c9-bcea-e9cd394d4c3a",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.235393Z",
+            "modified": "2026-05-03T03:56:36.235393Z",
+            "name": "EMAIL: disposable8472@protonmail.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'disposable8472@protonmail.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--0385c620-4d43-4383-bad3-ed8e9e12201d",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.235845Z",
+            "modified": "2026-05-03T03:56:36.235845Z",
+            "name": "DOMAIN: vpn.megacorp.com",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'vpn.megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--1a389a41-8840-4672-8c61-cb45a8a38bdb",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.236692Z",
+            "modified": "2026-05-03T03:56:36.236692Z",
+            "name": "DOMAIN: wiki.internal.megacorp.com",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'wiki.internal.megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--fddc467b-257f-4720-8451-1eb98bc4f089",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.237203Z",
+            "modified": "2026-05-03T03:56:36.237203Z",
+            "name": "DOMAIN: jira.megacorp.com",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'jira.megacorp.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--21e3d683-0526-4028-8930-47f8585934e1",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.237779Z",
+            "modified": "2026-05-03T03:56:36.237779Z",
+            "name": "SHA256: 7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = '7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--aa16fcb3-85aa-4960-853f-a6c1e44a4547",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.23832Z",
+            "modified": "2026-05-03T03:56:36.23832Z",
+            "name": "SHA256: 1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = '1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--a2c0d6a7-7d90-4897-a31f-5bfcc7a5dd6b",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.238822Z",
+            "modified": "2026-05-03T03:56:36.238822Z",
+            "name": "SHA256: abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = 'abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--72709e80-c7e1-40d2-9bed-c843580336cc",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.241678Z",
+            "modified": "2026-05-03T03:56:36.241678Z",
+            "name": "EMAIL: recovery@protonmail.ch",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'recovery@protonmail.ch']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--db5cc13c-deb4-4110-a026-09966507b0c0",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.242196Z",
+            "modified": "2026-05-03T03:56:36.242196Z",
+            "name": "EMAIL: lockcrypt_support@tutanota.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'lockcrypt_support@tutanota.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--134d298e-0e81-4cc2-a6f9-d8e6f5d800c7",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.24271Z",
+            "modified": "2026-05-03T03:56:36.24271Z",
+            "name": "EMAIL: decrypt.files@onionmail.org",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'decrypt.files@onionmail.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--5bee9760-f619-4a4d-8d28-0e132e88b962",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.243145Z",
+            "modified": "2026-05-03T03:56:36.243145Z",
+            "name": "DOMAIN: lockcrypt-payment.onion",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'lockcrypt-payment.onion']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--2e6162dd-2e55-4671-b7f0-f72b809ed3b5",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.243574Z",
+            "modified": "2026-05-03T03:56:36.243574Z",
+            "name": "DOMAIN: update-service-cdn.com",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'update-service-cdn.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--593f4c12-0f4e-4e14-80b8-599481c6cab6",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.244039Z",
+            "modified": "2026-05-03T03:56:36.244039Z",
+            "name": "DOMAIN: secure-file-transfer.net",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'secure-file-transfer.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--7b5e36ef-a5f7-4252-ad13-d316352ec9d1",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.244628Z",
+            "modified": "2026-05-03T03:56:36.244628Z",
+            "name": "DOMAIN: cloud-backup-restore.org",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'cloud-backup-restore.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--a8c328f7-567e-4754-9203-2a2eaa2e00c2",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.245083Z",
+            "modified": "2026-05-03T03:56:36.245083Z",
+            "name": "DOMAIN: microsoft-security-patch.com",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'microsoft-security-patch.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--cff7d4fd-fdb3-4d4c-97f0-253de1a34aa4",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.245547Z",
+            "modified": "2026-05-03T03:56:36.245547Z",
+            "name": "IPV4: 185.220.101.34",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '185.220.101.34']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--0f329670-3a5f-4f51-bf90-5e3eb02f5906",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.245977Z",
+            "modified": "2026-05-03T03:56:36.245977Z",
+            "name": "IPV4: 185.220.101.35",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '185.220.101.35']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--659dbe06-54d5-4e17-9b11-3bae4cc1361b",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.246379Z",
+            "modified": "2026-05-03T03:56:36.246379Z",
+            "name": "IPV4: 23.106.215.76",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '23.106.215.76']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--b1e91f1c-c0fc-410b-a986-6e24e3627f4e",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.246785Z",
+            "modified": "2026-05-03T03:56:36.246785Z",
+            "name": "IPV4: 91.214.124.20",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '91.214.124.20']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--4203eebc-c3b6-4323-97ce-527cf919cb63",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.247258Z",
+            "modified": "2026-05-03T03:56:36.247258Z",
+            "name": "IPV4: 194.165.16.21",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '194.165.16.21']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--a45ecccd-43fe-4a2a-b0b1-59f1e991e812",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.247658Z",
+            "modified": "2026-05-03T03:56:36.247658Z",
+            "name": "IPV4: 194.165.16.22",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '194.165.16.22']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--8da8d476-724a-4175-b3a2-f688c6e1765b",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.248228Z",
+            "modified": "2026-05-03T03:56:36.248228Z",
+            "name": "IPV4: 194.165.16.23",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '194.165.16.23']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--b5d2b94b-0d57-4a4a-8b03-0d7178d6eace",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.2488Z",
+            "modified": "2026-05-03T03:56:36.2488Z",
+            "name": "URL: https://nvd.nist.gov/vuln/detail/CVE-2024-53677",
+            "description": "Extracted url indicator from dark web intelligence collection",
+            "pattern": "[url:value = 'https://nvd.nist.gov/vuln/detail/CVE-2024-53677']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--a26c054e-af05-49e1-bd98-ef7af52a82d5",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.249536Z",
+            "modified": "2026-05-03T03:56:36.249536Z",
+            "name": "URL: https://struts.apache.org/announce",
+            "description": "Extracted url indicator from dark web intelligence collection",
+            "pattern": "[url:value = 'https://struts.apache.org/announce']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--00a709f6-0ba9-4e96-b7e5-46bf95f8b06c",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.250017Z",
+            "modified": "2026-05-03T03:56:36.250017Z",
+            "name": "DOMAIN: upload.action",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'upload.action']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--29223340-74cc-4287-9ed1-33092e95a035",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.250536Z",
+            "modified": "2026-05-03T03:56:36.250536Z",
+            "name": "DOMAIN: target.com",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'target.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--dfec45b8-c5d6-42b9-aa1f-28a24071e98d",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.250964Z",
+            "modified": "2026-05-03T03:56:36.250964Z",
+            "name": "DOMAIN: shell.jsp",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'shell.jsp']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--f0270519-d6e3-4038-bcf5-1d138d8386c2",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.251408Z",
+            "modified": "2026-05-03T03:56:36.251408Z",
+            "name": "IPV6: 2001:db8::",
+            "description": "Extracted ipv6 indicator from dark web intelligence collection",
+            "pattern": "[ipv6-addr:value = '2001:db8::']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--4e818ddf-666c-4a26-a2a3-449ad1699c83",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.251889Z",
+            "modified": "2026-05-03T03:56:36.251889Z",
+            "name": "IPV4: 6.3.0.2",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '6.3.0.2']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--b5b8f927-6bed-4be4-9ca1-c996e8b4a168",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.252356Z",
+            "modified": "2026-05-03T03:56:36.252356Z",
+            "name": "IPV4: 203.0.113.50",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '203.0.113.50']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--a5c6e235-bd1b-41eb-b2b0-24f95bad39e5",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.252934Z",
+            "modified": "2026-05-03T03:56:36.252934Z",
+            "name": "IPV4: 198.51.100.75",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '198.51.100.75']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--199430b8-d744-46ab-9d8b-70f2ba200d91",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.253406Z",
+            "modified": "2026-05-03T03:56:36.253406Z",
+            "name": "IPV4: 192.0.2.100",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '192.0.2.100']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--ea58adb4-e511-4402-97dc-684b864a37b6",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.253827Z",
+            "modified": "2026-05-03T03:56:36.253827Z",
+            "name": "EMAIL: n.doe@gmail.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'n.doe@gmail.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--641ef309-7ed5-4787-aeab-c6b707e19d65",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.254347Z",
+            "modified": "2026-05-03T03:56:36.254347Z",
+            "name": "DOMAIN: co.uk",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'co.uk']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--189980c3-e8d3-4923-bda9-3d90af1b606d",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.254808Z",
+            "modified": "2026-05-03T03:56:36.254808Z",
+            "name": "SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--04213798-d373-4f5f-9910-2755b8eae5fe",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.255618Z",
+            "modified": "2026-05-03T03:56:36.255618Z",
+            "name": "EMAIL: lockcrypt@xmpp.jp",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'lockcrypt@xmpp.jp']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--c157c0a9-e1b2-4b08-93ad-40c175e2f184",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.256081Z",
+            "modified": "2026-05-03T03:56:36.256081Z",
+            "name": "EMAIL: xpl0it@jabber.de",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'xpl0it@jabber.de']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--54bdfc3c-14a9-422b-8959-25442cf6635e",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.256549Z",
+            "modified": "2026-05-03T03:56:36.256549Z",
+            "name": "SHA256: a3f5b2c8d1e4f6789012345678abcdef0123456789abcdef0123456789abcdef",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = 'a3f5b2c8d1e4f6789012345678abcdef0123456789abcdef0123456789abcdef']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--226af701-8aa6-4092-b510-e36d58596cba",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.257292Z",
+            "modified": "2026-05-03T03:56:36.257292Z",
+            "name": "DOMAIN: welcome.cgi",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'welcome.cgi']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--02df735e-f9f0-4083-811f-0f3f99ce6929",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.257748Z",
+            "modified": "2026-05-03T03:56:36.257748Z",
+            "name": "IPV4: 185.174.100.56",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '185.174.100.56']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--09f5d498-08a2-467f-85fc-4c2de7ee95a4",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.258172Z",
+            "modified": "2026-05-03T03:56:36.258172Z",
+            "name": "IPV4: 192.36.27.92",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '192.36.27.92']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--27e8a073-edda-44ae-8dd7-43c48a206a60",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.258585Z",
+            "modified": "2026-05-03T03:56:36.258585Z",
+            "name": "IPV4: 91.92.240.113",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '91.92.240.113']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--f598fea2-2409-440e-a2cf-0e74ab3a0223",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.259005Z",
+            "modified": "2026-05-03T03:56:36.259005Z",
+            "name": "IPV4: 45.77.45.127",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '45.77.45.127']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--f1f06125-2916-4c41-aed0-55ad3a6d1b87",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.259468Z",
+            "modified": "2026-05-03T03:56:36.259468Z",
+            "name": "EMAIL: admin@hospital-corp.org",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'admin@hospital-corp.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--909388e9-a740-4411-a1be-e87c1a60f416",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.259874Z",
+            "modified": "2026-05-03T03:56:36.259874Z",
+            "name": "EMAIL: sysadmin@firstnat-bank.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'sysadmin@firstnat-bank.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--f42eaeb3-b503-4c64-a5b7-c479fffc2c2f",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.260311Z",
+            "modified": "2026-05-03T03:56:36.260311Z",
+            "name": "DOMAIN: ivanti-update-service.com",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'ivanti-update-service.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--bacce636-2218-4880-bb51-17d47d26100b",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.260774Z",
+            "modified": "2026-05-03T03:56:36.260774Z",
+            "name": "DOMAIN: connectsecure-patch.net",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'connectsecure-patch.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--c8586fc9-b664-4d49-af16-43f0d0cdb918",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.261173Z",
+            "modified": "2026-05-03T03:56:36.261173Z",
+            "name": "DOMAIN: vpn-security-update.org",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'vpn-security-update.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--bafc337d-87c6-4798-9b28-b98a49ceb4e6",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.261573Z",
+            "modified": "2026-05-03T03:56:36.261573Z",
+            "name": "IPV4: 194.165.16.0",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '194.165.16.0']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--11adf3f8-fc86-40ab-abbd-2dff03e0cd8b",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.261997Z",
+            "modified": "2026-05-03T03:56:36.261997Z",
+            "name": "SHA256: d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8091011121314151617181920212223aabb",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = 'd4e5f6a7b8c9d0e1f2a3b4c5d6e7f8091011121314151617181920212223aabb']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--5d2fd66b-07b6-41cc-81a7-f0fc1ca46387",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.262502Z",
+            "modified": "2026-05-03T03:56:36.262502Z",
+            "name": "SHA256: cc11dd22ee33ff44aa55bb66cc77dd88ee99ff00aa11bb22cc33dd44ee55ff66",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = 'cc11dd22ee33ff44aa55bb66cc77dd88ee99ff00aa11bb22cc33dd44ee55ff66']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--7dd743aa-97b5-4076-b011-8cb361e64e3f",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.26301Z",
+            "modified": "2026-05-03T03:56:36.26301Z",
+            "name": "MD5: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6",
+            "description": "Extracted md5 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.MD5 = 'a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--7d2ec7d3-b820-49e3-9ede-57266c94bda7",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.264169Z",
+            "modified": "2026-05-03T03:56:36.264169Z",
+            "name": "SHA256: 48c476735caed746c3bc658b446b5825392be3b3343dd5c11f70dfd55ee942c8",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = '48c476735caed746c3bc658b446b5825392be3b3343dd5c11f70dfd55ee942c8']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--66465b81-9a17-48e5-a7ba-aaba279b61a3",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.264849Z",
+            "modified": "2026-05-03T03:56:36.264849Z",
+            "name": "MD5: 9a5af146a630be8b895d3f7602888518",
+            "description": "Extracted md5 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.MD5 = '9a5af146a630be8b895d3f7602888518']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--9f1e9003-ce65-43ec-af37-b811cb9125be",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.265461Z",
+            "modified": "2026-05-03T03:56:36.265461Z",
+            "name": "EMAIL: jimenezcourtney@example.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'jimenezcourtney@example.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--da53b2a0-861e-4124-b04e-2cebdac5bc27",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.266018Z",
+            "modified": "2026-05-03T03:56:36.266018Z",
+            "name": "IPV4: 209.81.118.182",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '209.81.118.182']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--4090ec65-ab9c-47b1-a1c4-a227f419be2b",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.266588Z",
+            "modified": "2026-05-03T03:56:36.266588Z",
+            "name": "IPV4: 80.240.31.80",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '80.240.31.80']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--eae40625-3432-4bed-846d-2a0842aff1ec",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.267137Z",
+            "modified": "2026-05-03T03:56:36.267137Z",
+            "name": "IPV4: 221.84.173.205",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '221.84.173.205']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--aa8f4d6c-5c26-4452-b0c8-6e38c8910a54",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.267673Z",
+            "modified": "2026-05-03T03:56:36.267673Z",
+            "name": "SHA256: 0326048509eeec9c5d66bb016badf799826be20cf1385695acc919542777f7d3",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = '0326048509eeec9c5d66bb016badf799826be20cf1385695acc919542777f7d3']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--8b2b0248-7e9c-4696-a9cb-f74825ac187a",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.268431Z",
+            "modified": "2026-05-03T03:56:36.268431Z",
+            "name": "SHA1: 0f49512c4d2a29010ad90b0b44ad5b95178355d6",
+            "description": "Extracted sha1 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-1' = '0f49512c4d2a29010ad90b0b44ad5b95178355d6']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--cc2923ad-2413-4a9d-b691-62c611d0e838",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.269025Z",
+            "modified": "2026-05-03T03:56:36.269025Z",
+            "name": "SHA1: 8529600bc82e2e569d98879705164eda94af9307",
+            "description": "Extracted sha1 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-1' = '8529600bc82e2e569d98879705164eda94af9307']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--86f43886-a0a9-48f9-a605-0817697854f2",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.269893Z",
+            "modified": "2026-05-03T03:56:36.269893Z",
+            "name": "SHA256: 40a6eef8eeed007415b60638e6e0c4755e84fa72b0eb142650afff177a2cc6bb",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = '40a6eef8eeed007415b60638e6e0c4755e84fa72b0eb142650afff177a2cc6bb']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--24c526a5-f465-4e0d-bec2-be0510c3aa24",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.271024Z",
+            "modified": "2026-05-03T03:56:36.271024Z",
+            "name": "SHA256: dce77241951b7ffc7eff75469a7895167ef0f0cb82169d3da578d121f6661593",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = 'dce77241951b7ffc7eff75469a7895167ef0f0cb82169d3da578d121f6661593']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--10949b0b-602b-4b4b-a7f5-1e84b38d4e7f",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.271683Z",
+            "modified": "2026-05-03T03:56:36.271683Z",
+            "name": "SHA256: 69bcb1273d4e63bc910ab552a4d654ac6c758445bbdab7b23658bb2f012e6131",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = '69bcb1273d4e63bc910ab552a4d654ac6c758445bbdab7b23658bb2f012e6131']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--2dc89ade-f853-49f6-8f1c-6f9a30d786f0",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.272267Z",
+            "modified": "2026-05-03T03:56:36.272267Z",
+            "name": "SHA1: d9cd2a4b5793613d8621790c81729deca85083cc",
+            "description": "Extracted sha1 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-1' = 'd9cd2a4b5793613d8621790c81729deca85083cc']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--47e8a973-d3ee-4a84-9edf-4d8b2c080ffe",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.272889Z",
+            "modified": "2026-05-03T03:56:36.272889Z",
+            "name": "MD5: b13cb7732d0092a09042f990ba417fd2",
+            "description": "Extracted md5 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.MD5 = 'b13cb7732d0092a09042f990ba417fd2']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--0d8c8a1a-7dec-4b8c-bda5-b659d33cc15f",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.273541Z",
+            "modified": "2026-05-03T03:56:36.273541Z",
+            "name": "DOMAIN: donovan-perez.net",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'donovan-perez.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--663d9ca9-db1a-42e5-a977-c9bd3f4e261e",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.274253Z",
+            "modified": "2026-05-03T03:56:36.274253Z",
+            "name": "DOMAIN: singleton-king.net",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'singleton-king.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--ab44f490-3a47-4d83-bb95-a14f8c1d2a3c",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.274843Z",
+            "modified": "2026-05-03T03:56:36.274843Z",
+            "name": "DOMAIN: martinez-turner.net",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'martinez-turner.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--932002e5-dc95-4e6c-9688-35108d8af42d",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.275418Z",
+            "modified": "2026-05-03T03:56:36.275418Z",
+            "name": "SHA256: dfa2b7b80ea91708a494e534571240983552b43195727a106299db94dba8fc72",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = 'dfa2b7b80ea91708a494e534571240983552b43195727a106299db94dba8fc72']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--f8870f51-6cc2-4bc4-8415-2ec1976b71b3",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.27603Z",
+            "modified": "2026-05-03T03:56:36.27603Z",
+            "name": "MD5: ad969dcb506737f341cce70783eb8c2d",
+            "description": "Extracted md5 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.MD5 = 'ad969dcb506737f341cce70783eb8c2d']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--f5099bd2-b743-4a62-87e8-b88b2c16266c",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.276691Z",
+            "modified": "2026-05-03T03:56:36.276691Z",
+            "name": "EMAIL: carriemorales@example.org",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'carriemorales@example.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--cba101ae-3e36-43b9-ab01-492e9d397e76",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.27739Z",
+            "modified": "2026-05-03T03:56:36.27739Z",
+            "name": "IPV4: 70.48.7.138",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '70.48.7.138']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--89d4d2c0-e88d-4fc7-9ee5-6dfd858d9a3a",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.277992Z",
+            "modified": "2026-05-03T03:56:36.277992Z",
+            "name": "IPV4: 149.179.146.208",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '149.179.146.208']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--b989a8a5-bbac-4c6d-b25e-4869f3e40610",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.278493Z",
+            "modified": "2026-05-03T03:56:36.278493Z",
+            "name": "IPV4: 199.73.221.105",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '199.73.221.105']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--4ff9bd83-4556-49e0-9ead-c6c75d9ed86b",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.279061Z",
+            "modified": "2026-05-03T03:56:36.279061Z",
+            "name": "EMAIL: vfox@example.org",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'vfox@example.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--5e15d4ad-3326-4f03-89a1-9be10087726e",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.279625Z",
+            "modified": "2026-05-03T03:56:36.279625Z",
+            "name": "EMAIL: cjoseph@example.org",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'cjoseph@example.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--706ed6df-b102-442d-aa2b-4422a0e28fe3",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.280133Z",
+            "modified": "2026-05-03T03:56:36.280133Z",
+            "name": "EMAIL: abeasley@example.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'abeasley@example.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--edd4421f-da44-452b-8d48-12e6b798a30a",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.280632Z",
+            "modified": "2026-05-03T03:56:36.280632Z",
+            "name": "SHA256: 72eb4fdba230524280555824e672750bf5b74ff929e7bbe2846d710a93e4087a",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = '72eb4fdba230524280555824e672750bf5b74ff929e7bbe2846d710a93e4087a']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--9777c33a-29af-4c8a-a855-13aa661c37e1",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.281227Z",
+            "modified": "2026-05-03T03:56:36.281227Z",
+            "name": "SHA1: 4f14b7d8a4f8257a41d3fa65a59bd742c24f7c05",
+            "description": "Extracted sha1 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-1' = '4f14b7d8a4f8257a41d3fa65a59bd742c24f7c05']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--9ba8fd90-98ec-43eb-85e2-08a2d59cbb7b",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.281952Z",
+            "modified": "2026-05-03T03:56:36.281952Z",
+            "name": "MD5: 317f9f3b354a415781ba849cfcf1e71e",
+            "description": "Extracted md5 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.MD5 = '317f9f3b354a415781ba849cfcf1e71e']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--42542ed6-9553-46bb-b098-5e7dcc778a8f",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.282755Z",
+            "modified": "2026-05-03T03:56:36.282755Z",
+            "name": "DOMAIN: bennett.net",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'bennett.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--4fb61a84-5b78-4768-9a6b-84d7d8d89e4f",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.283467Z",
+            "modified": "2026-05-03T03:56:36.283467Z",
+            "name": "DOMAIN: payne-lowe.com",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'payne-lowe.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--80df83ec-c7e1-44e2-9728-45395e877019",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.284166Z",
+            "modified": "2026-05-03T03:56:36.284166Z",
+            "name": "DOMAIN: washington.com",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'washington.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--05e1545f-a269-459d-8665-d7e5ea1e9a86",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.284766Z",
+            "modified": "2026-05-03T03:56:36.284766Z",
+            "name": "SHA256: bb395314338bfca9aa6d307041799300c9072f088507d64551c704f7aedf13d2",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = 'bb395314338bfca9aa6d307041799300c9072f088507d64551c704f7aedf13d2']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--fd759dbb-9f7f-42a6-9131-d9e29b1649c3",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.285457Z",
+            "modified": "2026-05-03T03:56:36.285457Z",
+            "name": "SHA256: f98f443d0db488e2052593c16ebbc2db9e94b910c5d6dd3490c64082830b6798",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = 'f98f443d0db488e2052593c16ebbc2db9e94b910c5d6dd3490c64082830b6798']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--7c3a75e5-20ec-4060-9cd1-0f9aa4335966",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.286394Z",
+            "modified": "2026-05-03T03:56:36.286394Z",
+            "name": "SHA1: b8383a2b61a57ae22652f755f55c6b993c34f76b",
+            "description": "Extracted sha1 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-1' = 'b8383a2b61a57ae22652f755f55c6b993c34f76b']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--dc23a404-8dfc-4dcc-8268-791a57b20bda",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.287166Z",
+            "modified": "2026-05-03T03:56:36.287166Z",
+            "name": "MD5: 3719da8b4591e3731c08f65bd4014ff1",
+            "description": "Extracted md5 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.MD5 = '3719da8b4591e3731c08f65bd4014ff1']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--5137569a-d87a-4faf-b3d8-2a196639dc25",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.287936Z",
+            "modified": "2026-05-03T03:56:36.287936Z",
+            "name": "DOMAIN: peck-griffith.com",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'peck-griffith.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--5bf56893-a35c-46de-bf55-4f52348af50c",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.288984Z",
+            "modified": "2026-05-03T03:56:36.288984Z",
+            "name": "SHA256: ff4cc7202e413313ad5757abeadbc12c2cedb6617b939c55d9cea23365a646d0",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = 'ff4cc7202e413313ad5757abeadbc12c2cedb6617b939c55d9cea23365a646d0']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--fcd20290-8b28-4924-9219-498704cbc29a",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.289694Z",
+            "modified": "2026-05-03T03:56:36.289694Z",
+            "name": "IPV4: 181.30.156.121",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '181.30.156.121']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--ac721726-eb82-4bec-8599-229a77e1f393",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.290452Z",
+            "modified": "2026-05-03T03:56:36.290452Z",
+            "name": "IPV4: 92.11.6.8",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '92.11.6.8']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--c5d3d540-6c2a-4583-aaf4-0882630b92f0",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.29106Z",
+            "modified": "2026-05-03T03:56:36.29106Z",
+            "name": "IPV4: 79.26.140.93",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '79.26.140.93']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--83baa195-8ac1-46c8-ac43-72f6644fd946",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.291625Z",
+            "modified": "2026-05-03T03:56:36.291625Z",
+            "name": "IPV4: 220.64.87.220",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '220.64.87.220']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--c25007fc-e018-44fa-bf90-fb641ef1bfd1",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.292163Z",
+            "modified": "2026-05-03T03:56:36.292163Z",
+            "name": "EMAIL: j05huajon35@example.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'j05huajon35@example.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--6ac09776-0181-4cb7-b5de-c85a94cbeb4d",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.292705Z",
+            "modified": "2026-05-03T03:56:36.292705Z",
+            "name": "EMAIL: b3nd3rk3nn37h@3xampl3.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'b3nd3rk3nn37h@3xampl3.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--48fa521a-f0b2-416f-85d3-721f2a941538",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.29326Z",
+            "modified": "2026-05-03T03:56:36.29326Z",
+            "name": "EMAIL: me4dowsbrittany@3x4mple.net",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'me4dowsbrittany@3x4mple.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--64a5d13c-c343-4b1e-b141-374dfb5e503c",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.293857Z",
+            "modified": "2026-05-03T03:56:36.293857Z",
+            "name": "EMAIL: c0ok3m1cha3l@ex4mple.net",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'c0ok3m1cha3l@ex4mple.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--62ce4723-f767-4966-9cc1-d61a509c1b38",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.294424Z",
+            "modified": "2026-05-03T03:56:36.294424Z",
+            "name": "EMAIL: l4n3sar4h@3xample.net",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'l4n3sar4h@3xample.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--810cc4d9-2d60-483c-bdea-96444aa334c7",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.295203Z",
+            "modified": "2026-05-03T03:56:36.295203Z",
+            "name": "SHA256: a4baf4660b93b38cea8dde2124cc2a515b4c544d7d9f138d640d2369e75bc742",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = 'a4baf4660b93b38cea8dde2124cc2a515b4c544d7d9f138d640d2369e75bc742']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--b4f53027-2321-4f3d-ad84-0d5c14738c45",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.295945Z",
+            "modified": "2026-05-03T03:56:36.295945Z",
+            "name": "EMAIL: cody64@example.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'cody64@example.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--9073bf03-c481-413e-9861-2d8e86d197b8",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.29654Z",
+            "modified": "2026-05-03T03:56:36.29654Z",
+            "name": "EMAIL: bromero@example.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'bromero@example.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--687f6431-43a6-43f2-a0ba-9799a4cb82f3",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.297094Z",
+            "modified": "2026-05-03T03:56:36.297094Z",
+            "name": "EMAIL: lmoore@example.net",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'lmoore@example.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--54b6d769-7424-4a8d-8952-aa86f400d775",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.297604Z",
+            "modified": "2026-05-03T03:56:36.297604Z",
+            "name": "EMAIL: smurray@example.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'smurray@example.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--286bc944-0a5e-4c82-8129-244c0c1110cb",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.298142Z",
+            "modified": "2026-05-03T03:56:36.298142Z",
+            "name": "SHA256: 4a662449e5a7025babbb41053efff9b049465f8948ee2582102ddbe439c45e5f",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = '4a662449e5a7025babbb41053efff9b049465f8948ee2582102ddbe439c45e5f']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--a04eb900-80ed-4fae-a4e9-3d37a487f73e",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.298782Z",
+            "modified": "2026-05-03T03:56:36.298782Z",
+            "name": "SHA1: c362ef33f3aaef3b266415f1b6e7a1b3dc472d9f",
+            "description": "Extracted sha1 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-1' = 'c362ef33f3aaef3b266415f1b6e7a1b3dc472d9f']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--8bbca556-98d9-46f4-8c31-a40a0e825920",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.299373Z",
+            "modified": "2026-05-03T03:56:36.299373Z",
+            "name": "MD5: db859db700a4c26a5128fdcdac57b4ad",
+            "description": "Extracted md5 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.MD5 = 'db859db700a4c26a5128fdcdac57b4ad']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--f391b237-c9c3-4fb2-9ae4-56bb05e7aef2",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.299876Z",
+            "modified": "2026-05-03T03:56:36.299876Z",
+            "name": "DOMAIN: fi7zpatrick-hor7on.com",
+            "description": "Extracted domain indicator from dark web intelligence collection",
+            "pattern": "[domain-name:value = 'fi7zpatrick-hor7on.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--62e1a980-dc23-4b03-ab2a-0e5fa9517b86",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.300328Z",
+            "modified": "2026-05-03T03:56:36.300328Z",
+            "name": "EMAIL: lmorrison@jabber.de",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'lmorrison@jabber.de']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--af44c70c-ecd9-4725-a333-88a45ef65349",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.300749Z",
+            "modified": "2026-05-03T03:56:36.300749Z",
+            "name": "EMAIL: x_patric@jabber.de",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'x_patric@jabber.de']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--7bdeda38-655b-425d-9281-df30329359e7",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.301169Z",
+            "modified": "2026-05-03T03:56:36.301169Z",
+            "name": "EMAIL: null_christ@jabber.de",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'null_christ@jabber.de']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--bde05c85-8e34-4c80-a33f-282dfb59fbce",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.301571Z",
+            "modified": "2026-05-03T03:56:36.301571Z",
+            "name": "SHA256: 686f16314dcff853e4caaaaa8836c4e2d60dcaa196630398196092aaf09c683e",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = '686f16314dcff853e4caaaaa8836c4e2d60dcaa196630398196092aaf09c683e']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--dc7481a2-d510-4cec-bfd6-b676f41e4110",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.302037Z",
+            "modified": "2026-05-03T03:56:36.302037Z",
+            "name": "SHA256: 04d0777fe3a64864c658f185d9a44c497a3ac8af500168a5b40909e391f196ca",
+            "description": "Extracted sha256 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.'SHA-256' = '04d0777fe3a64864c658f185d9a44c497a3ac8af500168a5b40909e391f196ca']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--7b8046e7-eff3-4660-bae7-f66bd44b2060",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.302611Z",
+            "modified": "2026-05-03T03:56:36.302611Z",
+            "name": "MD5: 21c4944b9eba52c3280ff9ddc66ab29d",
+            "description": "Extracted md5 indicator from dark web intelligence collection",
+            "pattern": "[file:hashes.MD5 = '21c4944b9eba52c3280ff9ddc66ab29d']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--5c45560b-ce7e-42de-bddb-25faba4a0767",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.303173Z",
+            "modified": "2026-05-03T03:56:36.303173Z",
+            "name": "EMAIL: laura09@example.com",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'laura09@example.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--03fa2303-9ac4-48f8-8e66-61145ea74cda",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.303605Z",
+            "modified": "2026-05-03T03:56:36.303605Z",
+            "name": "IPV4: 217.151.226.99",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '217.151.226.99']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--f4745ea7-bae2-46dd-b8f0-84a0ff844597",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.304021Z",
+            "modified": "2026-05-03T03:56:36.304021Z",
+            "name": "IPV4: 165.228.203.40",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '165.228.203.40']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--b18b4516-ed34-453d-8d35-2f654e472ece",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.304856Z",
+            "modified": "2026-05-03T03:56:36.304856Z",
+            "name": "IPV4: 189.84.76.66",
+            "description": "Extracted ipv4 indicator from dark web intelligence collection",
+            "pattern": "[ipv4-addr:value = '189.84.76.66']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--739275fb-6d0d-4b3a-b80f-afdc78722c19",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.305334Z",
+            "modified": "2026-05-03T03:56:36.305334Z",
+            "name": "EMAIL: jillrhodes@example.net",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'jillrhodes@example.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--42566787-df24-4bc3-b87e-2297f148c232",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.305766Z",
+            "modified": "2026-05-03T03:56:36.305766Z",
+            "name": "EMAIL: er1c51@example.org",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'er1c51@example.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--a40faa52-b413-4856-bd2c-c74d74928728",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.306208Z",
+            "modified": "2026-05-03T03:56:36.306208Z",
+            "name": "EMAIL: gabri3ll3cameron@example.org",
+            "description": "Extracted email indicator from dark web intelligence collection",
+            "pattern": "[email-addr:value = 'gabri3ll3cameron@example.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2026-05-03T03:56:36Z",
+            "labels": [
+                "malicious-activity"
+            ],
+            "confidence": 85
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.306691Z",
+            "modified": "2026-05-03T03:56:36.306691Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: hiring devs for new project\nAuthor: ghost_admin\n2024-11-15 07:40 UTC\nViews: 337\nExpires: 7 days\nWe are looking for experienced developers to join our team. Requirements:\n\n1. Strong C/C++ and Python sk",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--68ba7aef-06cb-4f21-86dd-0be9f9684236",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.306891Z",
+            "modified": "2026-05-03T03:56:36.306891Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: Malware C2 Infrastructure \u2014 November 2024\nAuthor: th3_hunt3r\n2024-11-14 21:05 UTC\nViews: 892\nExpires: 30 days\n# Active C2 Infrastructure \u2014 LockCrypt Ransomware Campaign\n# Last updated: 2024-11-14\n# Co",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--ef1186f6-ea87-46ae-b83d-2c7b65734195",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.307108Z",
+            "modified": "2026-05-03T03:56:36.307108Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: LockCrypt RaaS \u2014 Affiliate Program (70/30 Split)\nVendor:\nLockCrypt_Admin\nPrice: $500.00 deposit (refundable)\nCategory: Ransomware / Services\nListed: 2024-11-13 14:55 UTC\nSales: 23\nRating: \u2605\u2605\u2605\u2605\u2606 (4.5)\n",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--f2e22ee7-9fe9-4e9e-a672-c7ea7d12ccb4",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.307247Z",
+            "modified": "2026-05-03T03:56:36.307247Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: threat_intel_guy\nMember\nPosts: 234\n2024-11-14 19:15 UTC\nHeads up \u2014 someone is selling a zero-day for another VPN product in the marketplace section. Claims pre-auth RCE, $75k price tag. Could be legit",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--55a66584-0b5d-41f1-817b-987f0508c74e",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.307369Z",
+            "modified": "2026-05-03T03:56:36.307369Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: APT_watcher\nModerator\nPosts: 3,892\n2024-11-14 18:01 UTC\nUpdate: CISA just added CVE-2024-21887 to the KEV catalog. Federal agencies have 48 hours to patch or disconnect. This is going to get worse bef",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--faacf9e9-e9d1-4817-8fba-7675c88899cb",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.307491Z",
+            "modified": "2026-05-03T03:56:36.307491Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: [Forum Post] Thread: Ivanti Connect Secure mass exploitation \u2014 who's got working PoC?\nUser: threat_intel_guy (Member)\nPosts: Posts: 234\nDate: 2024-11-14 19:15 UTC\n\nHeads up \u2014 someone is selling a zero",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a75cf743-734c-48aa-84bf-9f2fe0d0a917",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.307612Z",
+            "modified": "2026-05-03T03:56:36.307612Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: [Marketplace Listing] LockCrypt RaaS \u2014 Affiliate Program (70/30 Split)\nVendor: Vendor:LockCrypt_Admin\nPrice: Price: $500.00 deposit (refundable)\nCategory: Category: Ransomware / Services\nDate: Listed:",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--53d99ef8-78c5-48b9-be4f-87eceabefb22",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.307734Z",
+            "modified": "2026-05-03T03:56:36.307734Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: We are looking for experienced developers to join our team. Requirements:\n\n1. Strong C/C++ and Python skills\n2. Experience with Windows kernel development\n3. Knowledge of AV/EDR evasion techniques (us",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--6989cac8-e423-47e0-ad19-3754fa81b335",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.30785Z",
+            "modified": "2026-05-03T03:56:36.30785Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: # Active C2 Infrastructure \u2014 LockCrypt Ransomware Campaign\n# Last updated: 2024-11-14\n# Confidence: HIGH\n# Share freely \u2014 TLP:WHITE\n\n## IP Addresses (C2 Servers)\n185.220.101.34\n185.220.101.35\n23.106.2",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--59040021-adec-4679-8360-41428c4fdc6b",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.307966Z",
+            "modified": "2026-05-03T03:56:36.307966Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: Malw4re 4nalysis report: NoEscap3 loader\nH4shes:\nMD5: 3719da8b4591e3731c08f65bd4014ff1\nSHA-1: b8383a2b61a57ae22652f755f55c6b993c34f76b\nSHA-256: f98f443d0db488e2052593c16ebbc2db9e94b910c5d6dd3490c64082",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--b3b425e0-19aa-4ae9-b2b5-ef21bc753ab8",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.308084Z",
+            "modified": "2026-05-03T03:56:36.308084Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: Sicherhe1tsl\u00fccke \u2014 Malware 4n4lysi5 report:L ockrypt loaedr\nHa5hes:\nMD5: db859db700a4c26a5128fdcdac57b4ad\nSHA-1: c362ef33f3aaef3b266415f1b6e7a1b3dc472d9f\n5HA-256: 4a662449e5a7025babbb41053efff9b049465",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--0a71ddce-a32f-449c-9afd-d2c4557954e2",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.308202Z",
+            "modified": "2026-05-03T03:56:36.308202Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: Malware analysis report: NoEscape loader\nHashes:\nMD5: b13cb7732d0092a09042f990ba417fd2\nSHA-1: d9cd2a4b5793613d8621790c81729deca85083cc\nSHA-256: 69bcb1273d4e63bc910ab552a4d654ac6c758445bbdab7b23658bb2f",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--3bc50709-dfb9-4414-8b77-5cb38908e428",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.30832Z",
+            "modified": "2026-05-03T03:56:36.30832Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: New Akira variant spotted in the wild\nMD5: 21c4944b9eba52c3280ff9ddc66ab29d\nSHA-256: 04d0777fe3a64864c658f185d9a44c497a3ac8af500168a5b40909e391f196ca\nDelivery: exploit kit\nC2 servers:\n217.151.226.99\n1",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--ceb67d31-2c57-4543-9250-694bc8ceeaaf",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.308437Z",
+            "modified": "2026-05-03T03:56:36.308437Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: Akira Ransomware-as-a-Service \u2014 Affiliate Program\nRevenue split: 80/20\nFeatures: AES-256+RSA-4096, Windows+Linux+ESXi support\nAdmin panel, auto-negotiation, BTC payment\nFUD against top EDR: Defender\nD",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--424047cd-186b-45f9-b002-7bcef9791da1",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.308553Z",
+            "modified": "2026-05-03T03:56:36.308553Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: Malwre analysis report: Royal loader\nHashes:\nMD5: 317f9f3b354a415781ba849cfcf1e71e\nSHA-1: 4f14b7d8a4f8257a41d3fa65a59bd742c24f7c05\nSHA-256: 72eb4fdba230524280555824e672750bf5b74ff929e7bbe2846d710a93e4",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--65f557dc-b24e-4a5e-8090-60895ba20ecb",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.308739Z",
+            "modified": "2026-05-03T03:56:36.308739Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: New LockCrypt variant spotted in the wild\nMD5: 9a5af146a630be8b895d3f7602888518\nSHA-256: 48c476735caed746c3bc658b446b5825392be3b3343dd5c11f70dfd55ee942c8\nDelivery: supply chain\nC2 servers:\n209.81.118.",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--5b84b554-db96-493f-8a55-ee82f3a47d30",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.308919Z",
+            "modified": "2026-05-03T03:56:36.308919Z",
+            "name": "Malware/Ransomware (classified)",
+            "description": "Classified as ransomware/malware: New Cl0p variant spotted in the wild\nMD5: ad969dcb506737f341cce70783eb8c2d\nSHA-256: dfa2b7b80ea91708a494e534571240983552b43195727a106299db94dba8fc72\nDelivery: supply chain\nC2 servers:\n70.48.7.138\n149.",
+            "malware_types": [
+                "ransomware"
+            ],
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--23b8e27e-9780-4d57-a531-fa275aae061d",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.309073Z",
+            "modified": "2026-05-03T03:56:36.309073Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--02ff11a3-835f-404d-be51-89af6dc36a0a",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--5e058816-d801-448d-8937-6beab9b7075c",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.309211Z",
+            "modified": "2026-05-03T03:56:36.309211Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--128fbdea-656a-460d-9036-90d4c1435eb5",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--82549036-0bdf-4407-80c5-e1a4035290fe",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.309335Z",
+            "modified": "2026-05-03T03:56:36.309335Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--c428f82b-2c77-4c9e-9262-3bd226655723",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ca1497f8-fa16-472a-94d7-7707f84ab325",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.309449Z",
+            "modified": "2026-05-03T03:56:36.309449Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--1816ce7f-fef4-412c-a149-e09996c4dd56",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--916e74b9-e4af-49f5-95e7-3cb193106046",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.30956Z",
+            "modified": "2026-05-03T03:56:36.30956Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--c9fa592f-36d6-41b9-89cd-8a7f7423935b",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--74f224f6-1d9c-43d5-8015-0a12be7dab94",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.309673Z",
+            "modified": "2026-05-03T03:56:36.309673Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--17631a2b-7853-4fb1-a552-890d60586b60",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3442b10b-4059-484d-a73a-c01e873250fd",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.309794Z",
+            "modified": "2026-05-03T03:56:36.309794Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--21e3d683-0526-4028-8930-47f8585934e1",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--987de17b-1a1d-4a48-9a3e-23ad8409515c",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.309901Z",
+            "modified": "2026-05-03T03:56:36.309901Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--aa16fcb3-85aa-4960-853f-a6c1e44a4547",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--a575859c-3068-4586-984d-4b47373556b8",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.310008Z",
+            "modified": "2026-05-03T03:56:36.310008Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--a2c0d6a7-7d90-4897-a31f-5bfcc7a5dd6b",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--a21b07ce-cdda-4b72-9f79-a52a7f73f997",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.310126Z",
+            "modified": "2026-05-03T03:56:36.310126Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--189980c3-e8d3-4923-bda9-3d90af1b606d",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--367eda91-556f-4ffd-955c-c82f2a84bca5",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.310235Z",
+            "modified": "2026-05-03T03:56:36.310235Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--54bdfc3c-14a9-422b-8959-25442cf6635e",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--36242c1e-e48c-4fc8-9d22-fab9f62014bc",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.310349Z",
+            "modified": "2026-05-03T03:56:36.310349Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--11adf3f8-fc86-40ab-abbd-2dff03e0cd8b",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--cedfb13b-9298-41e3-8215-7aadfe54bcfe",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.310466Z",
+            "modified": "2026-05-03T03:56:36.310466Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--5d2fd66b-07b6-41cc-81a7-f0fc1ca46387",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--eda6b4e5-c50a-4bce-9a23-6fd8f401c663",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.310573Z",
+            "modified": "2026-05-03T03:56:36.310573Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--7dd743aa-97b5-4076-b011-8cb361e64e3f",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--31ae8bf8-fa07-421a-a534-0d4ccf3fc520",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.310684Z",
+            "modified": "2026-05-03T03:56:36.310684Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--7d2ec7d3-b820-49e3-9ede-57266c94bda7",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c5e95f3a-f668-447e-a881-02234e54c582",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.310789Z",
+            "modified": "2026-05-03T03:56:36.310789Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--66465b81-9a17-48e5-a7ba-aaba279b61a3",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e351c559-3c69-4bc6-a55e-3f767f29bb39",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.310895Z",
+            "modified": "2026-05-03T03:56:36.310895Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--aa8f4d6c-5c26-4452-b0c8-6e38c8910a54",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--2114b533-0dfc-498f-b402-cc7e32a7f008",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.311Z",
+            "modified": "2026-05-03T03:56:36.311Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--8b2b0248-7e9c-4696-a9cb-f74825ac187a",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--b28b8d36-574e-4eee-9bea-20acdf988078",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.311107Z",
+            "modified": "2026-05-03T03:56:36.311107Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--cc2923ad-2413-4a9d-b691-62c611d0e838",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--72d68ac1-8621-4cf8-80e5-343384eaad94",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.311212Z",
+            "modified": "2026-05-03T03:56:36.311212Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--86f43886-a0a9-48f9-a605-0817697854f2",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--d9cbf44a-2258-466d-9d84-c8b2915b8de2",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.311316Z",
+            "modified": "2026-05-03T03:56:36.311316Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--24c526a5-f465-4e0d-bec2-be0510c3aa24",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--7b23ae75-33ae-4684-b9a4-d5551a01300e",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.311418Z",
+            "modified": "2026-05-03T03:56:36.311418Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--10949b0b-602b-4b4b-a7f5-1e84b38d4e7f",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--dac32617-7fcc-4f89-9a2f-3d202e027dec",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.311521Z",
+            "modified": "2026-05-03T03:56:36.311521Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--2dc89ade-f853-49f6-8f1c-6f9a30d786f0",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ba033868-47b8-4bac-8be7-a08b0c8dfb43",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.311624Z",
+            "modified": "2026-05-03T03:56:36.311624Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--47e8a973-d3ee-4a84-9edf-4d8b2c080ffe",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9a46383b-4191-416d-a5bc-97e79f9bf08a",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.311729Z",
+            "modified": "2026-05-03T03:56:36.311729Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--932002e5-dc95-4e6c-9688-35108d8af42d",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3b268021-fb93-4f6f-844c-0ec809e58063",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.311921Z",
+            "modified": "2026-05-03T03:56:36.311921Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--f8870f51-6cc2-4bc4-8415-2ec1976b71b3",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--5aa3cc7a-a336-4e59-8b1c-721beb1a6761",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.312072Z",
+            "modified": "2026-05-03T03:56:36.312072Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--edd4421f-da44-452b-8d48-12e6b798a30a",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--6fee55d9-5192-4cd7-9687-6af1b9fa2a7d",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.31219Z",
+            "modified": "2026-05-03T03:56:36.31219Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--9777c33a-29af-4c8a-a855-13aa661c37e1",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--663ef302-66c5-4e4e-9c8c-10561b056435",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.312297Z",
+            "modified": "2026-05-03T03:56:36.312297Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--9ba8fd90-98ec-43eb-85e2-08a2d59cbb7b",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--2623e73c-771e-4018-8c11-6deaac0944c6",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.312407Z",
+            "modified": "2026-05-03T03:56:36.312407Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--05e1545f-a269-459d-8665-d7e5ea1e9a86",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--36a3cbf1-96a7-4d54-acbe-207f4f1ad71c",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.312513Z",
+            "modified": "2026-05-03T03:56:36.312513Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--fd759dbb-9f7f-42a6-9131-d9e29b1649c3",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--be0eb04c-5339-4280-b397-a702fb640027",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.31262Z",
+            "modified": "2026-05-03T03:56:36.31262Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--7c3a75e5-20ec-4060-9cd1-0f9aa4335966",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--0f7598ed-2ebf-4181-a7cf-1c205af2734d",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.31273Z",
+            "modified": "2026-05-03T03:56:36.31273Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--dc23a404-8dfc-4dcc-8268-791a57b20bda",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--33ddbb38-3d4b-4847-876c-d031ea7023e5",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.312842Z",
+            "modified": "2026-05-03T03:56:36.312842Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--5bf56893-a35c-46de-bf55-4f52348af50c",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--574dae0d-3c35-4114-94c1-aa2ecacab23b",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.312954Z",
+            "modified": "2026-05-03T03:56:36.312954Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--810cc4d9-2d60-483c-bdea-96444aa334c7",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f91f5191-182f-4349-b01e-21f54f8ec5fa",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.313064Z",
+            "modified": "2026-05-03T03:56:36.313064Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--286bc944-0a5e-4c82-8129-244c0c1110cb",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--0b1e24b3-d3d5-4081-9dc8-f1adee028d0c",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.313172Z",
+            "modified": "2026-05-03T03:56:36.313172Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--a04eb900-80ed-4fae-a4e9-3d37a487f73e",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--64373221-be83-4577-81b7-0c4352ecf1ce",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.313276Z",
+            "modified": "2026-05-03T03:56:36.313276Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--8bbca556-98d9-46f4-8c31-a40a0e825920",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9d1e9bf4-9ca9-4ccd-8947-f80c1381decb",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.313383Z",
+            "modified": "2026-05-03T03:56:36.313383Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--bde05c85-8e34-4c80-a33f-282dfb59fbce",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--6d1c5c4f-0f34-460d-876c-52af89040c65",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.313488Z",
+            "modified": "2026-05-03T03:56:36.313488Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--dc7481a2-d510-4cec-bfd6-b676f41e4110",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--a4567d64-5aac-4fea-a5e1-f287be7db5df",
+            "created_by_ref": "identity--508c6b9d-e6e8-4db2-bf0e-ab4923dbabfb",
+            "created": "2026-05-03T03:56:36.313607Z",
+            "modified": "2026-05-03T03:56:36.313607Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--7b8046e7-eff3-4660-bae7-f66bd44b2060",
+            "target_ref": "malware--ed1f94ec-7475-44b3-9b22-4c75c3763759"
+        }
+    ]
+}

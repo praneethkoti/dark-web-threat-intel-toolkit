@@ -274,6 +274,114 @@ class TestEntityExtractor:
         assert len(org_names) >= 1
 
 
+# ── Domain Extraction Tests (regex + post-match filter) ───────────────────────
+
+class TestDomainExtraction:
+    """
+    Domain extraction is a hybrid: permissive regex that accepts any 2–24
+    char alpha TLD (so new gTLDs don't need a code change), plus a
+    post-match filter that rejects filenames, version strings, and domains
+    already absorbed by the email/URL patterns.
+
+    These tests lock in both the positive matches and the rejections — the
+    latter matter more in practice because false positives flood the IOC
+    explorer and waste analyst time.
+    """
+
+    def test_standalone_domain(self, extractor):
+        text = "C2 beacon observed at evil-corp.com yesterday."
+        values = {e.value for e in extractor.extract(text) if e.entity_type == "domain"}
+        assert "evil-corp.com" in values
+
+    def test_defanged_domain_normalizes(self, extractor):
+        """Defanged `[.]` should be normalized to `.` in the extracted value."""
+        text = "Attacker pivoted to malicious-site[.]onion last week."
+        values = {e.value for e in extractor.extract(text) if e.entity_type == "domain"}
+        assert "malicious-site.onion" in values
+
+    def test_multi_label_tld(self, extractor):
+        text = "Compromised account at target.co.uk detected."
+        values = {e.value for e in extractor.extract(text) if e.entity_type == "domain"}
+        assert "target.co.uk" in values
+
+    def test_new_gtld_without_allowlist(self, extractor):
+        """Hybrid regex accepts new gTLDs without an allowlist update."""
+        text = "Wallet resolver at dark-wallet.crypto was seen in traffic."
+        values = {e.value for e in extractor.extract(text) if e.entity_type == "domain"}
+        assert "dark-wallet.crypto" in values
+
+    def test_skips_domain_inside_email(self, extractor):
+        text = "Phishing from admin@evil-corp.com reported today."
+        domains = {e.value for e in extractor.extract(text) if e.entity_type == "domain"}
+        assert "evil-corp.com" not in domains
+
+    def test_skips_domain_inside_url(self, extractor):
+        text = "Payload served from http://bad.site/dropper was blocked."
+        domains = {e.value for e in extractor.extract(text) if e.entity_type == "domain"}
+        assert "bad.site" not in domains
+
+    def test_rejects_filename_exe(self, extractor):
+        text = "Sample malware.exe was detonated in the sandbox."
+        domains = {e.value for e in extractor.extract(text) if e.entity_type == "domain"}
+        assert not domains
+
+    def test_rejects_archive_zip(self, extractor):
+        text = "The leak was distributed as data-dump.zip via Telegram."
+        domains = {e.value for e in extractor.extract(text) if e.entity_type == "domain"}
+        assert not domains
+
+    def test_rejects_version_string(self, extractor):
+        """Numeric second-level label rules out version strings like 1.0.2."""
+        text = "Affected library is openssl 1.0.2 and earlier builds."
+        domains = {e.value for e in extractor.extract(text) if e.entity_type == "domain"}
+        assert not domains
+
+    def test_ipv4_does_not_match_as_domain(self, extractor):
+        """IPv4 addresses have numeric TLDs which fail the alpha requirement."""
+        text = "Beacon IP is 192.168.1.100 over TCP."
+        domains = {e.value for e in extractor.extract(text) if e.entity_type == "domain"}
+        assert not domains
+
+    def test_mixed_realistic_post(self, extractor):
+        """
+        End-to-end on a realistic post: standalone domains IN, domains
+        inside emails/URLs OUT, filenames and version strings OUT.
+        """
+        text = (
+            "BREACH: creds leaked from corp.com. Dumped to paste-site.io. "
+            "Attacker contact: admin@evil-corp.com. Payload http://bad.site/drop.exe. "
+            "Backup archive: stolen-data.zip. Version 2.1.4 affected."
+        )
+        domains = {e.value for e in extractor.extract(text) if e.entity_type == "domain"}
+        assert "corp.com" in domains
+        assert "paste-site.io" in domains
+        # Absorbed by email pattern, not domain
+        assert "evil-corp.com" not in domains
+        # Absorbed by URL pattern, not domain
+        assert "bad.site" not in domains
+        # Filename / archive / version
+        assert "stolen-data.zip" not in domains
+        assert "drop.exe" not in domains
+
+    def test_domain_metadata(self, extractor):
+        """Extracted domains carry high confidence and regex method."""
+        text = "Attacker C2 at evil-actor.su observed repeatedly."
+        domain_ents = [e for e in extractor.extract(text) if e.entity_type == "domain"]
+        assert len(domain_ents) == 1
+        ent = domain_ents[0]
+        assert ent.confidence == "high"
+        assert ent.extraction_method == "regex"
+        assert "evil-actor.su" in ent.context
+
+    def test_extract_type_applies_filter(self, extractor):
+        """extract_type('domain') must agree with extract() on what is a domain."""
+        text = "Visit corp.com for updates, grab patch.exe, pivot to evil-corp.com too."
+        domains = extractor.extract_type(text, "domain")
+        assert "corp.com" in domains
+        assert "evil-corp.com" in domains
+        assert "patch.exe" not in domains
+
+
 # ── DatabaseLoader Tests ──────────────────────────────────────────────────────
 
 class TestDatabaseLoader:

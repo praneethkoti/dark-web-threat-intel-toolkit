@@ -147,6 +147,75 @@ _RE_PGP = re.compile(
     r"\b[0-9A-Fa-f]{40}\b"
 )
 
+# Domains — permissive regex, post-match filter for non-domain patterns.
+#
+# Design rationale: threat actors register on new gTLDs constantly (.crypto,
+# .xyz, .onion, etc.), so a hardcoded IANA allowlist goes stale the moment
+# any new TLD ships. A raw permissive regex, on the other hand, floods the
+# IOC explorer with garbage like "report.pdf" or "version.2.0". The hybrid
+# approach: permissive match on structure, then `_is_likely_domain()` rejects
+# anything whose final label is a known non-domain extension or whose
+# second-level label looks like a version number.
+#
+# Accepts plain (evil-corp.com) and defanged (evil-corp[.]com) forms.
+_RE_DOMAIN = re.compile(
+    r"\b(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?(?:\[\.\]|\.))+"
+    r"[a-zA-Z]{2,24}\b"
+)
+
+# Final-label strings that structurally look like a TLD but are overwhelmingly
+# filenames or archive extensions in threat intel text. Keeping this list
+# short and conservative — we only reject extensions that have ~zero real
+# TLD usage. (e.g., .py IS a ccTLD for Paraguay, so it is NOT in this set.)
+_NON_DOMAIN_TLDS: frozenset[str] = frozenset({
+    # Executables & libraries
+    "exe", "dll", "msi", "msix", "bat", "cmd", "ps1", "sh", "bin",
+    # Archives
+    "zip", "rar", "7z", "tar", "gz", "bz2", "xz", "tgz", "tbz",
+    # Disk images & installers
+    "iso", "img", "dmg", "deb", "rpm", "apk", "ipa", "pkg",
+    # Transient & dev artefacts
+    "bak", "tmp", "old", "log", "swp", "lock", "pid",
+    # Config & structured data (never valid TLDs)
+    "ini", "cfg", "conf", "sql", "csv", "tsv",
+    # Compiled/intermediate code
+    "pdb", "obj", "class", "jar", "pyc", "pyo", "o",
+    # Fonts
+    "ttf", "otf", "woff", "woff2",
+})
+
+
+def _is_likely_domain(candidate: str) -> bool:
+    """
+    Post-match filter: reject candidates whose shape matches a domain but
+    whose semantics point elsewhere (filenames, version strings, etc.).
+
+    Called AFTER regex match + defang/lowercase normalization, so `candidate`
+    is already the normalized value (e.g. "evil-corp.com", not
+    "evil-corp[.]com").
+    """
+    labels = candidate.split(".")
+    if len(labels) < 2:
+        return False
+
+    tld = labels[-1]
+    if len(tld) < 2 or tld in _NON_DOMAIN_TLDS:
+        return False
+
+    # If the second-level label is purely numeric, this is almost certainly
+    # a version string ("1.2.beta") or IP-like noise, not a domain.
+    sld = labels[-2]
+    if sld.isdigit():
+        return False
+
+    # Reject candidates that are entirely digits+dots with a stray alpha TLD
+    # (unlikely to match the regex at all, but belt-and-braces).
+    if all(label.isdigit() for label in labels[:-1]):
+        return False
+
+    return True
+
+
 # Master pattern registry — ORDER MATTERS (longer matches first to prevent overlap)
 _REGEX_PATTERNS: list[tuple[str, re.Pattern, callable]] = [
     ("sha256",           _RE_SHA256,      _lower),
@@ -155,6 +224,7 @@ _REGEX_PATTERNS: list[tuple[str, re.Pattern, callable]] = [
     ("cve_id",           _RE_CVE,         lambda m: m.strip().upper()),
     ("email",            _RE_EMAIL,       _defang),
     ("url",              _RE_URL,         _defang),
+    ("domain",           _RE_DOMAIN,      lambda m: _defang(m).lower()),
     ("ipv6",             _RE_IPV6,        _identity),
     ("ipv4",             _RE_IPV4,        _identity),
     ("bitcoin_address",  _RE_BTC,         _identity),
@@ -216,10 +286,13 @@ class EntityExtractor:
                         continue
                     matched_spans.add((start, end))
 
-                # Skip domains that are part of emails/URLs
+                # Skip domains that are part of emails/URLs, or that look
+                # like filenames/version strings despite matching the regex.
                 if entity_type == "domain":
                     context_window = text[max(0, start - 5):end + 5]
                     if "@" in context_window or "://" in context_window:
+                        continue
+                    if not _is_likely_domain(normalized):
                         continue
 
                 key = (entity_type, normalized)
@@ -335,9 +408,10 @@ class EntityExtractor:
         """Quick extraction of a single entity type. Returns normalized values."""
         for etype, pattern, normalizer in _REGEX_PATTERNS:
             if etype == entity_type:
-                return list(
-                    dict.fromkeys(
-                        normalizer(m.group()) for m in pattern.finditer(text)
-                    )
-                )
+                values = (normalizer(m.group()) for m in pattern.finditer(text))
+                # Apply the same domain filter that extract() uses, so both
+                # paths agree on what is and isn't a domain.
+                if entity_type == "domain":
+                    values = (v for v in values if _is_likely_domain(v))
+                return list(dict.fromkeys(values))
         return []

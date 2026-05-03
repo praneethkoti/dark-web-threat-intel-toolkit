@@ -44,12 +44,21 @@ def _now_iso() -> str:
 
 
 def job_scrape_pastes() -> dict[str, Any]:
-    """Scrape paste sites and save raw data."""
+    """
+    Scrape paste sites and save raw data.
+
+    Source is configurable via ``scheduler.jobs.scrape_pastes.source`` in
+    settings.yaml. Defaults to ``"fixture"`` (local HTML, no network) so
+    out-of-the-box demos stay fully offline. Flip to ``"live"`` or
+    ``"all"`` for a real deployment.
+    """
     from scraper import PasteScraper
     started = _now_iso()
     try:
         scraper = PasteScraper()
-        items = scraper.scrape(source="fixture")
+        source = settings.get("scheduler.jobs.scrape_pastes.source", "fixture")
+        logger.debug("job_scrape_pastes: using source=%s", source)
+        items = scraper.scrape(source=source)
         if items:
             scraper.save_raw(items)
         logger.info("job_scrape_pastes: collected %d items", len(items))
@@ -62,12 +71,23 @@ def job_scrape_pastes() -> dict[str, Any]:
 
 
 def job_scrape_feeds() -> dict[str, Any]:
-    """Scrape threat intelligence feeds."""
+    """
+    Scrape threat intelligence feeds.
+
+    Feed name and per-run limit are configurable via
+    ``scheduler.jobs.scrape_feeds.feed`` and
+    ``scheduler.jobs.scrape_feeds.limit`` in settings.yaml. Defaults
+    preserve the original hardcoded behaviour (``feed="all"``,
+    ``limit=25``).
+    """
     from scraper import FeedScraper
     started = _now_iso()
     try:
         scraper = FeedScraper()
-        items = scraper.scrape(feed="all", limit=25)
+        feed = settings.get("scheduler.jobs.scrape_feeds.feed", "all")
+        limit = settings.get("scheduler.jobs.scrape_feeds.limit", 25)
+        logger.debug("job_scrape_feeds: using feed=%s, limit=%d", feed, limit)
+        items = scraper.scrape(feed=feed, limit=limit)
         if items:
             scraper.save_raw(items)
         logger.info("job_scrape_feeds: collected %d items", len(items))

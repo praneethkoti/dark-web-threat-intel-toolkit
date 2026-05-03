@@ -150,6 +150,11 @@ class Enricher:
             return []
         return self.enrich_cves(cve_ids, skip_cached)
 
+    def close(self) -> None:
+        """Release resources. Enricher holds only an in-memory cache, so this
+        is a no-op — but Pipeline.close() expects this method to exist."""
+        self._cache.clear()
+
     # -- NVD API -----------------------------------------------------------
 
     def _fetch_cve(self, cve_id: str) -> CVEEnrichmentResult | None:

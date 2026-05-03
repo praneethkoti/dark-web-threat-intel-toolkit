@@ -238,6 +238,251 @@ class TestFeedScraper:
 
 # ── Base Class Tests ──────────────────────────────────────────────────────────
 
+# ── SeleniumScraper Tests ─────────────────────────────────────────────────────
+
+
+class TestSeleniumScraper:
+    """
+    Structural + offline tests for SeleniumScraper.
+
+    The expensive bits — actually launching Chrome and driving file:// URLs
+    — are gated behind ``RUN_SELENIUM_TESTS=1`` so CI without a Chrome
+    install stays green. The structural tests below run unconditionally
+    and prove:
+
+      * SeleniumScraper inherits BaseScraper and exposes the abstract
+        ``scrape`` / ``parse`` methods.
+      * ``parse()`` correctly turns the bundled paste/forum/listing
+        HTML into ``ScrapedItem`` instances *without* invoking Chrome.
+        This works because parse() takes raw HTML, not a driver — the
+        same trick PasteScraper uses for testability.
+      * ``scrape(source="url")`` without a URL raises ``ValueError``.
+      * An unknown source string is rejected.
+    """
+
+    def test_inherits_base_scraper(self):
+        from scraper.selenium_scraper import SeleniumScraper
+        ss = SeleniumScraper()
+        assert isinstance(ss, BaseScraper)
+        assert ss.source_name == "selenium"
+
+    def test_in_public_api(self):
+        """Should be importable from the scraper package directly."""
+        from scraper import SeleniumScraper as PublicSelenium
+        from scraper.selenium_scraper import SeleniumScraper as InternalSelenium
+        assert PublicSelenium is InternalSelenium
+
+    def test_parse_handles_paste_fixture(self):
+        """parse() on the bundled paste_dump.html yields paste items."""
+        from scraper.selenium_scraper import SeleniumScraper
+        ss = SeleniumScraper()
+        fixture_path = ss._fixtures_dir / "paste_dump.html"
+        html = fixture_path.read_text(encoding="utf-8")
+
+        items = ss.parse(html, url=f"file://{fixture_path}")
+        assert len(items) >= 1
+        # Source name should be tagged with the matched selector type
+        assert all(item.source_name == "selenium_paste" for item in items)
+        # Content should contain real paste text, not just whitespace
+        assert any(len(item.content) > 100 for item in items)
+        # Metadata should record how the item was produced
+        assert items[0].metadata["rendered_via"] == "selenium_chrome"
+        assert items[0].metadata["selector"] == "div.paste"
+
+    def test_parse_handles_forum_fixture(self):
+        """parse() on forum_thread.html should match div.post and tag items as forum."""
+        from scraper.selenium_scraper import SeleniumScraper
+        ss = SeleniumScraper()
+        fixture_path = ss._fixtures_dir / "forum_thread.html"
+        if not fixture_path.exists():
+            pytest.skip("forum_thread.html not present")
+        html = fixture_path.read_text(encoding="utf-8")
+
+        items = ss.parse(html, url=f"file://{fixture_path}")
+        assert len(items) >= 1
+        # Should pick up the div.post selector, not fall through to body
+        assert all(item.source_name == "selenium_forum" for item in items), (
+            f"Expected all items tagged 'selenium_forum'; got {[i.source_name for i in items]}"
+        )
+
+    def test_parse_handles_marketplace_fixture(self):
+        """parse() on marketplace_listing.html yields listing-tagged items."""
+        from scraper.selenium_scraper import SeleniumScraper
+        ss = SeleniumScraper()
+        fixture_path = ss._fixtures_dir / "marketplace_listing.html"
+        if not fixture_path.exists():
+            pytest.skip("marketplace_listing.html not present")
+        html = fixture_path.read_text(encoding="utf-8")
+
+        items = ss.parse(html, url=f"file://{fixture_path}")
+        assert len(items) >= 1
+
+    def test_parse_falls_back_to_body(self):
+        """Pages without our known selectors should fall back to <body>."""
+        from scraper.selenium_scraper import SeleniumScraper
+        ss = SeleniumScraper()
+        html = """
+        <html><body>
+          <p>This is a generic page with enough content to pass the length filter.</p>
+          <p>Threat intel sometimes appears on pages without our preferred markup.</p>
+        </body></html>
+        """
+        items = ss.parse(html, url="http://example.com/generic")
+        assert len(items) == 1
+        assert items[0].source_name == "selenium_page"
+        assert items[0].metadata["selector"] == "body"
+
+    def test_parse_skips_too_short_content(self):
+        """Empty bodies and shells under 20 chars get filtered out."""
+        from scraper.selenium_scraper import SeleniumScraper
+        ss = SeleniumScraper()
+        items = ss.parse("<html><body>tiny</body></html>", url="http://x")
+        assert items == []
+
+    def test_url_mode_requires_url(self):
+        """scrape(source='url') without a url= argument should raise."""
+        from scraper.selenium_scraper import SeleniumScraper
+        ss = SeleniumScraper()
+        with pytest.raises(ValueError, match="url"):
+            ss.scrape(source="url")
+
+    def test_unknown_source_raises(self):
+        from scraper.selenium_scraper import SeleniumScraper
+        ss = SeleniumScraper()
+        with pytest.raises(ValueError, match="Unknown source"):
+            ss.scrape(source="banana")
+
+    def test_per_fixture_wait_selector_used(self):
+        """
+        _scrape_fixtures should look up the right selector per fixture
+        instead of waiting on a global default. Otherwise non-paste
+        fixtures burn the full timeout. Locks in the
+        ``FIXTURE_WAIT_SELECTORS`` map.
+        """
+        from scraper.selenium_scraper import SeleniumScraper
+
+        recorded: list[tuple[str, str]] = []
+
+        class FakeDriver:
+            page_source = "<html><body>x</body></html>"
+            def __init__(self):
+                self.last_url = None
+            def get(self, url):
+                self.last_url = url
+            def set_page_load_timeout(self, n):
+                pass
+            def quit(self):
+                pass
+
+        class FakeSelenium(SeleniumScraper):
+            def _make_driver(self):
+                return FakeDriver()
+            def _wait_for_selector(self, driver, selector):
+                # Record (filename being loaded, selector requested)
+                fname = (driver.last_url or "").rsplit("/", 1)[-1]
+                recorded.append((fname, selector))
+
+        ss = FakeSelenium()
+        ss.scrape(source="fixture")
+
+        # Convert to dict so test doesn't depend on glob ordering
+        per_file = dict(recorded)
+        assert per_file.get("paste_dump.html") == "div.paste", per_file
+        assert per_file.get("forum_thread.html") == "div.post", per_file
+        assert per_file.get("marketplace_listing.html") == "div.listing", per_file
+
+    def test_explicit_wait_for_overrides_per_fixture_map(self):
+        """
+        Passing ``wait_for=...`` to ``scrape()`` should force that single
+        selector on every fixture (escape hatch for power users).
+        """
+        from scraper.selenium_scraper import SeleniumScraper
+
+        recorded: list[str] = []
+
+        class FakeDriver:
+            page_source = "<html><body>x</body></html>"
+            def get(self, url): pass
+            def set_page_load_timeout(self, n): pass
+            def quit(self): pass
+
+        class FakeSelenium(SeleniumScraper):
+            def _make_driver(self):
+                return FakeDriver()
+            def _wait_for_selector(self, driver, selector):
+                recorded.append(selector)
+
+        ss = FakeSelenium()
+        ss.scrape(source="fixture", wait_for="div.custom-thing")
+
+        assert recorded, "expected at least one wait call"
+        assert all(s == "div.custom-thing" for s in recorded), recorded
+
+    def test_make_driver_overridable(self):
+        """
+        A subclass must be able to inject a fake driver — that's the
+        seam tests use to drive scrape() without launching real Chrome.
+        Locking this down so a future refactor doesn't break it.
+        """
+        from scraper.selenium_scraper import SeleniumScraper
+
+        called = {"made": 0, "quit": 0}
+
+        class FakeDriver:
+            page_source = """
+            <html><body>
+              <div class="paste">
+                <pre>Fake paste content with enough length to be kept</pre>
+              </div>
+            </body></html>
+            """
+            def get(self, url):
+                pass
+            def set_page_load_timeout(self, n):
+                pass
+            def quit(self):
+                called["quit"] += 1
+
+        class FakeSelenium(SeleniumScraper):
+            def _make_driver(self):
+                called["made"] += 1
+                return FakeDriver()
+            def _wait_for_selector(self, driver, selector):
+                pass  # no-op — driver has no wait support
+
+        items = FakeSelenium().scrape(source="url", url="http://example.com")
+        assert called["made"] == 1
+        assert called["quit"] == 1
+        assert len(items) == 1
+        assert items[0].source_name == "selenium_paste"
+
+    @pytest.mark.skipif(
+        not os.getenv("RUN_SELENIUM_TESTS"),
+        reason="Live Chrome tests disabled — set RUN_SELENIUM_TESTS=1 and "
+               "ensure Chrome is installed",
+    )
+    def test_real_chrome_drives_fixtures(self):
+        """
+        End-to-end: launch real headless Chrome, drive it against the
+        bundled fixture HTML files via file:// URLs, parse the rendered
+        DOM. Gated because it requires Chrome on the host.
+        """
+        from scraper.selenium_scraper import SeleniumScraper
+        ss = SeleniumScraper()
+        items = ss.scrape(source="fixture")
+        assert len(items) >= 1, (
+            "Expected at least one item from the bundled fixtures via real Chrome"
+        )
+        # Items should carry the rendering provenance
+        assert all(
+            item.metadata.get("rendered_via") == "selenium_chrome"
+            for item in items
+        )
+
+
+# ── BaseScraper Tests ─────────────────────────────────────────────────────────
+
+
 class TestBaseScraper:
     def test_cannot_instantiate_directly(self):
         """BaseScraper is abstract — direct instantiation should fail."""

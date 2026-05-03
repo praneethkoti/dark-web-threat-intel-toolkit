@@ -57,6 +57,13 @@ scraper:
       enabled: true
       fixtures_dir: "scraper/fixtures"
 
+  # Headless-browser scraper (Selenium + Chrome). Used for JS-rendered
+  # threat pages where requests-only scraping returns an empty shell.
+  selenium:
+    headless: true
+    page_load_timeout_seconds: 30
+    wait_timeout_seconds: 10        # Max wait for the target CSS selector
+
 # ── Pipeline Settings ─────────────────────────────────────────────────────────
 pipeline:
   cleaning:
@@ -124,6 +131,14 @@ classifier:
   mitre:
     mapping_path: "config/mitre_attack_mapping.yaml"
 
+  distilbert:
+    model_name: "distilbert-base-uncased"
+    max_length: 512
+    epochs: 3
+    batch_size: 16
+    learning_rate: 2.0e-5
+    checkpoint_dir: "data/models/distilbert_finetuned/"
+
   synthetic_data:
     num_samples: 2500
     output_path: "data/synthetic_training_data.json"
@@ -159,7 +174,7 @@ export:
 
 # ── AI Summarizer Settings ────────────────────────────────────────────────────
 ai_summarizer:
-  default_backend: "openai"       # "openai" or "local"
+  default_backend: "openai"       # "openai", "anthropic", or "local"
   prompt_templates_dir: "ai_summarizer/prompt_templates"
 
   openai:
@@ -191,9 +206,19 @@ scheduler:
     scrape_pastes:
       trigger: "interval"
       minutes: 30
+      # Which data source the paste-scrape job should pull from.
+      #   "fixture" — local HTML fixtures only (default; fully offline, demo-safe)
+      #   "live"    — only public paste services (dpaste.org, etc.)
+      #   "all"     — fixtures + live sources
+      source: "fixture"
     scrape_feeds:
       trigger: "interval"
       hours: 6
+      # Which threat feeds to pull. Options: "all", "nvd", "otx",
+      # "urlhaus", "bazaar". "all" pulls every configured feed.
+      feed: "all"
+      # Per-run item cap for each feed.
+      limit: 25
     process_pipeline:
       trigger: "interval"
       minutes: 35                 # Runs shortly after scrape

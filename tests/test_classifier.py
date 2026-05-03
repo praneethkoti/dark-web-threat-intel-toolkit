@@ -383,6 +383,163 @@ class TestTransformerClassifier:
         assert len(results) == 2
 
 
+# ── DistilBertClassifier Tests ────────────────────────────────────────────────
+
+class TestDistilBertClassifier:
+    """
+    Structural tests run unconditionally (no GPU/transformers required).
+    Fine-tune tests are gated behind RUN_FINE_TUNE_TESTS=1 because even a
+    1-epoch run on tiny data takes 30-120 seconds on CPU.
+    """
+
+    def test_instantiates_without_torch(self):
+        # Import must succeed before torch/transformers are even imported
+        from classifier.bert_classifier import DistilBertClassifier
+        clf = DistilBertClassifier()
+        assert clf is not None
+        assert not clf.is_loaded
+
+    def test_config_reads_distilbert_block(self):
+        from classifier.bert_classifier import DistilBertClassifier
+        clf = DistilBertClassifier()
+        assert clf._model_name == "distilbert-base-uncased"
+        assert clf._max_length == 512
+        assert clf._default_epochs == 3
+        assert clf._default_batch_size == 16
+        assert abs(clf._default_lr - 2e-5) < 1e-9
+        assert "distilbert_finetuned" in clf._checkpoint_dir
+
+    def test_config_override_via_dict(self):
+        from classifier.bert_classifier import DistilBertClassifier
+        clf = DistilBertClassifier(config={
+            "model_name": "distilbert-base-multilingual-cased",
+            "max_length": 256,
+            "epochs": 5,
+        })
+        assert clf._model_name == "distilbert-base-multilingual-cased"
+        assert clf._max_length == 256
+        assert clf._default_epochs == 5
+
+    def test_load_from_checkpoint_missing_path_raises(self):
+        """FileNotFoundError must fire BEFORE any heavy import."""
+        from classifier.bert_classifier import DistilBertClassifier
+        clf = DistilBertClassifier()
+        with pytest.raises(FileNotFoundError, match="checkpoint not found"):
+            clf.load_from_checkpoint("/tmp/nonexistent_checkpoint_path_xyz")
+
+    def test_classify_without_load_raises(self):
+        from classifier.bert_classifier import DistilBertClassifier
+        clf = DistilBertClassifier()
+        with pytest.raises(RuntimeError, match="No model loaded"):
+            clf.classify("some threat post text")
+
+    def test_classify_batch_without_load_raises(self):
+        from classifier.bert_classifier import DistilBertClassifier
+        clf = DistilBertClassifier()
+        with pytest.raises(RuntimeError, match="No model loaded"):
+            clf.classify_batch(["text one", "text two"])
+
+    def test_categories_property(self):
+        from classifier.bert_classifier import DistilBertClassifier
+        clf = DistilBertClassifier()
+        cats = clf.categories
+        assert len(cats) == 6
+        assert "data_breach" in cats
+        assert "zero_day" in cats
+
+    def test_exported_from_package(self):
+        from classifier import DistilBertClassifier
+        clf = DistilBertClassifier()
+        assert clf is not None
+
+    # ── Fine-tune tests (slow — require GPU for reasonable speed) ─────────
+
+    @pytest.mark.skipif(
+        not os.getenv("RUN_FINE_TUNE_TESTS"),
+        reason="Fine-tune tests disabled — set RUN_FINE_TUNE_TESTS=1 (slow on CPU)",
+    )
+    def test_fine_tune_small_dataset(self, tmp_path):
+        from classifier.bert_classifier import DistilBertClassifier
+        from classifier.synthetic_data_generator import generate_synthetic_data
+        data = generate_synthetic_data(num_samples=24, balanced=True, seed=42,
+                                       output_path=tmp_path / "s.json")
+        clf = DistilBertClassifier(config={"epochs": 1, "batch_size": 8})
+        metrics = clf.fine_tune(data, output_dir=str(tmp_path / "ckpt"))
+        assert "accuracy" in metrics
+        assert "f1" in metrics
+        assert metrics["epochs"] == 1
+        assert metrics["training_samples"] == 24
+        assert 0.0 <= metrics["accuracy"] <= 1.0
+
+    @pytest.mark.skipif(
+        not os.getenv("RUN_FINE_TUNE_TESTS"),
+        reason="Fine-tune tests disabled — set RUN_FINE_TUNE_TESTS=1",
+    )
+    def test_classify_after_fine_tune(self, tmp_path):
+        from classifier.bert_classifier import DistilBertClassifier
+        from classifier.synthetic_data_generator import generate_synthetic_data
+        data = generate_synthetic_data(num_samples=24, balanced=True, seed=42,
+                                       output_path=tmp_path / "s.json")
+        clf = DistilBertClassifier(config={"epochs": 1, "batch_size": 8})
+        clf.fine_tune(data, output_dir=str(tmp_path / "ckpt"))
+        result = clf.classify("Selling credential dump 50K email:password pairs")
+        assert result["category"] in clf.categories
+        assert 0.0 <= result["confidence"] <= 1.0
+        assert result["model"] == "distilbert_finetuned"
+        assert len(result["scores"]) == 6
+
+    @pytest.mark.skipif(
+        not os.getenv("RUN_FINE_TUNE_TESTS"),
+        reason="Fine-tune tests disabled — set RUN_FINE_TUNE_TESTS=1",
+    )
+    def test_classify_batch_after_fine_tune(self, tmp_path):
+        from classifier.bert_classifier import DistilBertClassifier
+        from classifier.synthetic_data_generator import generate_synthetic_data
+        data = generate_synthetic_data(num_samples=24, balanced=True, seed=42,
+                                       output_path=tmp_path / "s.json")
+        clf = DistilBertClassifier(config={"epochs": 1, "batch_size": 8})
+        clf.fine_tune(data, output_dir=str(tmp_path / "ckpt"))
+        texts = [
+            "ransomware encrypts files demands payment",
+            "selling zero day exploit for enterprise VPN",
+            "credit card dump with CVV fullz",
+            "new APT group targeting finance sector",
+            "leaked database 100K credentials",
+        ]
+        results = clf.classify_batch(texts)
+        assert len(results) == 5
+        for r in results:
+            assert r["category"] in clf.categories
+            assert r["model"] == "distilbert_finetuned"
+            assert 0.0 <= r["confidence"] <= 1.0
+
+    @pytest.mark.skipif(
+        not os.getenv("RUN_FINE_TUNE_TESTS"),
+        reason="Fine-tune tests disabled — set RUN_FINE_TUNE_TESTS=1",
+    )
+    def test_checkpoint_roundtrip(self, tmp_path):
+        """fine_tune → save → load_from_checkpoint → classify must be consistent."""
+        from classifier.bert_classifier import DistilBertClassifier
+        from classifier.synthetic_data_generator import generate_synthetic_data
+        data = generate_synthetic_data(num_samples=24, balanced=True, seed=42,
+                                       output_path=tmp_path / "s.json")
+        ckpt = str(tmp_path / "ckpt")
+
+        clf1 = DistilBertClassifier(config={"epochs": 1, "batch_size": 8})
+        clf1.fine_tune(data, output_dir=ckpt)
+        result1 = clf1.classify("ransomware with encryption demands ransom payment")
+
+        # Load into a fresh instance — should produce same top category
+        clf2 = DistilBertClassifier(config={"epochs": 1, "batch_size": 8})
+        clf2.load_from_checkpoint(ckpt)
+        result2 = clf2.classify("ransomware with encryption demands ransom payment")
+
+        assert result2["category"] in clf2.categories
+        assert result2["model"] == "distilbert_finetuned"
+        # Same model weights → same prediction
+        assert result1["category"] == result2["category"]
+
+
 # ── Integration: Full classification pipeline ─────────────────────────────────
 
 class TestClassificationPipeline:
