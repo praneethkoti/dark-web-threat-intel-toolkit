@@ -582,35 +582,71 @@ def dashboard(ctx: click.Context, port: int | None) -> None:
 def full_pipeline(ctx: click.Context, source: str, skip_enrichment: bool,
                   skip_export: bool, skip_report: bool) -> None:
     """🚀  Run the complete pipeline: scrape → process → classify → analyze → export."""
+    import time as _time
+    from pipeline.db_loader import DatabaseLoader
+
     console.print(Panel("[bold]Full Pipeline Execution[/]", style="cyan"))
+    t0 = _time.perf_counter()
+    step_times: list[tuple[str, float]] = []
+
+    def _step(n: int, label: str) -> float:
+        console.print(f"\n[bold cyan]Step {n}/5:[/] {label}")
+        return _time.perf_counter()
 
     # Step 1: Scrape
-    console.print("\n[bold cyan]Step 1/5:[/] Scraping...")
+    ts = _step(1, "Scraping...")
     ctx.invoke(scrape, source=source, limit=100, save=True)
+    step_times.append(("Scrape", _time.perf_counter() - ts))
 
     # Step 2: Process
-    console.print("\n[bold cyan]Step 2/5:[/] Processing pipeline...")
+    ts = _step(2, "Processing pipeline...")
     ctx.invoke(process, input_dir="data/raw", skip_enrichment=skip_enrichment, skip_ner=True)
+    step_times.append(("Process", _time.perf_counter() - ts))
 
     # Step 3: Classify
-    console.print("\n[bold cyan]Step 3/5:[/] Classifying...")
+    ts = _step(3, "Classifying...")
     ctx.invoke(classify, model="keyword", input_filter="unclassified", export_mitre=True)
+    step_times.append(("Classify", _time.perf_counter() - ts))
 
     # Step 4: Analyze + Report
+    ts = _step(4, "Analyzing and generating report..." if not skip_report else "Skipping report generation.")
     if not skip_report:
-        console.print("\n[bold cyan]Step 4/5:[/] Analyzing and generating report...")
         ctx.invoke(analyze, period="30d", output="both", report_format="both")
-    else:
-        console.print("\n[bold cyan]Step 4/5:[/] Skipping report generation.")
+    step_times.append(("Analyze", _time.perf_counter() - ts))
 
     # Step 5: Export
+    ts = _step(5, "Exporting IOCs..." if not skip_export else "Skipping export.")
     if not skip_export:
-        console.print("\n[bold cyan]Step 5/5:[/] Exporting IOCs...")
         ctx.invoke(export, export_format="all")
-    else:
-        console.print("\n[bold cyan]Step 5/5:[/] Skipping export.")
+    step_times.append(("Export", _time.perf_counter() - ts))
 
-    console.print(Panel("[bold green]✅ Full pipeline complete![/]", style="green"))
+    # ── Final summary panel ───────────────────────────────────────────
+    total = _time.perf_counter() - t0
+    db = DatabaseLoader()
+    db.init_schema()
+    post_count   = db.get_post_count()
+    entity_count = db.get_entity_count()
+    db.close()
+
+    summary_table = Table(show_header=False, box=None, padding=(0, 2))
+    summary_table.add_column("Metric", style="bold white")
+    summary_table.add_column("Value",  style="bold green", justify="right")
+    summary_table.add_row("Posts in DB",      str(post_count))
+    summary_table.add_row("IOCs extracted",   str(entity_count))
+    summary_table.add_row("", "")
+    for step_name, elapsed in step_times:
+        summary_table.add_row(f"  {step_name}", f"{elapsed:.1f}s")
+    summary_table.add_row("", "")
+    summary_table.add_row("Total time", f"[bold]{total:.1f}s[/]")
+
+    console.print()
+    console.print(Panel(
+        summary_table,
+        title="[bold green]Pipeline Complete",
+        border_style="green",
+        padding=(1, 2),
+    ))
+    console.print(f"\n[dim]Tip: run [bold]python cli.py dashboard[/] to explore results visually.[/]")
 
 
 # ── Generate synthetic data command ───────────────────────────────────────────
@@ -731,6 +767,81 @@ def db_info() -> None:
 
     db.close()
     console.print(table)
+
+
+# ── DB Cleanup command ────────────────────────────────────────────────────────
+
+@cli.command("db-cleanup")
+@click.option(
+    "--older-than", "older_than", default="90d",
+    help="Delete posts older than this (e.g. 30d, 7d, 365d). Default: 90d.",
+)
+@click.option("--dry-run", "dry_run", is_flag=True,
+              help="Show what would be deleted without deleting anything.")
+@click.pass_context
+def db_cleanup(ctx: click.Context, older_than: str, dry_run: bool) -> None:
+    """🗑️  Prune posts (and their entities/classifications) older than N days."""
+    import re as _re
+    from datetime import datetime, timedelta, timezone
+    from pipeline.db_loader import DatabaseLoader
+
+    # Parse "90d" → 90
+    match = _re.fullmatch(r"(\d+)d", older_than.strip())
+    if not match:
+        console.print(f"[red]Invalid --older-than value:[/] {older_than!r}. Use format like 30d, 90d, 365d.")
+        raise SystemExit(1)
+    days = int(match.group(1))
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat()
+
+    if ctx.obj.get("dry_run") or dry_run:
+        # Count only — don't delete
+        db = DatabaseLoader()
+        db.init_schema()
+        cursor = db.conn.execute(
+            "SELECT COUNT(*) FROM raw_posts WHERE scraped_at < ?", (cutoff,)
+        )
+        count = cursor.fetchone()[0]
+        db.close()
+        console.print(
+            f"[yellow]DRY RUN:[/] {count} posts older than {days} days "
+            f"(before {cutoff[:10]}) would be deleted."
+        )
+        return
+
+    db = DatabaseLoader()
+    db.init_schema()
+
+    # Count before deletion for the summary
+    cursor = db.conn.execute(
+        "SELECT COUNT(*) FROM raw_posts WHERE scraped_at < ?", (cutoff,)
+    )
+    post_count = cursor.fetchone()[0]
+
+    if post_count == 0:
+        console.print(f"[green]Nothing to clean up.[/] No posts older than {days} days.")
+        db.close()
+        return
+
+    # SQLite foreign keys may not be enforced; delete child rows first
+    db.conn.execute(
+        "DELETE FROM classifications WHERE post_id IN "
+        "(SELECT id FROM raw_posts WHERE scraped_at < ?)", (cutoff,)
+    )
+    db.conn.execute(
+        "DELETE FROM entities WHERE post_id IN "
+        "(SELECT id FROM raw_posts WHERE scraped_at < ?)", (cutoff,)
+    )
+    db.conn.execute("DELETE FROM raw_posts WHERE scraped_at < ?", (cutoff,))
+    db.conn.commit()
+
+    # VACUUM to reclaim space
+    db.conn.execute("VACUUM")
+    db.close()
+
+    console.print(
+        f"[green]Cleanup complete.[/] Deleted [bold]{post_count}[/] posts "
+        f"(and their entities/classifications) older than {days} days."
+    )
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────

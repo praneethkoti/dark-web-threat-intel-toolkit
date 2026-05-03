@@ -33,9 +33,13 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 from apscheduler.triggers.cron import CronTrigger
 
+from rich.console import Console
+from rich.table import Table
+
 from config import settings, setup_logging, PROJECT_ROOT as PROJ_ROOT
 
 logger = logging.getLogger(__name__)
+console = Console()
 
 # ── Job functions ─────────────────────────────────────────────────────────────
 
@@ -336,12 +340,12 @@ class ToolkitScheduler:
     def start(self) -> None:
         """Start the scheduler (blocking mode — runs until interrupted)."""
         logger.info("Starting scheduler daemon...")
-        print("\n🕐 Threat Intel Scheduler started. Press Ctrl+C to stop.\n")
+        console.print("\n[bold cyan]Threat Intel Scheduler started.[/] Press Ctrl+C to stop.\n")
         self.status()
-        print()
+        console.print()
 
         def _shutdown(signum, frame):
-            print("\n⏹ Shutting down scheduler...")
+            console.print("\n[yellow]Shutting down scheduler...[/]")
             self._scheduler.shutdown(wait=False)
             sys.exit(0)
 
@@ -368,15 +372,16 @@ class ToolkitScheduler:
         jobs = self._scheduler.get_jobs()
         results = []
 
-        print("📋 Scheduled Jobs:")
-        print(f"{'ID':<20} {'Name':<25} {'Next Run':<30} {'Trigger'}")
-        print("-" * 100)
+        table = Table(title="Scheduled Jobs", show_lines=True)
+        table.add_column("ID", style="cyan", min_width=20)
+        table.add_column("Name", style="white", min_width=25)
+        table.add_column("Next Run", style="green", min_width=30)
+        table.add_column("Trigger", style="dim")
 
         for job in jobs:
-            # next_run_time is only set after scheduler.start(); use getattr
             next_run = str(getattr(job, "next_run_time", None) or "pending")
             trigger_str = str(job.trigger)
-            print(f"{job.id:<20} {job.name:<25} {next_run:<30} {trigger_str}")
+            table.add_row(job.id, job.name, next_run, trigger_str)
             results.append({
                 "id": job.id,
                 "name": job.name,
@@ -384,21 +389,22 @@ class ToolkitScheduler:
                 "trigger": trigger_str,
             })
 
-        print(f"\nTotal: {len(jobs)} jobs")
+        console.print(table)
+        console.print(f"[dim]Total: {len(jobs)} jobs[/]")
         return results
 
     def run_now(self, task_name: str) -> dict[str, Any]:
         """Manually trigger a task by name."""
         if task_name not in JOB_REGISTRY:
             available = ", ".join(JOB_REGISTRY.keys())
-            print(f"❌ Unknown task: {task_name}")
-            print(f"   Available tasks: {available}")
+            console.print(f"[red]Unknown task:[/] {task_name}")
+            console.print(f"  Available tasks: {available}")
             return {"status": "error", "message": f"Unknown task: {task_name}"}
 
         job_info = JOB_REGISTRY[task_name]
-        print(f"▶ Running: {task_name} — {job_info['description']}")
+        console.print(f"[bold cyan]Running:[/] {task_name} — {job_info['description']}")
         result = job_info["func"]()
-        print(f"  Result: {result}")
+        console.print(f"  [green]Result:[/] {result}")
         return result
 
     def get_run_history(self, limit: int = 20) -> list[dict[str, Any]]:
@@ -434,9 +440,9 @@ def main() -> None:
     setup_logging("scheduler")
 
     if len(sys.argv) < 2:
-        print("Usage: python scheduler.py <command>")
-        print("Commands: start, status, run-now --task <n>, history")
-        print(f"Available tasks: {', '.join(JOB_REGISTRY.keys())}")
+        console.print("[bold]Usage:[/] python scheduler.py <command>")
+        console.print("Commands: start, status, run-now --task <n>, history")
+        console.print(f"Available tasks: {', '.join(JOB_REGISTRY.keys())}")
         sys.exit(1)
 
     command = sys.argv[1]
@@ -451,8 +457,8 @@ def main() -> None:
 
     elif command == "run-now":
         if len(sys.argv) < 4 or sys.argv[2] != "--task":
-            print("Usage: python scheduler.py run-now --task <task_name>")
-            print(f"Available tasks: {', '.join(JOB_REGISTRY.keys())}")
+            console.print("[bold]Usage:[/] python scheduler.py run-now --task <task_name>")
+            console.print(f"Available tasks: {', '.join(JOB_REGISTRY.keys())}")
             sys.exit(1)
         task = sys.argv[3]
         sched = ToolkitScheduler(blocking=False)
@@ -462,21 +468,28 @@ def main() -> None:
         sched = ToolkitScheduler(blocking=False)
         runs = sched.get_run_history()
         if runs:
-            print(f"\n📜 Recent Scheduler Runs (last {len(runs)}):")
-            print(f"{'Job':<20} {'Status':<10} {'Started':<28} {'Records':<10} {'Error'}")
-            print("-" * 100)
+            hist_table = Table(title=f"Recent Scheduler Runs (last {len(runs)})", show_lines=True)
+            hist_table.add_column("Job", style="cyan", min_width=20)
+            hist_table.add_column("Status", min_width=10)
+            hist_table.add_column("Started", style="dim", min_width=28)
+            hist_table.add_column("Records", justify="right", min_width=8)
+            hist_table.add_column("Error", style="red")
             for run in runs:
-                err = (run.get("error_message") or "")[:40]
-                print(
-                    f"{run['job_name']:<20} {run['status']:<10} "
-                    f"{run['started_at']:<28} {run.get('records_affected', 0):<10} {err}"
+                status_style = "green" if run["status"] == "success" else "red"
+                hist_table.add_row(
+                    run["job_name"],
+                    f"[{status_style}]{run['status']}[/{status_style}]",
+                    run["started_at"],
+                    str(run.get("records_affected", 0)),
+                    (run.get("error_message") or "")[:40],
                 )
+            console.print(hist_table)
         else:
-            print("No scheduler runs recorded yet.")
+            console.print("[dim]No scheduler runs recorded yet.[/]")
 
     else:
-        print(f"Unknown command: {command}")
-        print("Commands: start, status, run-now --task <n>, history")
+        console.print(f"[red]Unknown command:[/] {command}")
+        console.print("Commands: start, status, run-now --task <n>, history")
         sys.exit(1)
 
 

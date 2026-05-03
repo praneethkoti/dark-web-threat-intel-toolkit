@@ -286,6 +286,26 @@ class EntityExtractor:
                         continue
                     matched_spans.add((start, end))
 
+                # PGP / SHA-1 disambiguation: both patterns match 40-char hex.
+                # SHA-1 is listed first in _REGEX_PATTERNS so it wins by default.
+                # When the surrounding text contains PGP/GPG/fingerprint keywords
+                # the match is almost certainly a PGP fingerprint, not a file hash,
+                # so reclassify it here before dedup.
+                if entity_type == "sha1":
+                    ctx_window = text[max(0, start - 100): end + 100].lower()
+                    if any(kw in ctx_window for kw in ("pgp", "gpg", "fingerprint", "key id", "key fingerprint")):
+                        entity_type = "pgp_fingerprint"
+                        normalized = normalizer(raw).upper()
+
+                # PGP solid-format (\b[0-9A-Fa-f]{40}\b) overlaps exactly with
+                # SHA-1. After the SHA-1 reclassification above handles true PGP
+                # hits, any remaining pgp_fingerprint match for a 40-char solid
+                # hex string with no PGP keyword context is noise — skip it.
+                if entity_type == "pgp_fingerprint" and len(raw.replace(" ", "")) == 40:
+                    ctx_window = text[max(0, start - 100): end + 100].lower()
+                    if not any(kw in ctx_window for kw in ("pgp", "gpg", "fingerprint", "key id", "key fingerprint")):
+                        continue
+
                 # Skip domains that are part of emails/URLs, or that look
                 # like filenames/version strings despite matching the regex.
                 if entity_type == "domain":

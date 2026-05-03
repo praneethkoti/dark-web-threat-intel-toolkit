@@ -42,6 +42,104 @@ def _deep_merge(base: dict, override: dict) -> dict:
     return merged
 
 
+_REQUIRED_SECTIONS = [
+    "project",
+    "scraper",
+    "pipeline",
+    "classifier",
+    "analysis",
+    "export",
+    "ai_summarizer",
+    "dashboard",
+    "scheduler",
+]
+
+# (dotted_key, expected_type, human_description)
+_REQUIRED_KEYS: list[tuple[str, type, str]] = [
+    ("project.name",                        str,   "project name string"),
+    ("project.version",                     str,   "project version string"),
+    ("project.log_level",                   str,   "log level (DEBUG/INFO/WARNING/ERROR)"),
+    ("project.database_path",               str,   "path to SQLite database"),
+    ("scraper.default_delay_seconds",       (int, float), "scraper delay in seconds"),
+    ("scraper.max_retries",                 int,   "scraper max retries integer"),
+    ("pipeline.entity_extraction.extract_types", list, "list of IOC types to extract"),
+    ("classifier.keyword.config_path",      str,   "path to keyword config YAML"),
+    ("classifier.ml.models",               list,  "list of ML model names"),
+    ("classifier.distilbert.model_name",   str,   "DistilBERT base model name"),
+    ("ai_summarizer.default_backend",      str,   "'openai', 'anthropic', or 'local'"),
+    ("scheduler.timezone",                 str,   "scheduler timezone string"),
+]
+
+_log = logging.getLogger(__name__)
+
+
+def _validate_settings(data: dict) -> None:
+    """
+    Validate the loaded settings dict.  Emits warnings (not exceptions) so a
+    misconfigured key degrades gracefully rather than crashing at import time.
+    Raises ValueError only for unrecoverable structural problems.
+    """
+    if not isinstance(data, dict):
+        raise ValueError("settings.yaml must be a YAML mapping at the top level")
+
+    # Check required top-level sections exist
+    for section in _REQUIRED_SECTIONS:
+        if section not in data:
+            _log.warning(
+                "settings.yaml is missing required section '%s'. "
+                "Defaults will be used, but some features may not work correctly.",
+                section,
+            )
+
+    # Check required keys have correct types
+    def _get_nested(d: dict, dotted: str):
+        node = d
+        for k in dotted.split("."):
+            if not isinstance(node, dict):
+                return None
+            node = node.get(k)
+        return node
+
+    for dotted_key, expected_type, description in _REQUIRED_KEYS:
+        value = _get_nested(data, dotted_key)
+        if value is None:
+            _log.warning(
+                "settings.yaml: key '%s' (%s) is missing or null. "
+                "Check your config file.",
+                dotted_key,
+                description,
+            )
+        elif not isinstance(value, expected_type):
+            _log.warning(
+                "settings.yaml: key '%s' should be %s but got %s (%r). "
+                "This may cause unexpected behaviour.",
+                dotted_key,
+                expected_type.__name__ if isinstance(expected_type, type) else str(expected_type),
+                type(value).__name__,
+                value,
+            )
+
+    # Validate specific value constraints
+    valid_log_levels = {"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}
+    log_level = _get_nested(data, "project.log_level")
+    if log_level and str(log_level).upper() not in valid_log_levels:
+        _log.warning(
+            "settings.yaml: project.log_level '%s' is not a valid log level. "
+            "Valid values: %s",
+            log_level,
+            ", ".join(sorted(valid_log_levels)),
+        )
+
+    valid_backends = {"openai", "anthropic", "local"}
+    backend = _get_nested(data, "ai_summarizer.default_backend")
+    if backend and str(backend).lower() not in valid_backends:
+        _log.warning(
+            "settings.yaml: ai_summarizer.default_backend '%s' is not recognised. "
+            "Valid values: openai, anthropic, local",
+            backend,
+        )
+
+
 class _Settings:
     """
     Lazy-loaded, singleton-ish settings object.
@@ -89,6 +187,7 @@ class _Settings:
             raise FileNotFoundError(f"Settings file not found: {SETTINGS_PATH}")
 
         data = _load_yaml(SETTINGS_PATH)
+        _validate_settings(data)
 
         # Apply .env overrides for commonly-changed values
         env_overrides: dict[str, tuple[str, type]] = {

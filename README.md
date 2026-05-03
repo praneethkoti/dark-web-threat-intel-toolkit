@@ -40,6 +40,71 @@ Python toolkit for collecting, processing, classifying, and analyzing threat int
 └──────────────┘                                  └───────────────────┘
 ```
 
+### Mermaid Diagram
+
+```mermaid
+flowchart TD
+    CLI["CLI (cli.py)\n18 commands"]
+
+    subgraph Scrapers["Module 1 — Scraper Engine"]
+        PS[PasteScraper]
+        FS[FeedScraper\nOTX · NVD · Abuse.ch]
+        SM[SimulatedMarketScraper]
+        SE[SeleniumScraper\nHeadless Chrome]
+    end
+
+    subgraph Pipeline["Module 2 — Processing Pipeline"]
+        CL[Cleaner\nHTML · Unicode · Dedup]
+        EE[EntityExtractor\n13 IOC types · spaCy NER]
+        EN[Enricher\nNVD CVE lookups]
+        DB[(SQLite\nWAL mode\n7 tables)]
+    end
+
+    subgraph Classifier["Module 3 — Classifier Engine"]
+        KW[KeywordClassifier\nYAML · 120+ keywords]
+        ML[MLClassifier\nTF-IDF · LR · RF · SVM]
+        TR[TransformerClassifier\nZero-shot BART]
+        DB2[DistilBertClassifier\nFine-tuned]
+        MM[MitreMapper\n25+ ATT&CK techniques]
+    end
+
+    subgraph Analysis["Module 4 — Analysis & Reporting"]
+        TA[TrendAnalyzer]
+        AD[AnomalyDetector\nZ-score · Rolling avg]
+        RG[ReportGenerator\nMarkdown · HTML]
+    end
+
+    subgraph Export["Module 5 — IOC Export"]
+        STX[STIX 2.1]
+        CSV[CSV]
+        MISP[MISP JSON]
+    end
+
+    AI["Module 6 — AI Summarizer\nOpenAI · Anthropic · Local HF"]
+    DASH["Module 7 — Dashboard\nStreamlit · 6 pages"]
+    SCHED["Module 8 — Scheduler\nAPScheduler · 5 jobs"]
+
+    CLI --> Scrapers
+    CLI --> Pipeline
+    CLI --> Classifier
+    CLI --> Analysis
+    CLI --> Export
+    CLI --> AI
+    CLI --> DASH
+    CLI --> SCHED
+
+    Scrapers --> Pipeline
+    CL --> EE --> EN --> DB
+    DB --> Classifier
+    DB --> Analysis
+    DB --> Export
+    DB --> AI
+    DB --> DASH
+    SCHED --> Scrapers
+    SCHED --> Pipeline
+    SCHED --> Classifier
+```
+
 ---
 
 ## Project Structure
