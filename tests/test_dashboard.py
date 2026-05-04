@@ -117,3 +117,39 @@ class TestDashboardPackage:
         ]
         for fname in expected:
             assert (pages_dir / fname).exists(), f"Missing page file: {fname}"
+
+
+class TestSummarizerPageDegradation:
+    """summarizer_page.render() must not raise even when heavy deps are absent."""
+
+    def test_render_does_not_raise_without_transformers(self, monkeypatch):
+        """
+        Remove torch and transformers from sys.modules before importing the page,
+        then call _probe_backends() directly. It must return a non-None error for
+        'local' (unavailable) rather than raising ImportError to the caller.
+        """
+        # Strip the heavy packages so the import probe sees them as missing
+        for mod in list(sys.modules):
+            if mod.startswith("torch") or mod.startswith("transformers"):
+                monkeypatch.delitem(sys.modules, mod, raising=False)
+
+        # Re-import the module fresh so _probe_backends picks up the patched sys.modules
+        if "dashboard.pages.summarizer_page" in sys.modules:
+            monkeypatch.delitem(sys.modules, "dashboard.pages.summarizer_page", raising=False)
+
+        from dashboard.pages.summarizer_page import _probe_backends
+        result = _probe_backends()
+
+        # 'local' must report an error string, not None, when torch/transformers absent
+        assert result["local"] is not None, (
+            "Expected 'local' to be unavailable when torch/transformers are absent"
+        )
+        # The other keys must still be present (probe must not raise)
+        assert "openai" in result
+        assert "anthropic" in result
+
+    def test_probe_returns_dict_with_all_three_backends(self):
+        """_probe_backends() always returns exactly three keys regardless of env."""
+        from dashboard.pages.summarizer_page import _probe_backends
+        result = _probe_backends()
+        assert set(result.keys()) == {"openai", "anthropic", "local"}

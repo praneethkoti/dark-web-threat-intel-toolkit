@@ -1,5 +1,13 @@
 # 🛡️ Dark Web Threat Intelligence Toolkit
 
+## Live Demo
+
+**[<DEPLOYMENT_URL_TBD>](<DEPLOYMENT_URL_TBD>)**
+
+Interactive Streamlit dashboard pre-loaded with synthetic threat intelligence data — no setup required. Add your own `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` in Streamlit secrets to enable the AI Summarizer page.
+
+---
+
 Python toolkit for collecting, processing, classifying, and analyzing threat intelligence from public OSINT sources and simulated dark web data. Covers the full pipeline from raw scraping through AI-powered summarization, with a Streamlit dashboard and a CLI that wires everything together.
 
 > **⚠️ Legal & Ethical:** This project uses **synthetic/simulated data** and **public APIs only**. No real dark web scraping, no .onion addresses, no stolen data. The architecture is designed so swapping in real sources requires minimal code changes.

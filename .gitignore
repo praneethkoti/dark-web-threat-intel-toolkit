@@ -16,6 +16,7 @@ env/
 .env
 *.key
 *.pem
+.streamlit/secrets.toml
 
 # ── Data (keep structure, ignore contents) ───────────
 data/raw/*
@@ -28,6 +29,8 @@ data/*.log
 !data/processed/.gitkeep
 !data/exports/.gitkeep
 !data/reports/.gitkeep
+# Committed demo DB so Streamlit Cloud can serve a pre-populated dashboard
+!data/dashboard_demo.db
 
 # ── ML Model Artifacts ──────────────────────────────
 *.pkl

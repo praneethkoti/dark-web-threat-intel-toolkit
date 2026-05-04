@@ -594,3 +594,62 @@ class TestPipeline:
         assert "sha256" in counts
 
         pipe.close()
+
+
+class TestSeedDemoCveEnrichments:
+    """seed_demo_cve_enrichments() seeds curated CVE data without hitting NVD."""
+
+    def test_seeded_row_has_correct_score_and_severity(self, tmp_path):
+        from demo import seed_demo_cve_enrichments
+
+        db = DatabaseLoader(db_path=tmp_path / "seed_test.db")
+        db.init_schema()
+
+        # Insert a fake post that mentions the target CVE so the function
+        # sees it in the entities table and decides to seed it.
+        sid = db.get_or_create_source("test", "paste", "http://test")
+        post_id = db.insert_raw_post(sid, "CVE-2024-21887 exploit", "hash_seed1", "2024-01-01T00:00:00Z")
+        db.conn.execute(
+            "INSERT INTO entities (post_id, entity_type, value, confidence)"
+            " VALUES (?, 'cve_id', 'CVE-2024-21887', 'high')",
+            (post_id,),
+        )
+        db.conn.commit()
+
+        seed_demo_cve_enrichments(db)
+
+        row = db.conn.execute(
+            "SELECT cvss_score, severity FROM cve_enrichment WHERE cve_id='CVE-2024-21887'"
+        ).fetchone()
+
+        assert row is not None, "Expected a cve_enrichment row for CVE-2024-21887"
+        assert row[0] == 9.1
+        assert row[1] == "CRITICAL"
+
+        db.close()
+
+    def test_unknown_cve_not_fabricated(self, tmp_path):
+        from demo import seed_demo_cve_enrichments
+
+        db = DatabaseLoader(db_path=tmp_path / "seed_test2.db")
+        db.init_schema()
+
+        # Insert a CVE that is NOT in the curated dict
+        sid = db.get_or_create_source("test", "paste", "http://test")
+        post_id = db.insert_raw_post(sid, "CVE-2099-99999 unknown", "hash_seed2", "2024-01-01T00:00:00Z")
+        db.conn.execute(
+            "INSERT INTO entities (post_id, entity_type, value, confidence)"
+            " VALUES (?, 'cve_id', 'CVE-2099-99999', 'high')",
+            (post_id,),
+        )
+        db.conn.commit()
+
+        seed_demo_cve_enrichments(db)
+
+        row = db.conn.execute(
+            "SELECT cvss_score FROM cve_enrichment WHERE cve_id='CVE-2099-99999'"
+        ).fetchone()
+
+        assert row is None, "Should not fabricate enrichment for unknown CVE"
+
+        db.close()

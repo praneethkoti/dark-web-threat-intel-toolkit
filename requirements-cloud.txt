@@ -1,0 +1,40 @@
+# ── requirements-cloud.txt ────────────────────────────────────────────────────
+# Streamlit Community Cloud runtime dependencies ONLY.
+# Heavy ML packages (torch, transformers, spacy, selenium) are intentionally
+# excluded — they exceed the 1 GB free-tier RAM limit and are not needed for
+# the dashboard. The AI Summarizer page degrades gracefully when they are absent.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Dashboard
+streamlit>=1.29.0
+plotly>=5.18.0
+pandas>=2.1.0
+matplotlib>=3.8.0
+wordcloud>=1.9.0
+
+# Threat intel formats (used by export pages and pipeline)
+stix2>=3.0.1
+
+# LLM backends (optional at runtime — page degrades if keys are absent)
+openai>=1.6.0
+anthropic>=0.39.0
+
+# Scraping / parsing (used by fixture loaders the dashboard calls indirectly)
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+fake-useragent>=1.4.0
+python-dateutil>=2.8.0
+
+# Scheduler (imported by config validation path)
+APScheduler>=3.10.4
+
+# CLI / config / utilities
+click>=8.1.0
+rich>=13.7.0
+pyyaml>=6.0.1
+python-dotenv>=1.0.0
+Faker>=22.0.0
+
+# ML classifiers used by keyword/ML classify path (no torch dependency)
+scikit-learn>=1.3.0

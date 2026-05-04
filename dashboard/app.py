@@ -39,8 +39,36 @@ st.set_page_config(
 
 @st.cache_resource
 def get_db() -> DatabaseLoader:
-    """Return a shared DatabaseLoader instance."""
-    db = DatabaseLoader()
+    """
+    Return a shared DatabaseLoader instance.
+
+    On Streamlit Cloud there is no persistent disk, so we fall back to the
+    committed demo DB (data/dashboard_demo.db) when the default database path
+    either doesn't exist or is empty. This guarantees the public dashboard
+    always has data to display without requiring a pipeline run.
+    """
+    primary_path = Path(settings.get("project.database_path", "data/threat_intel.db"))
+    if not primary_path.is_absolute():
+        primary_path = PROJECT_ROOT / primary_path
+
+    demo_path = PROJECT_ROOT / "data" / "dashboard_demo.db"
+
+    # Use the demo DB if the primary one is absent or has no posts yet
+    use_path = primary_path
+    if not primary_path.exists() and demo_path.exists():
+        use_path = demo_path
+    elif primary_path.exists() and demo_path.exists():
+        import sqlite3 as _sqlite3
+        try:
+            count = _sqlite3.connect(str(primary_path)).execute(
+                "SELECT COUNT(*) FROM raw_posts"
+            ).fetchone()[0]
+            if count == 0:
+                use_path = demo_path
+        except Exception:
+            use_path = demo_path
+
+    db = DatabaseLoader(db_path=use_path)
     db.init_schema()
     return db
 
