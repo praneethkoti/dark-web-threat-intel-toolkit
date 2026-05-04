@@ -185,7 +185,8 @@ dark-web-threat-intel-toolkit/
 │   ├── test_summarizer.py
 │   └── test_scheduler.py
 ├── cli.py                          #   Unified Click CLI (18 commands)
-├── requirements.txt
+├── requirements.txt                #   Cloud runtime deps (Streamlit Cloud)
+├── requirements-dev.txt            #   Full dev deps (local + CI)
 ├── .env.example
 ├── .gitignore
 ├── LICENSE
@@ -215,8 +216,8 @@ python -m venv venv
 source venv/bin/activate        # macOS/Linux
 # venv\Scripts\activate         # Windows
 
-# Install dependencies
-pip install -r requirements.txt
+# Install dependencies (full dev set — includes ML, NER, Selenium)
+pip install -r requirements-dev.txt
 
 # Install spaCy model (for NER entity extraction)
 python -m spacy download en_core_web_sm

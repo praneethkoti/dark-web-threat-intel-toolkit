@@ -1,6 +1,6 @@
 # Deploying to Streamlit Community Cloud
 
-Six steps from a fresh GitHub push to a live public URL.
+Five steps from a fresh GitHub push to a live public URL.
 
 ---
 
@@ -8,7 +8,8 @@ Six steps from a fresh GitHub push to a live public URL.
 
 - GitHub repo is public (or you have a Streamlit Cloud Team/Pro plan for private repos)
 - `data/dashboard_demo.db` is committed — it ships the pre-populated demo database
-- `requirements-cloud.txt` is committed — it is the lightweight dependency list for Cloud
+- `requirements.txt` in the repo root is the cloud-safe dependency list (excludes torch/transformers/spacy/selenium)
+- Full dev dependencies are in `requirements-dev.txt` for local development and CI
 
 ---
 
@@ -30,19 +31,11 @@ Click **"New app"** in the top-right corner.
 | Branch | `main` |
 | Main file path | `dashboard/app.py` |
 
-### 4. Point at the cloud requirements file
+Streamlit Cloud automatically reads `requirements.txt` from the repo root — no custom path needed.
 
-In **Advanced settings → Python dependencies**, set the requirements file to:
+### 4. Add secrets (optional — enables AI Summarizer)
 
-```
-requirements-cloud.txt
-```
-
-This excludes `torch`, `transformers`, `spacy`, and `selenium` — all of which exceed the 1 GB free-tier RAM limit.
-
-### 5. Add secrets (optional — enables AI Summarizer)
-
-In **App settings → Secrets**, paste:
+In **Advanced settings → Secrets**, paste:
 
 ```toml
 OPENAI_API_KEY = "sk-..."
@@ -51,11 +44,22 @@ ANTHROPIC_API_KEY = "sk-ant-..."
 
 Without these the AI Summarizer page still loads and shows a helpful info card explaining how to configure each backend. All other pages work without any secrets.
 
-### 6. Deploy
+### 5. Deploy
 
-Click **"Deploy"**. Streamlit Cloud will install dependencies, run `dashboard/app.py`, and give you a public URL within ~2 minutes.
+Click **"Deploy"**. Streamlit Cloud will install `requirements.txt`, run `dashboard/app.py`, and give you a public URL within ~2 minutes.
 
 Update the `<DEPLOYMENT_URL_TBD>` placeholder in `README.md` with the URL once it is live.
+
+---
+
+## Local Development
+
+Install the full dependency set (includes torch, spacy, selenium, etc.):
+
+```bash
+pip install -r requirements-dev.txt
+python -m spacy download en_core_web_sm
+```
 
 ---
 
@@ -63,11 +67,11 @@ Update the `<DEPLOYMENT_URL_TBD>` placeholder in `README.md` with the URL once i
 
 ### App crashes immediately on boot
 
-**Most likely cause:** a package in `requirements-cloud.txt` failed to install or a required import is missing.
+**Most likely cause:** a package in `requirements.txt` failed to install or a required import is missing.
 
 Check: **App menu (⋮) → Logs** in the Streamlit Cloud UI. Look for `ModuleNotFoundError` or `pip install` failures.
 
-**Fix:** verify `requirements-cloud.txt` includes the failing package. Do not add `torch` or `transformers` — they will exceed the memory limit and cause the app to crash.
+**Fix:** verify `requirements.txt` includes the failing package. Do not add `torch` or `transformers` — they will exceed the 1 GB free-tier RAM limit and cause the app to crash.
 
 ### "No data in the database"
 
@@ -83,13 +87,13 @@ Then run `git add data/dashboard_demo.db` and push.
 
 **Cause:** API keys are not configured as Streamlit secrets.
 
-**Fix:** In **App settings → Secrets**, add `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` (see Step 5 above). Then click **Reboot app**.
+**Fix:** In **Advanced settings → Secrets**, add `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` (see Step 4 above). Then click **Reboot app**.
 
 ### Memory limit exceeded (app OOMs)
 
-**Cause:** a heavy package (torch, transformers, spacy, selenium) crept into `requirements-cloud.txt`.
+**Cause:** a heavy package (torch, transformers, spacy, selenium) crept into `requirements.txt`.
 
-**Fix:** remove it. These packages are only needed for local fine-tuning and headless scraping — neither is required for the dashboard to run.
+**Fix:** remove it. These packages are only needed for local fine-tuning and headless scraping — neither is required for the dashboard. They belong in `requirements-dev.txt` only.
 
 ### Wrong Python version
 
