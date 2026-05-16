@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-**[<DEPLOYMENT_URL_TBD>](<DEPLOYMENT_URL_TBD>)**
+**🌐 [dark-web-threat-intel-toolkit.streamlit.app](https://dark-web-threat-intel-toolkit.streamlit.app/)**
 
 Interactive Streamlit dashboard pre-loaded with synthetic threat intelligence data — no setup required. Add your own `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` in Streamlit secrets to enable the AI Summarizer page.
 
