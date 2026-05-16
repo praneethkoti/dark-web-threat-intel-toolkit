@@ -58,12 +58,12 @@ class TestAppParsing:
 
 # Map module path → expected callable name
 _PAGES = [
-    ("dashboard.pages.overview",        "render"),
-    ("dashboard.pages.threat_feed",     "render"),
-    ("dashboard.pages.ioc_explorer",    "render"),
-    ("dashboard.pages.trends",          "render"),
-    ("dashboard.pages.report_page",     "render"),
-    ("dashboard.pages.summarizer_page", "render"),
+    ("dashboard.views.overview",        "render"),
+    ("dashboard.views.threat_feed",     "render"),
+    ("dashboard.views.ioc_explorer",    "render"),
+    ("dashboard.views.trends",          "render"),
+    ("dashboard.views.report_page",     "render"),
+    ("dashboard.views.summarizer_page", "render"),
 ]
 
 
@@ -90,7 +90,7 @@ def test_page_has_render_function(module_path: str, func_name: str):
     )
 
 
-# ── pages/__init__.py parse test ──────────────────────────────────────────────
+# ── views/__init__.py parse test ──────────────────────────────────────────────
 
 class TestDashboardPackage:
     def test_dashboard_init_is_valid_python(self):
@@ -99,14 +99,14 @@ class TestDashboardPackage:
         source = init_path.read_text(encoding="utf-8")
         ast.parse(source, filename=str(init_path))
 
-    def test_pages_init_is_valid_python(self):
-        init_path = PROJECT_ROOT / "dashboard" / "pages" / "__init__.py"
-        assert init_path.exists(), "dashboard/pages/__init__.py not found"
+    def test_views_init_is_valid_python(self):
+        init_path = PROJECT_ROOT / "dashboard" / "views" / "__init__.py"
+        assert init_path.exists(), "dashboard/views/__init__.py not found"
         source = init_path.read_text(encoding="utf-8")
         ast.parse(source, filename=str(init_path))
 
-    def test_all_page_files_exist(self):
-        pages_dir = PROJECT_ROOT / "dashboard" / "pages"
+    def test_all_view_files_exist(self):
+        views_dir = PROJECT_ROOT / "dashboard" / "views"
         expected = [
             "overview.py",
             "threat_feed.py",
@@ -116,7 +116,7 @@ class TestDashboardPackage:
             "summarizer_page.py",
         ]
         for fname in expected:
-            assert (pages_dir / fname).exists(), f"Missing page file: {fname}"
+            assert (views_dir / fname).exists(), f"Missing view file: {fname}"
 
 
 class TestSummarizerPageDegradation:
@@ -134,10 +134,10 @@ class TestSummarizerPageDegradation:
                 monkeypatch.delitem(sys.modules, mod, raising=False)
 
         # Re-import the module fresh so _probe_backends picks up the patched sys.modules
-        if "dashboard.pages.summarizer_page" in sys.modules:
-            monkeypatch.delitem(sys.modules, "dashboard.pages.summarizer_page", raising=False)
+        if "dashboard.views.summarizer_page" in sys.modules:
+            monkeypatch.delitem(sys.modules, "dashboard.views.summarizer_page", raising=False)
 
-        from dashboard.pages.summarizer_page import _probe_backends
+        from dashboard.views.summarizer_page import _probe_backends
         result = _probe_backends()
 
         # 'local' must report an error string, not None, when torch/transformers absent
@@ -150,6 +150,6 @@ class TestSummarizerPageDegradation:
 
     def test_probe_returns_dict_with_all_three_backends(self):
         """_probe_backends() always returns exactly three keys regardless of env."""
-        from dashboard.pages.summarizer_page import _probe_backends
+        from dashboard.views.summarizer_page import _probe_backends
         result = _probe_backends()
         assert set(result.keys()) == {"openai", "anthropic", "local"}

@@ -99,20 +99,20 @@ st.sidebar.caption(f"v{settings.get('project.version', '1.0.0')}")
 db = get_db()
 
 if page == "📊 Overview":
-    from dashboard.pages.overview import render
+    from dashboard.views.overview import render
     render(db)
 elif page == "📋 Threat Feed":
-    from dashboard.pages.threat_feed import render
+    from dashboard.views.threat_feed import render
     render(db)
 elif page == "🔍 IOC Explorer":
-    from dashboard.pages.ioc_explorer import render
+    from dashboard.views.ioc_explorer import render
     render(db)
 elif page == "📈 Trends":
-    from dashboard.pages.trends import render
+    from dashboard.views.trends import render
     render(db)
 elif page == "📄 Report Generator":
-    from dashboard.pages.report_page import render
+    from dashboard.views.report_page import render
     render(db)
 elif page == "🤖 AI Summarizer":
-    from dashboard.pages.summarizer_page import render
+    from dashboard.views.summarizer_page import render
     render(db)
